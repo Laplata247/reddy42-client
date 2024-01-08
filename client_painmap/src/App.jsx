@@ -8,12 +8,12 @@ function App() {
   return (
     <Canvas
       camera={{
-        position: [0, 2, 8], // Adjust camera position as needed
-        fov: 45, // Field of view
-        near: 0.1, // Near clipping plane
-        far: 100, // Far clipping plane
+        position: [0, 2, 8],
+        fov: 45,
+        near: 0.1,
+        far: 100,
       }}
-      shadowmap // Enable shadow mapping
+      shadowMap={true} // Enable shadow mapping by setting it to true
       style={{
         height: '100vh',
         width: '100vw',
@@ -24,13 +24,14 @@ function App() {
     >
       <ambientLight intensity={0.5} />
       <directionalLight
-        position={[5, 5, 5]} // Adjust the light's position
-        intensity={1} // Light intensity
-        castShadow // Enable shadow casting
-        shadow-mapSize-width={1024} // Shadow map size (width)
-        shadow-mapSize-height={1024} // Shadow map size (height)
+        position={[5, 5, 5]}
+        intensity={1}
+        castShadow
+        shadow-mapSize-width={1024}
+        shadow-mapSize-height={1024}
       />
-      <Model /> {/* Use the Model component to render your GLB model */}
+      <Model />
+
       <OrbitControls />
     </Canvas>
   );
