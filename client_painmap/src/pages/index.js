@@ -1,6 +1,8 @@
+export { default as LandingPage } from './LandingPage'
 export { default as HomePage } from './HomePage'
 export { default as NotFoundPage } from './NotFoundPage'
 export { default as ChatPage } from './ChatPage'
 export { default as MapPainPage } from './MapPainPage'
 export { default as MedicalHistoryPage } from './MedicalHistoryPage'
 export { default as ConsultationPage } from './ConsultationPage'
+export { default as SignupPage } from './SignupPage'
