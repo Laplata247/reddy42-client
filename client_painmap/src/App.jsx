@@ -8,12 +8,12 @@ function App() {
   return (
     <Canvas
       camera={{
-        position: [0, 2, 8],
+        position: [0, 2, 8], // Camera position
         fov: 45,
         near: 0.1,
         far: 100,
       }}
-      shadowMap={true} // Enable shadow mapping by setting it to true
+      shadowMap={true} // Re-enable shadow mapping
       style={{
         height: '100vh',
         width: '100vw',
@@ -26,7 +26,7 @@ function App() {
       <directionalLight
         position={[5, 5, 5]}
         intensity={1}
-        castShadow
+        castShadow // Enable shadow casting
         shadow-mapSize-width={1024}
         shadow-mapSize-height={1024}
       />
