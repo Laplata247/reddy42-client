@@ -28,6 +28,8 @@ const SignupForm = () => {
 
             if (response.status === 200) {
                 setSignupSuccessful(true);
+
+                goTo('/home');
             }
             else {
                 console.error('Sighnup failed:', response.data.error);
