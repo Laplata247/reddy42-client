@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { SignupForm } from '../../components';
+import { LoginForm } from '../../components';
 
-const Signup = () => {
+const Login = () => {
 
     useEffect(() => {
         localStorage.clear()
@@ -9,10 +9,10 @@ const Signup = () => {
 
     return (
         <>
-            <h1>Signup</h1>
-            <SignupForm />
+            <h1>Login</h1>
+            <LoginForm />
         </>
     )
 }
 
-export default Signup;
+export default Login;
