@@ -9,6 +9,7 @@ function App() {
   return (
     <>
       <Routes>
+        <Route path='/landing' element={<Pages.LandingPage />} />
         <Route path="/" element={<Header />}>
           <Route index element={<Pages.HomePage />} />
           <Route path="/painmap" element={<Pages.MapPainPage />} />
