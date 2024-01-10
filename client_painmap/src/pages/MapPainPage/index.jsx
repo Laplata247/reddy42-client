@@ -7,9 +7,9 @@ import './style.css';
 
 const MapPainPage = () => {
 
-  const takeScreenshot=() => {
+  const takeScreenshot = () => {
     const element = document.getElementById("canvasDiv")
-    html2canvas(element).then((canvas)=> {
+    html2canvas(element).then((canvas) => {
       let image = canvas.toDataURL("image/jpeg");
       const a = document.createElement("a")
       a.href = image
