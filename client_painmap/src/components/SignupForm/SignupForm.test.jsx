@@ -42,6 +42,16 @@ describe("SignupForm component", () => {
         expect(userFirstName.value).toBe("Doe");
     });
 
+    // it("updates the dateOfBirth state correctly", () => {
+    //     const userDOB = screen.getByRole("dateOfBirth");
+        
+    //     expect(userDOB.value).toBe("");
+
+    //     fireEvent.change(userDOB, { target: { value: "01/10/2024" } });
+
+    //     expect(userDOB.value).toBe("01/10/2024");
+    // });
+
     it("updates the email state correctly", () => {
         const userLastName = screen.getByRole("email");
         
@@ -62,7 +72,7 @@ describe("SignupForm component", () => {
         expect(userPassword.value).toBe("test-password");
     });
 
-    it("displays a form to input first name, last name, email and password", () => {
+    it("displays a form to input user's information", () => {
         const form = screen.getByRole("form");
         expect(form).toBeInTheDocument();
     });
