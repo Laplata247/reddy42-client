@@ -15,9 +15,9 @@ function App() {
       <Route path="/" element={<Header />}>
         <Route index element={<Pages.HomePage />} />
         
-        {/* Update the route for "Map Pain" */}
-        <Route path="/painmap" element={<GenderSelection />} />
-        
+        <Route path="/select-gender" element={<Pages.GenderSelection />} />
+        <Route path="/painmap" element={<Pages.MapPainPage />} />
+
         <Route path="/chat" element={<Pages.ChatPage />} />
         <Route path="/history">
           <Route index element={<Pages.MedicalHistoryPage />} />
