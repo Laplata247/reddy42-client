@@ -3,7 +3,7 @@ import { useLoader } from '@react-three/fiber';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader';
 
 function Model() {
-  const gltf = useLoader(GLTFLoader, 'public/3Dmale.gltf');
+  const gltf = useLoader(GLTFLoader, '/3Dmale.gltf');
 
 
   const modelRef = useRef();
