@@ -25,7 +25,8 @@ const SignupForm = () => {
                 password: e.target.password.value,
             }
 
-            const response = await axios.post('<backendURL>', userData);
+            // const response = await axios.post('<backendURL>', userData);
+            const response = await axios.post('http://localhost:4000/patients', userData);
 
             if (response.status === 200) {
                 setSignupSuccessful(true);
@@ -33,7 +34,7 @@ const SignupForm = () => {
                 goTo('/home');
             }
             else {
-                console.error('Sighnup failed:', response.data.error);
+                console.error('Signup failed:', response.data.error);
                 setSignupSuccessful(false);
             }
 
