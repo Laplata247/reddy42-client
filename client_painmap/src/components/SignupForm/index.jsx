@@ -11,7 +11,13 @@ const SignupForm = () => {
     const [ lastName, setLastName ] = useState();
     const [ email, setEmail ] = useState();
     const [ password, setPassword ] = useState();
-    const [isSignupSuccessful, setSignupSuccessful] = useState(null);
+    const [ dateOfBirth, setDateOfBirth ] = useState('');
+    const [ sex, setSex ] = useState('');
+    const [ ethnicity, setEthnicity ] = useState('');
+    const [ nhsMember, setNhsMember ] = useState('');
+    const [ isSignupSuccessful, setSignupSuccessful ] = useState(null);
+
+    const sexOptions = ['Male', 'Female', 'Other'];
 
     const handleSubmit = async(e) => {
         e.preventDefault();
@@ -23,6 +29,10 @@ const SignupForm = () => {
                 lastName: e.target.lastName.value,
                 email: e.target.email.value,
                 password: e.target.password.value,
+                dateOfBirth: e.target.dateOfBirth.value,
+                sex: e.target.sex.value,
+                ethnicity: e.target.ethnicity.value,
+                nhsMember: e.target.nhsMember.value
             }
 
             const response = await axios.post('<backendURL>', userData);
@@ -64,20 +74,73 @@ const SignupForm = () => {
         setPassword(input);
     }
 
+    const updateDOB = e => {
+        const input = e.target.value;
+        setDateOfBirth(input);
+    }
+
+    const updateSex = e => {
+        const input = e.target.value;
+        setSex(input);
+    }
+
+    const updateEthnicity = e => {
+        const input = e.target.value;
+        setEthnicity(input);
+    }
+
     return (
         <>
-            <form onSubmit={handleSubmit} id='signup-form'>
+            <form onSubmit={handleSubmit} id='signup-form' role='form'>
                 <label>First name</label>
-                <input type='text' name='firstName' placeholder='Enter Your First Name' onChange={updateFirstName} />
+                <input type='text' name='firstName' placeholder='Enter your first name' onChange={updateFirstName} role='first-name' />
                 
                 <label>Last name</label>
-                <input type='text' name='lastName' placeholder='Enter Your Last Name' onChange={updateLastName} />
-                
+                <input type='text' name='lastName' placeholder='Enter your last name' onChange={updateLastName} role='last-name' />
+
+                <label>Date of Birth</label>
+                <input type='date' name='dateOfBirth' placeholder='MM/DD/YYYY' onChange={updateDOB} role='dateOfBirth' />
+
+                <label>Sex</label>
+                <select name='sex' onChange={updateSex} role='sex'>
+                    {sexOptions.map((option) => (
+                        <option key={option} value={option}>
+                        {option}
+                        </option>
+                    ))}
+                </select>
+
+                <label>Ethnicity</label>
+                <input type='text' name='ethnicity' placeholder='' onChange={updateEthnicity} role='ethnicity' />
+
                 <label>Email</label>
-                <input type='text' name='email' placeholder='Enter Your Email' onChange={updateEmail} />
+                <input type='text' name='email' placeholder='example@email.com' onChange={updateEmail} role='email' />
                 
                 <label>Create Password</label>
-                <input type='text' name='password' placeholder='Enter Password' onChange={updatePassword} />
+                <input type='password' name='password' placeholder='must be 8 characters' onChange={updatePassword} role='password' />
+
+                <label>Are you a NHS member?</label>
+                <div>
+                    <input
+                        type='radio'
+                        name='nhsMember'
+                        value='yes'
+                        defaultChecked={false}
+                        onChange={(e) => e.target.checked && setNhsMember(true)}
+                        role='nhsMember'
+                    />
+                    <label htmlFor='nhsMemberYes'>Yes</label>
+
+                    <input
+                        type='radio'
+                        name='nhsMember'
+                        value='no'
+                        defaultChecked={true}
+                        onChange={(e) => e.target.checked && setNhsMember(false)}
+                        role='nhsMember'
+                    />
+                    <label htmlFor='nhsMemberNo'>No</label>
+                </div>
                 
                 <input type='submit' value='Create Account'/>
             </form>
