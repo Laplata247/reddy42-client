@@ -15,9 +15,12 @@ function App() {
         
         <Route path="/home" element={<Header />}>
           <Route index element={<Pages.HomePage />} />
-          <Route path="painmap" element={<Pages.MapPainPage />} />
-          <Route path="chat" element={<Pages.ChatPage />} />
-          <Route path="history" element={<Pages.MedicalHistoryPage />} />
+          <Route path="/painmap" element={<Pages.MapPainPage />} />
+          <Route path="/chat" element={<Pages.ChatPage />} />
+          <Route path="/history">
+            <Route index element={<Pages.MedicalHistoryPage />} />
+            <Route path=":id" element={<Pages.ConsultationPage />} />
+          </Route>
           <Route path="*" element={<Pages.NotFoundPage />} />
         </Route>
       </Routes>
