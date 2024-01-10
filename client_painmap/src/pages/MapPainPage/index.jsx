@@ -21,12 +21,13 @@ const MapPainPage = () => {
 
       <Canvas
         style={{
-          height: '500px',
+          height: '450px',
           width: '500px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background:'white'
+          background:'white',
+          borderRadius: '50px'
         }}
         camera={{ position: [0, 0, 5] }}
       >
