@@ -1,44 +1,51 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
-import Model from '../../components/model.jsx'; // Import the Model component
+import Model from '../../components/model.jsx';
+import DrawingOverlay from '../../components/DrawingOverlay';
 
 const MapPainPage = () => {
+  const [drawingEnabled, setDrawingEnabled] = useState(false);
+
+  const toggleDrawing = () => {
+    setDrawingEnabled(!drawingEnabled);
+  };
+
   return (
     <>
       <h1>Map Pain Page</h1>
 
+      <button onClick={toggleDrawing}>
+        {drawingEnabled ? 'Disable Drawing' : 'Enable Drawing'}
+      </button>
+
       <Canvas
-        camera={{
-          position: [0, 2, 8], // Camera position
-          fov: 45,
-          near: 0.1,
-          far: 100,
-        }}
-        shadowMap={true} // Re-enable shadow mapping
         style={{
-          height: '100vh',
-          width: '100vw',
+          height: '500px',
+          width: '500px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
+          background:'white'
         }}
+        camera={{ position: [0, 0, 5] }}
       >
         <ambientLight intensity={0.5} />
         <directionalLight
           position={[5, 5, 5]}
           intensity={1}
-          castShadow // Enable shadow casting
+          castShadow
           shadow-mapSize-width={1024}
           shadow-mapSize-height={1024}
         />
-        <Model />
-
-        <OrbitControls />
+        <Model position={[0, 0, 0]} />
+        <OrbitControls enableRotate={true} enablePan={true} enableZoom={true} />
       </Canvas>
 
+      {/* Conditionally render the DrawingOverlay based on drawingEnabled */}
+      {drawingEnabled && <DrawingOverlay />}
     </>
-  )
-}
+  );
+};
 
-export default MapPainPage
+export default MapPainPage;
