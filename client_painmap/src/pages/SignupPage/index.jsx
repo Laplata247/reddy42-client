@@ -9,7 +9,7 @@ const Signup = () => {
 
     return (
         <>
-            <h1>Signup</h1>
+            <h1>Sign up</h1>
             <SignupForm />
         </>
     )
