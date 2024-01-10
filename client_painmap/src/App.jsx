@@ -9,11 +9,11 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path='/' element={<Pages.LandingPage />}></Route>
+        <Route path='/landing' element={<Pages.LandingPage />}></Route>
         <Route path='/signup' element={<Pages.SignupPage />}></Route>
         <Route path='/login' element={<Pages.LoginPage />}></Route>
         
-        <Route path="/home" element={<Header />}>
+        <Route path="/" element={<Header />}>
           <Route index element={<Pages.HomePage />} />
           <Route path="/painmap" element={<Pages.MapPainPage />} />
           <Route path="/chat" element={<Pages.ChatPage />} />
