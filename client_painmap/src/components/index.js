@@ -6,3 +6,4 @@ export { default as Decals } from './Decals'
 export { default as Model } from './Model'
 
 export { default as DrawingOverlay} from './DrawingOverlay'
+export {default as Chat } from './Chat'
