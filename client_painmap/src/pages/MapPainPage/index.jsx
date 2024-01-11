@@ -2,10 +2,12 @@ import React, { useState, useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { DecalGeometry } from 'three/addons/geometries/DecalGeometry.js'; //import decal geometry pakage 
+import html2canvas from 'html2canvas';
 import Model from '../../components/model.jsx';
 import DrawingOverlay from '../../components/DrawingOverlay';
 import { Decal } from '@react-three/drei';
 
+import './style.css';
 
 const MapPainPage = () => {
 
@@ -48,6 +50,18 @@ const MapPainPage = () => {
   //   screen.add(decal)
 
   // }
+
+
+  const takeScreenshot = () => {
+    const element = document.getElementById("canvasDiv")
+    html2canvas(element).then((canvas) => {
+      let image = canvas.toDataURL("image/jpeg");
+      const a = document.createElement("a")
+      a.href = image
+      a.download = "screenshot.jpeg"
+      a.click()
+    })
+  }
 
   return (
     <>
