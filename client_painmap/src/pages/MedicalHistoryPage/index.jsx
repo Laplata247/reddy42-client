@@ -43,7 +43,7 @@ const MedicalHistoryPage = () => {
 
   return (
     <>
-      <h1> Medical History Page</h1 >
+      <h1>Medical History Page</h1 >
       <div className='consultations'>
         {consultations.map(consultation => (
           <Link to={`${consultation.id}`} key={consultation.id}>

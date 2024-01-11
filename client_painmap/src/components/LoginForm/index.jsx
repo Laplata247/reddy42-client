@@ -53,12 +53,12 @@ const LoginForm = () => {
 
     return (
         <>
-            <form onSubmit={handleSubmit} id='login-form'>
+            <form onSubmit={handleSubmit} id='login-form' role='form'>
                 <label>Email</label>
-                <input type='text' name='email' placeholder='Enter Your Email' onChange={updateEmail} />
+                <input type='text' name='email' placeholder='Your email' onChange={updateEmail} role='email' />
 
                 <label>Password</label>
-                <input type='text' name='password' placeholder='Enter Password' onChange={updatePassword} />
+                <input type='text' name='password' placeholder='Password' onChange={updatePassword} role='password' />
 
                 <input type='submit' value='Login' />
             </form>
