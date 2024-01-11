@@ -69,7 +69,7 @@ const MapPainPage = () => {
             shadow-mapSize-height={1024}
           />
           <Model decals={decals} setDecals={setDecals}/>
-          <OrbitControls enableRotate={true} enablePan={false} enableZoom={true} />
+          <OrbitControls enableRotate={true} enablePan={true} enableZoom={true} />
 
         </Canvas>
 
