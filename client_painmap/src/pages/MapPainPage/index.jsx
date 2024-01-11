@@ -26,8 +26,8 @@ const MapPainPage = () => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background:'white',
-          borderRadius: '50px'
+          background: 'white',
+          borderRadius: '50px',
         }}
         camera={{ position: [0, 0, 5] }}
       >
@@ -44,7 +44,7 @@ const MapPainPage = () => {
       </Canvas>
 
       {/* Conditionally render the DrawingOverlay based on drawingEnabled */}
-      {drawingEnabled && <DrawingOverlay />}
+      {drawingEnabled && <DrawingOverlay modelRef={Model} />} {/* Pass the modelRef as a prop */}
     </>
   );
 };

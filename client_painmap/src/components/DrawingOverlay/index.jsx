@@ -1,9 +1,12 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
+import * as THREE from 'three';
+import { useFrame } from '@react-three/fiber';
 
-const DrawingOverlay = () => {
+const DrawingOverlay = ({ cameraRef, sceneRef }) => { // Pass the cameraRef and sceneRef as props
   const canvasRef = useRef(null);
   const [drawing, setDrawing] = useState(false);
-  const [context, setContext] = useState(null);
+  const raycaster = new THREE.Raycaster();
+  const mouse = new THREE.Vector2();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -11,7 +14,6 @@ const DrawingOverlay = () => {
       const ctx = canvas.getContext('2d');
       ctx.strokeStyle = 'red'; // Customize drawing color here
       ctx.lineWidth = 2; // Customize line width here
-      setContext(ctx);
     }
   }, []);
 
@@ -23,35 +25,46 @@ const DrawingOverlay = () => {
   };
 
   const startDrawing = (e) => {
-    if (context && isWithinCanvas(e.nativeEvent.offsetX, e.nativeEvent.offsetY)) {
-      console.log('Start drawing');
+    if (isWithinCanvas(e.nativeEvent.offsetX, e.nativeEvent.offsetY)) {
       setDrawing(true);
-      context.beginPath();
-      context.moveTo(e.nativeEvent.offsetX, e.nativeEvent.offsetY);
+      mouse.x = (e.nativeEvent.offsetX / window.innerWidth) * 2 - 1;
+      mouse.y = -(e.nativeEvent.offsetY / window.innerHeight) * 2 + 1;
+
+      // Update the raycaster with the current mouse position
+      raycaster.setFromCamera(mouse, cameraRef.current); // Use the camera from props
+
+      // Perform the raycast
+      const intersects = raycaster.intersectObject(sceneRef.current, true);
+
+      if (intersects.length > 0) {
+        // Get the intersection point on the 3D model
+        const intersectionPoint = intersects[0].point;
+
+        // Here, you can implement your drawing logic using intersectionPoint
+        // For example, you can apply a texture at the intersection point.
+      }
     }
   };
 
   const draw = (e) => {
-    if (drawing && context && isWithinCanvas(e.nativeEvent.offsetX, e.nativeEvent.offsetY)) {
-      console.log('Drawing');
-      context.lineTo(e.nativeEvent.offsetX, e.nativeEvent.offsetY);
-      context.stroke();
+    if (drawing) {
+      // Implement your drawing logic here
+      // You can use e.nativeEvent.offsetX and e.nativeEvent.offsetY
+      // to get the current mouse position and draw on the canvas.
     }
   };
 
   const endDrawing = () => {
-    if (context) {
-      console.log('End drawing');
-      setDrawing(false);
-      context.closePath();
-    }
+    // Implement your logic to end the drawing here
+    // This function should be called when drawing is completed
+    setDrawing(false);
   };
 
   return (
     <canvas
       ref={canvasRef}
-      width={window.innerWidth}
-      height={window.innerHeight}
+      width={500}
+      height={500}
       style={{
         position: 'absolute',
         top: 0,
