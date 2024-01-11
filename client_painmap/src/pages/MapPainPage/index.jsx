@@ -70,6 +70,7 @@ const MapPainPage = () => {
   return (
     <>
       <h1>Map Pain Page</h1>
+
       <button onClick={toggleDrawing}>
         {drawingEnabled ? 'Disable Drawing' : 'Enable Drawing'}
       </button>
@@ -102,11 +103,12 @@ const MapPainPage = () => {
           <OrbitControls enableRotate={true} enablePan={true} enableZoom={true} />
         </Canvas>
       </div>
-      <button onClick={takeScreenshot} >
-        Save Image
-      </button>
+
+
+      <button onClick={takeScreenshot}>Save image</button>
+
       {/* Conditionally render the DrawingOverlay based on drawingEnabled */}
-      {drawingEnabled && <DrawingOverlay />}
+      {drawingEnabled && <DrawingOverlay modelRef={Model} />} {/* Pass the modelRef as a prop */}
     </>
   );
 };
