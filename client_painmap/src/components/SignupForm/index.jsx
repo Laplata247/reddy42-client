@@ -17,25 +17,28 @@ const SignupForm = () => {
     const [ nhsMember, setNhsMember ] = useState('');
     const [ isSignupSuccessful, setSignupSuccessful ] = useState(null);
 
-    const sexOptions = ['Male', 'Female', 'Other'];
+    //changed inputs - doesnt like string larger than 1
+    const sexOptions = ['M', 'F'];
 
     const handleSubmit = async(e) => {
         e.preventDefault();
 
         try {
-
+            //order is very important here - had to rearrrange to make work on back end
             const userData = {
                 firstName: e.target.firstName.value,
                 lastName: e.target.lastName.value,
                 email: e.target.email.value,
                 password: e.target.password.value,
+                nhsMember: e.target.nhsMember.value,
                 dateOfBirth: e.target.dateOfBirth.value,
                 sex: e.target.sex.value,
-                ethnicity: e.target.ethnicity.value,
-                nhsMember: e.target.nhsMember.value
+                ethnicity: e.target.ethnicity.value
             }
 
             // const response = await axios.post('<backendURL>', userData);
+            // const response = await axios.post('http://localhost:4000/patients', userData, { withCredentials: true });
+
             const response = await axios.post('http://localhost:4000/patients', userData);
 
             if (response.status === 200) {
@@ -125,22 +128,22 @@ const SignupForm = () => {
                     <input
                         type='radio'
                         name='nhsMember'
-                        value='yes'
+                        value='True'
                         defaultChecked={false}
                         onChange={(e) => e.target.checked && setNhsMember(true)}
                         role='nhsMember'
                     />
-                    <label htmlFor='nhsMemberYes'>Yes</label>
+                    <label htmlFor='nhsMemberYes'>True</label>
 
                     <input
                         type='radio'
                         name='nhsMember'
-                        value='no'
+                        value='False' //this line needs to be Boolean(false) - cant get it to work
                         defaultChecked={true}
                         onChange={(e) => e.target.checked && setNhsMember(false)}
                         role='nhsMember'
                     />
-                    <label htmlFor='nhsMemberNo'>No</label>
+                    <label htmlFor='nhsMemberNo'>False</label>
                 </div>
                 
                 <input type='submit' value='Create Account'/>
