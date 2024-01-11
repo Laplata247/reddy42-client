@@ -3,9 +3,14 @@ import { useLoader, useThree, useFrame } from '@react-three/fiber';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader';
 import { Vector2, Raycaster, Vector3, Euler, Matrix4} from 'three';
 import Decals from '../Decals';
+import { useGender } from '../contexts';
 
 function Model({decals, setDecals}) {
-  const gltf = useLoader(GLTFLoader, 'public/3Dmale.gltf');
+  
+  const {selectedGender} = useGender()
+  console.log(selectedGender)
+  const gltf = useLoader(GLTFLoader, selectedGender);
+  console.log("didn't load")
   let [num, setNum] = useState(0)
   const {camera, mouse} = useThree()
   const modelRef = useRef();
