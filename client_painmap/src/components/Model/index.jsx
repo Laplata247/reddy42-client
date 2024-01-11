@@ -1,26 +1,36 @@
 import React, { useRef, useState } from 'react';
-import { useLoader } from '@react-three/fiber';
+import { useLoader, useThree } from '@react-three/fiber';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader';
 import Decals from '../Decals';
 
-function Model() {
+function Model({decals, setDecals}) {
   const gltf = useLoader(GLTFLoader, 'public/3Dmale.gltf');
-  const [decals, setDecals] = useState([])
+  let [num, setNum] = useState(0)
+  const {camera, mouse} = useThree()
 
   const handleClick = () => {
-    console.log("clicked model")
+    setNum (num+=0.1)
+    console.log(mouse.x, "becomes: ", (mouse.x/1.3), mouse.y, "becomes: ", ((mouse.y+1.1)/1.3) )
+    setDecals([...decals, {
+      'url': 'src/assets/pizza.png',
+      'x': mouse.x/1.3,
+      'y': (mouse.y+1.1)/1.3,
+      'z': 0.1,
+      'scale': 0.1
+    }])
     console.log(decals)
 
   }
 
-  // const modelRef = useRef();
   const geometry = gltf.scene.children[0].geometry;
 
   return (
-      <mesh onClick={handleClick}castShadow receiveShadow geometry={geometry} dispose={null} position={[0, 0, 0]} scale={[2, 2, 2]}>
+      <mesh onClick={handleClick}
+        castShadow receiveShadow position={[0, -1.1, 0]}  geometry={geometry} dispose={null} scale={[1.3, 1.3, 1.3]}>
        <meshStandardMaterial/>
-       <Decals url={'src/assets/firstDecal.png'} position={[0, 0.5, 0.3]} scale={1}/>
-       <Decals url={'src/assets/firstDecal.png'} position={[-0.2, 1, 0.3]} scale={0.1}/>
+       {decals.map(decal => 
+        <Decals url={decal['url']} position={[decal['x'], decal['y'], decal['z']]} scale={decal['scale']}/>)}
+        <axesHelper args={[5]} />
       </mesh>
 
   );
