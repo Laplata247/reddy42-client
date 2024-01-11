@@ -24,6 +24,9 @@ const MapPainPage = () => {
 
       <div id='canvasDiv'>
         <Canvas
+          gl={{
+            preserveDrawingBuffer: true // allow showing model on the screenshot
+          }}
           camera={{
             position: [0, 2, 8], // Camera position
             fov: 45,
@@ -39,6 +42,7 @@ const MapPainPage = () => {
             justifyContent: 'center',
           }}
         >
+          {/* skin colour */}
           <ambientLight intensity={0.5} />
           <directionalLight
             position={[5, 5, 5]}
