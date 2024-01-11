@@ -72,18 +72,20 @@ const MapPainPage = () => {
 
       <div id='canvasDiv'>
         <Canvas
-          
+          gl={{
+            preserveDrawingBuffer: true // allow showing model on the screenshot
+          }}
           style={{
             height: '500px',
             width: '500px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            background:'white',
+            background: 'white',
             border: '2px solid Green'
           }}
           camera={{ position: [0, 0, 5] }}
-          >
+        >
           <ambientLight intensity={0.5} />
           <directionalLight
             position={[5, 5, 5]}
@@ -91,16 +93,16 @@ const MapPainPage = () => {
             castShadow
             shadow-mapSize-width={1024}
             shadow-mapSize-height={1024}
-            />
-          <Model onClick={e => addDecal()} position={[0, 0, 0]}/>
+          />
+          <Model onClick={e => addDecal()} position={[0, 0, 0]} />
           <OrbitControls enableRotate={true} enablePan={true} enableZoom={true} />
         </Canvas>
       </div>
-      <button onClick={takeScreenshot()} >
-          Save Image
+      <button onClick={takeScreenshot} >
+        Save Image
       </button>
       {/* Conditionally render the DrawingOverlay based on drawingEnabled */}
-      {drawingEnabled && <DrawingOverlay/>}
+      {drawingEnabled && <DrawingOverlay />}
     </>
   );
 };
