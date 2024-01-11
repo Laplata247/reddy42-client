@@ -1,12 +1,12 @@
 import React, { useState, useRef } from 'react';
 import ReactDOM from 'react-dom'
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, ScrollControls } from '@react-three/drei';
+import { OrbitControls, RandomizedLight} from '@react-three/drei';
 import { DecalGeometry } from 'three/addons/geometries/DecalGeometry.js'; //import decal geometry pakage 
 import html2canvas from 'html2canvas';
-import { Model } from '../../components';
+import { Model} from '../../components';
 import DrawingOverlay from '../../components/DrawingOverlay';
-import { Decal } from '@react-three/drei';
+
 
 import './style.css';
 
@@ -63,12 +63,13 @@ const MapPainPage = () => {
           <ambientLight intensity={0.5} />
           <directionalLight
             position={[5, 5, 5]}
-            intensity={1}
+            intensity={3}
             castShadow
             shadow-mapSize-width={1024}
             shadow-mapSize-height={1024}
           />
           <Model decals={decals} setDecals={setDecals}/>
+          {/* <RandomizedLight amount={8} radius={10} ambient={0.5} position={[2.5, 5, -5]} bias={0.001} /> */}
           <OrbitControls enableRotate={true} enablePan={true} enableZoom={true} />
 
         </Canvas>
