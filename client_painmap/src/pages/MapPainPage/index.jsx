@@ -1,11 +1,60 @@
-import React from 'react'
+import React, { useState, useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
+import { DecalGeometry } from 'three/addons/geometries/DecalGeometry.js'; //import decal geometry pakage 
 import html2canvas from 'html2canvas';
-import Model from '../../components/model.jsx'; // Import the Model component
+import {Model} from '../../components';
+import DrawingOverlay from '../../components/DrawingOverlay';
+import { Decal } from '@react-three/drei';
+
 import './style.css';
 
 const MapPainPage = () => {
+
+  const [drawingEnabled, setDrawingEnabled] = useState(false);
+
+  const toggleDrawing = () => {
+    setDrawingEnabled(!drawingEnabled);
+  };
+
+  const addDecal = () => {
+    console.log("hit")
+  }
+
+  // const addDecal = () => {
+  //   console.log("hit")
+  //   const raycaster = new THREE.Raycaster() //defines raycaster
+  //   const pos = {x: 0, y: 0} //defines position
+
+  //   raycaster.setFromCamera(pos, camera) //relates raycaster to position and camera
+  //   const hits = raycaster.intersectObjects(0) //hits is any click that interacts with the object not sur eif needed
+
+  //   if (!hits.length){
+  //     return
+  //   }
+  //   const position = hits[0].point.clone()
+  //   const eye = position.clone()
+  //   eye.add(hits[0].face.normal)
+
+  //   const rotation = new THREE.Matrix4()
+  //   rotation.lookAt(eye, position, THREE.Object3D.DEFAULT_UP)
+  //   const euler = new THREE.Euler()
+  //   euler.setFromRotationMatrix(rotation)
+
+  //   const decalGeometry = new DecalGeometry(
+  //     hits[0].object, hits[0].point, euler, new THREE.Vector3(1, 1, 1));
+  //   const decalMaterial = new THREE.MeshStandardMaterial({
+  //     color: 0xFFFFFF,
+  //     depthTest: true,
+  //     depthWrite: false
+  //   })
+
+  //   const decal = new THREE.Mesh(decalGeometry, decalMaterial)
+  //   decal.receiveShadow = true
+  //   screen.add(decal)
+
+  // }
+
 
   const takeScreenshot = () => {
     const element = document.getElementById("canvasDiv")
@@ -22,46 +71,46 @@ const MapPainPage = () => {
     <>
       <h1>Map Pain Page</h1>
 
+      <button onClick={toggleDrawing}>
+        {drawingEnabled ? 'Disable Drawing' : 'Enable Drawing'}
+      </button>
+
       <div id='canvasDiv'>
         <Canvas
           gl={{
             preserveDrawingBuffer: true // allow showing model on the screenshot
           }}
-          camera={{
-            position: [0, 2, 8], // Camera position
-            fov: 45,
-            near: 0.1,
-            far: 100,
-          }}
-          shadowMap={true} // Re-enable shadow mapping
           style={{
-            height: '60vh',
-            width: '70vw',
+            height: '500px',
+            width: '500px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
+            background: 'white',
+            border: '2px solid Green'
           }}
+          camera={{ position: [0, 0, 5] }}
         >
-          {/* skin colour */}
           <ambientLight intensity={0.5} />
           <directionalLight
             position={[5, 5, 5]}
             intensity={1}
-            castShadow // Enable shadow casting
+            castShadow
             shadow-mapSize-width={1024}
             shadow-mapSize-height={1024}
           />
-          <Model />
-
-          <OrbitControls />
+          <Model position={[0, 0, 0]} />
+          <OrbitControls enableRotate={true} enablePan={true} enableZoom={true} />
         </Canvas>
       </div>
 
 
       <button onClick={takeScreenshot}>Save image</button>
 
+      {/* Conditionally render the DrawingOverlay based on drawingEnabled */}
+      {drawingEnabled && <DrawingOverlay modelRef={Model} />} {/* Pass the modelRef as a prop */}
     </>
-  )
-}
+  );
+};
 
-export default MapPainPage
+export default MapPainPage;
