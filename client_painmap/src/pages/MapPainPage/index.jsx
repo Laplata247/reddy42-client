@@ -69,32 +69,40 @@ const MapPainPage = () => {
       <button onClick={toggleDrawing}>
         {drawingEnabled ? 'Disable Drawing' : 'Enable Drawing'}
       </button>
-      <Canvas
-        style={{
-          height: '500px',
-          width: '500px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          background:'white',
-          border: '2px solid Green'
-        }}
-        camera={{ position: [0, 0, 5] }}
-      >
-        <ambientLight intensity={0.5} />
-        <directionalLight
-          position={[5, 5, 5]}
-          intensity={1}
-          castShadow
-          shadow-mapSize-width={1024}
-          shadow-mapSize-height={1024}
-        />
-        <Model onClick={e => addDecal()} position={[0, 0, 0]}/>
-        <OrbitControls enableRotate={true} enablePan={true} enableZoom={true} />
-      </Canvas>
+
+      <div id='canvasDiv'>
+        <Canvas
+          
+          style={{
+            height: '500px',
+            width: '500px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            background:'white',
+            border: '2px solid Green'
+          }}
+          camera={{ position: [0, 0, 5] }}
+          >
+          <ambientLight intensity={0.5} />
+          <directionalLight
+            position={[5, 5, 5]}
+            intensity={1}
+            castShadow
+            shadow-mapSize-width={1024}
+            shadow-mapSize-height={1024}
+            />
+          <Model onClick={e => addDecal()} position={[0, 0, 0]}/>
+          <OrbitControls enableRotate={true} enablePan={true} enableZoom={true} />
+        </Canvas>
+      </div>
+      <button onClick={takeScreenshot()} >
+          Save Image
+      </button>
       {/* Conditionally render the DrawingOverlay based on drawingEnabled */}
       {drawingEnabled && <DrawingOverlay/>}
     </>
   );
 };
+
 export default MapPainPage;
