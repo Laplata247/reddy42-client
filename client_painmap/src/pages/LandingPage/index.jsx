@@ -1,13 +1,15 @@
-import React from 'react'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const LandingPage = () => {
-  return (
-    <>
-        <button>Choose Language</button>
-        <button>Signup</button>
-        <button>Login</button>
-    </>
-  )
+  
+    const goTo = useNavigate();
+
+    return (
+      <>
+          <button onClick={() => goTo('/signup')}>Choose Language</button>
+      </>
+    )
 }
 
 export default LandingPage
