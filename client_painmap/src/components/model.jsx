@@ -4,7 +4,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader';
 import Decals from './Decals';
 
 function Model() {
-  const gltf = useLoader(GLTFLoader, 'public/3Dmale.gltf');
+  const gltf = useLoader(GLTFLoader, '/3Dmale.gltf');
 
   // const modelRef = useRef();
   const geometry = gltf.scene.children[0].geometry;
