@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useLoader } from '@react-three/fiber';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader';
-import Decals from './Decals';
+import Decals from '../Decals';
 
 function Model() {
   const gltf = useLoader(GLTFLoader, 'public/3Dmale.gltf');

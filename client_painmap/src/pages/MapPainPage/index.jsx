@@ -3,7 +3,7 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { DecalGeometry } from 'three/addons/geometries/DecalGeometry.js'; //import decal geometry pakage 
 import html2canvas from 'html2canvas';
-import Model from '../../components/model.jsx';
+import {Model} from '../../components';
 import DrawingOverlay from '../../components/DrawingOverlay';
 import { Decal } from '@react-three/drei';
 
