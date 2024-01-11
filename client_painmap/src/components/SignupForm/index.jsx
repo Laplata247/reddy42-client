@@ -18,6 +18,7 @@ const SignupForm = () => {
     const [ isSignupSuccessful, setSignupSuccessful ] = useState(null);
 
     const sexOptions = ['Male', 'Female', 'Other'];
+    const ethnicityOptions = ['Asian/Asian British', 'Black/Black British/African/Caribbean', 'White', 'Mixed-White and Asian', 'Mixed-White and Black Caribbean', 'Mixed-White and Black African', 'Mixed-Other', 'Other'].slice().sort();
 
     const handleSubmit = async(e) => {
         e.preventDefault();
@@ -102,7 +103,8 @@ const SignupForm = () => {
                 <input type='date' name='dateOfBirth' placeholder='MM/DD/YYYY' onChange={updateDOB} role='dateOfBirth' />
 
                 <label>Sex</label>
-                <select name='sex' onChange={updateSex} role='sex'>
+                <select name='sex' onChange={updateSex} role='sex' value={sex}>
+                    <option value='' disabled>Select Sex</option>
                     {sexOptions.map((option) => (
                         <option key={option} value={option}>
                         {option}
@@ -111,7 +113,14 @@ const SignupForm = () => {
                 </select>
 
                 <label>Ethnicity</label>
-                <input type='text' name='ethnicity' placeholder='' onChange={updateEthnicity} role='ethnicity' />
+                <select name='ethnicity' onChange={updateEthnicity} role='ethnicity' value={ethnicity}>
+                    <option value='' disabled>Select Ethnicity</option>
+                    {ethnicityOptions.map((option) => (
+                        <option key={option} value={option}>
+                        {option}
+                        </option>
+                    ))}
+                </select>
 
                 <label>Email</label>
                 <input type='text' name='email' placeholder='example@email.com' onChange={updateEmail} role='email' />

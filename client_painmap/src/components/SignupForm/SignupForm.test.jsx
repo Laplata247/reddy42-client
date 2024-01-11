@@ -42,15 +42,35 @@ describe("SignupForm component", () => {
         expect(userFirstName.value).toBe("Doe");
     });
 
-    // it("updates the dateOfBirth state correctly", () => {
-    //     const userDOB = screen.getByRole("dateOfBirth");
+    it("updates the dateOfBirth state correctly", () => {
+        const userDOB = screen.getByRole("dateOfBirth");
         
-    //     expect(userDOB.value).toBe("");
+        expect(userDOB.value).toBe("");
 
-    //     fireEvent.change(userDOB, { target: { value: "01/10/2024" } });
+        fireEvent.change(userDOB, { target: { value: "2024-01-10" } });
 
-    //     expect(userDOB.value).toBe("01/10/2024");
-    // });
+        expect(userDOB.value).toBe("2024-01-10");
+    });
+
+    it("updates the sex state correctly", () => {
+        const userSex = screen.getByRole("sex");
+        
+        expect(userSex.value).toBe("");
+
+        fireEvent.change(userSex, { target: { value: "Female" } });
+
+        expect(userSex.value).toBe("Female");
+    });
+
+    it("updates the ethnicity state correctly", () => {
+        const userEthnicity = screen.getByRole("ethnicity");
+        
+        expect(userEthnicity.value).toBe("");
+
+        fireEvent.change(userEthnicity, { target: { value: "Other" } });
+
+        expect(userEthnicity.value).toBe("Other");
+    });
 
     it("updates the email state correctly", () => {
         const userLastName = screen.getByRole("email");
