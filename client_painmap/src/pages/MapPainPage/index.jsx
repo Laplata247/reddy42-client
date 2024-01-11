@@ -3,7 +3,7 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { DecalGeometry } from 'three/addons/geometries/DecalGeometry.js'; //import decal geometry pakage 
 import html2canvas from 'html2canvas';
-import Model from '../../components/model.jsx';
+import {Model} from '../../components';
 import DrawingOverlay from '../../components/DrawingOverlay';
 import { Decal } from '@react-three/drei';
 
@@ -16,6 +16,10 @@ const MapPainPage = () => {
   const toggleDrawing = () => {
     setDrawingEnabled(!drawingEnabled);
   };
+
+  const addDecal = () => {
+    console.log("hit")
+  }
 
   // const addDecal = () => {
   //   console.log("hit")
@@ -95,7 +99,7 @@ const MapPainPage = () => {
             shadow-mapSize-width={1024}
             shadow-mapSize-height={1024}
           />
-          <Model onClick={e => addDecal()} position={[0, 0, 0]} />
+          <Model position={[0, 0, 0]} />
           <OrbitControls enableRotate={true} enablePan={true} enableZoom={true} />
         </Canvas>
       </div>
