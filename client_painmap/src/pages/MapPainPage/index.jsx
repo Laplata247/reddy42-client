@@ -1,9 +1,10 @@
 import React, { useState, useRef } from 'react';
+import ReactDOM from 'react-dom'
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, ScrollControls } from '@react-three/drei';
 import { DecalGeometry } from 'three/addons/geometries/DecalGeometry.js'; //import decal geometry pakage 
 import html2canvas from 'html2canvas';
-import {Model} from '../../components';
+import { Model } from '../../components';
 import DrawingOverlay from '../../components/DrawingOverlay';
 import { Decal } from '@react-three/drei';
 
@@ -13,6 +14,7 @@ const MapPainPage = () => {
 
   const [drawingEnabled, setDrawingEnabled] = useState(false);
   const [decals, setDecals] = useState([])
+  const [img, setImg] = useState('');
 
   const toggleDrawing = () => {
     setDrawingEnabled(!drawingEnabled);
@@ -22,10 +24,11 @@ const MapPainPage = () => {
     const element = document.getElementById("canvasDiv")
     html2canvas(element).then((canvas) => {
       let image = canvas.toDataURL("image/jpeg");
-      const a = document.createElement("a")
-      a.href = image
-      a.download = "screenshot.jpeg"
-      a.click()
+      setImg(image)
+      // const a = document.createElement("a")
+      // a.href = image
+      // a.download = "screenshot.jpeg"
+      // a.click()
     })
   }
   const removeDecal = () => {
@@ -42,8 +45,7 @@ const MapPainPage = () => {
         {drawingEnabled ? 'Disable Drawing' : 'Enable Drawing'}
       </button>
 
-      <div id='canvasDiv'>
-        <Canvas
+        <Canvas id='canvasDiv'
           gl={{
             preserveDrawingBuffer: true // allow showing model on the screenshot
           }}
@@ -70,14 +72,18 @@ const MapPainPage = () => {
           <OrbitControls enableRotate={true} enablePan={false} enableZoom={true} />
 
         </Canvas>
-      </div>
-
 
       <button onClick={takeScreenshot}>Save image</button>
       <button onClick={removeDecal}>Undo</button>
 
       {/* Conditionally render the DrawingOverlay based on drawingEnabled */}
       {drawingEnabled && <DrawingOverlay modelRef={Model} />} {/* Pass the modelRef as a prop */}
+
+      {/* display screenshot, save in db instead when db is finished */}
+      <div id="container">
+        <img width='500' height='500' src={`${img}`} />:
+      </div>
+
     </>
   );
 };
