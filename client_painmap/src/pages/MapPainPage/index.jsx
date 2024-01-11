@@ -17,6 +17,10 @@ const MapPainPage = () => {
     setDrawingEnabled(!drawingEnabled);
   };
 
+  const addDecal = () => {
+    console.log("hit")
+  }
+
   // const addDecal = () => {
   //   console.log("hit")
   //   const raycaster = new THREE.Raycaster() //defines raycaster
@@ -94,7 +98,7 @@ const MapPainPage = () => {
             shadow-mapSize-width={1024}
             shadow-mapSize-height={1024}
           />
-          <Model onClick={e => addDecal()} position={[0, 0, 0]} />
+          <Model position={[0, 0, 0]} />
           <OrbitControls enableRotate={true} enablePan={true} enableZoom={true} />
         </Canvas>
       </div>
