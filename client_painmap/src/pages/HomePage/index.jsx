@@ -5,7 +5,7 @@ const HomePage = () => {
 
   return (
     <div>
-      <h1>Home Page</h1>
+      <h1>Welcome back name</h1>
       <div id="google_translate_element"></div>
     </div>
   );

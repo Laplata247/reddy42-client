@@ -57,8 +57,8 @@ const MapPainPage = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            background: 'white',
-            border: '2px solid Green'
+            // background: 'white',
+            // border: '2px solid Green'
           }}
           camera={{ position: [0, 0, 2] }}
         >
