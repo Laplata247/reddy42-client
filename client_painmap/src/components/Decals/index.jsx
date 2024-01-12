@@ -1,18 +1,20 @@
 import React from 'react'
 import { Decal, useTexture} from '@react-three/drei'
 
-function Decals({url, position, scale}) {
+function Decals({url, position, scale, rotation}) {
   const pain = useTexture(url)
   return (
-    <Decal position={position} scale={scale}>
+    <Decal position={position} scale={scale} rotation={rotation}>
       <meshPhysicalMaterial
         transparent
-        polygonOffset
+        polygonOffset={true}
         map={pain}
-        polygonOffsetFactor={-10}
+        map-anisotropy={100}
+        polygonOffsetFactor={-30}
+        polygonOffsetUnits={0}
         roughness={1}
-        clearcoat={0.5}
-        metalness={0.75}
+        clearcoat={0}
+        metalness={0}
         toneMapped={false}
     />
     </Decal>
