@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import * as Pages from './pages';
@@ -28,7 +28,7 @@ function App() {
           } else {
             console.error('Google Translate API script loaded, but TranslateElement constructor is not available.');
           }
-        }, 100);
+        }, 50);
       };
 
       document.head.appendChild(script);
