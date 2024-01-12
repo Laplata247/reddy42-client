@@ -52,6 +52,7 @@ function Model({decals, setDecals, sticker, scaleMod}) {
       'ry':rotationY,
       'rz':rotationZ,
     }])
+    console.log(decals)
 
 
   }}
