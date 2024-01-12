@@ -1,13 +1,79 @@
-#stickerSelector{
-    display: flex;
-    width: 50%
+nav {
+    --side-color: rgb(112, 112, 140);
 
+}
+
+#stickerSelectorOpen{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 400px;
+    height: 100%;
+    background: var(--side-color);
+    padding: 10px, 14px;
+    transition: width 1s;
+    transition-timing-function: ease-out;
+}
+#stickerSelectorOpen{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#stickerSelectorClosed{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 150px;
+    height: 100%;
+    border: 2px solid rgb(85, 85, 110);
+    background: rgb(112, 112, 137);
+    padding: 10px, 14px;
+
+    transition: width 1s;
+    transition-timing-function: ease-out;
+
+}
+#stickerSelectorClosed{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#stickerSelectorClosed #sideArrow{
+    position: absolute;
+    left:130px;
+    top: 10px;
+    height: 40px;
+    width: 40px;
+    background-color: var(--side-color);
+    border-radius: 50px;
+    transition: transform 1s, left 1s;
+
+    transition-timing-function: ease-out;
+}
+
+#stickerSelectorOpen #sideArrow{
+    position: absolute;
+    left:380px;
+    top: 10px;
+    height: 40px;
+    width: 40px;
+    background-color: var(--side-color);
+    border-radius: 50px;
+    transform: rotate(180deg);
+    transition: transform 1s, left 1s;
+
+    transition-timing-function: ease-out;
+    
+}
+#sideArrow:hover{
+    cursor: pointer
 }
 .stickerButton{
     border: 2px solid rgb(227, 197, 197);
-    padding: 2% 2%;
+    min-width: 70px;
+    /* padding: 2% 2%; */
 }
 .stickerButton:hover {
     cursor:pointer;
-    border: 4px solid rgb(142, 108, 108);
+    border: 2px solid rgb(142, 108, 108);
 }
