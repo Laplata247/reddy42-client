@@ -7,7 +7,6 @@ import html2canvas from 'html2canvas';
 import { Model, Stickers} from '../../components';
 import DrawingOverlay from '../../components/DrawingOverlay';
 
-
 import './style.css';
 
 const MapPainPage = () => {
@@ -17,27 +16,28 @@ const MapPainPage = () => {
   const [img, setImg] = useState('');
   const [sticker, setSticker] = useState('src/assets/Basic_red_dot.png')
   const [scaleMod, setScaleMod] = useState(1)
+  const [iconVisible, setIconVisible] = useState(false);
 
   const toggleDrawing = () => {
     setDrawingEnabled(!drawingEnabled);
   };
 
   const takeScreenshot = () => {
-    const element = document.getElementById("canvasDiv")
+    const element = document.getElementById("canvasDiv");
     html2canvas(element).then((canvas) => {
       let image = canvas.toDataURL("image/jpeg");
-      setImg(image)
-      // const a = document.createElement("a")
-      // a.href = image
-      // a.download = "screenshot.jpeg"
-      // a.click()
-    })
-  }
+      setImg(image);
+      setIconVisible(true); // Set the icon visibility to true after taking screenshot
+    });
+  };
+
   const removeDecal = () => {
     const newDecals = decals.slice(0,-1)
     setDecals(newDecals)
 
   }
+
+  
 
   return (
     <>
@@ -84,9 +84,10 @@ const MapPainPage = () => {
       {drawingEnabled && <DrawingOverlay modelRef={Model} />} {/* Pass the modelRef as a prop */}
 
       {/* display screenshot, save in db instead when db is finished */}
-      <div id="container">
-        <img width='500' height='500' src={`${img}`} />:
-      </div>
+     <div id="container">
+  {img ? <img width='500' height='500' src={img} alt="Screenshot" /> : <div className="placeholder">Your screenshot will appear here</div>}
+</div>
+
 
     </>
   );
