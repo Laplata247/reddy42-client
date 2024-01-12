@@ -1,11 +1,44 @@
-import React from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import * as Pages from './pages';
 import { Header } from './components';
-import GenderSelection from './pages/GenderSelection';
 
 function App() {
+
+  useEffect(() => {
+
+    function googleTranslateElementInit() {
+      new window.google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+
+    if (window.google && window.google.translate) {
+      googleTranslateElementInit();
+    } 
+    else {
+      const script = document.createElement('script');
+      script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+      script.defer = true;
+      script.async = true;
+    
+      script.onload = () => {
+        setTimeout(() => {
+          if (typeof window.google.translate.TranslateElement === 'function') {
+            googleTranslateElementInit();
+          } else {
+            console.error('Google Translate API script loaded, but TranslateElement constructor is not available.');
+          }
+        }, 100);
+      };
+
+      document.head.appendChild(script);
+
+      return () => {
+        document.head.removeChild(script);
+      };
+    }
+  }, []);
+
   return (
     <Routes>
       <Route path="/landing" element={<Pages.LandingPage />} />
