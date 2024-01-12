@@ -3,14 +3,9 @@ import { useLoader, useThree, useFrame } from '@react-three/fiber';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader';
 import { Vector2, Raycaster, Vector3, Euler, Matrix4} from 'three';
 import Decals from '../Decals';
-import { useGender } from '../contexts';
 
-function Model({decals, setDecals}) {
-  
-  const {selectedGender} = useGender()
-  console.log(selectedGender)
-  const gltf = useLoader(GLTFLoader, selectedGender);
-  console.log("didn't load")
+function Model({decals, setDecals, sticker, scaleMod}) {
+  const gltf = useLoader(GLTFLoader, 'public/3Dmale.gltf');
   let [num, setNum] = useState(0)
   const {camera, mouse} = useThree()
   const modelRef = useRef();
@@ -48,15 +43,16 @@ function Model({decals, setDecals}) {
 
     setNum (num+=0.1)
     setDecals([...decals, {
-      'url': 'src/assets/pizza.png',
+      'url': sticker,
       'x': intersectionPoint['x'],
-      'y': intersectionPoint['y']*1.3,
+      'y': (intersectionPoint['y']+0.7),
       'z': intersectionPoint['z'],
-      'scale': 0.15,
+      'scale': 0.15*scaleMod,
       'rx': rotationX,
       'ry':rotationY,
       'rz':rotationZ,
     }])
+
 
   }}
 
@@ -68,6 +64,7 @@ function Model({decals, setDecals}) {
        <meshStandardMaterial/>
        {decals.map(decal => 
         <Decals 
+          key={decal['x']}
           url={decal['url']} 
           position={[decal['x'], decal['y'], decal['z']]} 
           scale={decal['scale']} 

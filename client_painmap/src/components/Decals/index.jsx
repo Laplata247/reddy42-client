@@ -10,11 +10,11 @@ function Decals({url, position, scale, rotation}) {
         polygonOffset={true}
         map={pain}
         map-anisotropy={100}
-        polygonOffsetFactor={-10}
-        polygonOffsetUnits={100}
+        polygonOffsetFactor={-30}
+        polygonOffsetUnits={0}
         roughness={1}
-        clearcoat={0.5}
-        metalness={0.75}
+        clearcoat={0}
+        metalness={0}
         toneMapped={false}
     />
     </Decal>
