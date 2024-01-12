@@ -1,12 +1,12 @@
 import React, { useState, useRef } from 'react';
 import ReactDOM from 'react-dom'
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, ScrollControls } from '@react-three/drei';
+import { OrbitControls, RandomizedLight} from '@react-three/drei';
 import { DecalGeometry } from 'three/addons/geometries/DecalGeometry.js'; //import decal geometry pakage 
 import html2canvas from 'html2canvas';
-import { Model } from '../../components';
+import { Model, Stickers} from '../../components';
 import DrawingOverlay from '../../components/DrawingOverlay';
-import { Decal } from '@react-three/drei';
+
 
 import './style.css';
 
@@ -15,6 +15,8 @@ const MapPainPage = () => {
   const [drawingEnabled, setDrawingEnabled] = useState(false);
   const [decals, setDecals] = useState([])
   const [img, setImg] = useState('');
+  const [sticker, setSticker] = useState('')
+  const [scaleMod, setScaleMod] = useState(1)
 
   const toggleDrawing = () => {
     setDrawingEnabled(!drawingEnabled);
@@ -63,18 +65,20 @@ const MapPainPage = () => {
           <ambientLight intensity={0.5} />
           <directionalLight
             position={[5, 5, 5]}
-            intensity={1}
+            intensity={3}
             castShadow
             shadow-mapSize-width={1024}
             shadow-mapSize-height={1024}
           />
-          <Model decals={decals} setDecals={setDecals}/>
+          <Model decals={decals} setDecals={setDecals} sticker={sticker} scaleMod={scaleMod}/>
+          {/* <RandomizedLight amount={8} radius={10} ambient={0.5} position={[2.5, 5, -5]} bias={0.001} /> */}
           <OrbitControls enableRotate={true} enablePan={true} enableZoom={true} />
 
         </Canvas>
 
       <button onClick={takeScreenshot}>Save image</button>
       <button onClick={removeDecal}>Undo</button>
+      <Stickers setSticker={setSticker} setScaleMod={setScaleMod}/>
 
       {/* Conditionally render the DrawingOverlay based on drawingEnabled */}
       {drawingEnabled && <DrawingOverlay modelRef={Model} />} {/* Pass the modelRef as a prop */}
