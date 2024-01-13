@@ -1,59 +1,120 @@
 nav {
-    --side-color: rgb(112, 112, 140);
+    --side-color: rgb(67, 77, 78);
+    --border-color: rgb(208, 205, 202);
+    box-sizing: border-box;
+    background: (--side-color);
 
 }
 
+
 #stickerSelectorOpen{
     position: fixed;
-    top:0;
-    left: 0;
-    width: 400px;
-    height: 100%;
+    top:5%;
+    left: 5%;
+    width: 330px;
+    height: 90%;
     background: var(--side-color);
+    border-radius: 15px;
     padding: 10px, 14px;
     transition: width 1s;
     transition-timing-function: ease-out;
-}
-#stickerSelectorOpen{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+
 }
 #stickerSelectorClosed{
     position: fixed;
-    top:0;
-    left: 0;
-    width: 150px;
-    height: 100%;
-    border: 2px solid rgb(85, 85, 110);
-    background: rgb(112, 112, 137);
+    top:5%;
+    left: 5%;
+    width: 110px;
+    height: 90%;
+    background: var(--side-color);
+    border-radius: 15px;
     padding: 10px, 14px;
-
     transition: width 1s;
     transition-timing-function: ease-out;
 
 }
-#stickerSelectorClosed{
+#stickerSelectorClosed .title{
+    position: relative;
+    top:0;
+    left:0px;
+    height:50px;
+    margin: 0px 0px;
+    padding: 0;
+    width: 60px;
+    background-color: var(--border-color);
+    border-radius: 15px;
+    transition: width 1s;
+    transition-timing-function: ease-out;
+}
+
+#stickerSelectorOpen .title{
+    position: relative;
+    top:0;
+    left:0px;
+    height:50px;
+    margin: 0;
+    padding: 0;
+    width: 290px;
+    background-color: var(--border-color);
+    border-radius: 15px;
+    transition: width 1s;
+    transition-timing-function: ease-out;
+}
+
+#menu{
     display: flex;
+
+}
+.choiceTitle{
+    font-size: 1.5em;
+    height: 30px;
+    margin: 4px 0px;
+}
+#sizeTitle{
+    font-size: 1.5em;
+    height: 30px;
+    margin: 4px 0px;
+}
+#choices{
+    display: flex;
+    position: relative;
+    left:10px;
+    height: 85%;
+    width: 100px;
     align-items: center;
     flex-direction: column;
 }
+
+#stickerSelectorClosed #sizes{
+    opacity: 0;
+    transition: all 0.2s;
+}
+#sizes{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    left:10px;
+    width: 210px;
+    transition: all 1.7s ease-in;
+}
+
+
 #stickerSelectorClosed #sideArrow{
     position: absolute;
-    left:130px;
+    left:90px;
     top: 10px;
     height: 40px;
     width: 40px;
     background-color: var(--side-color);
     border-radius: 50px;
     transition: transform 1s, left 1s;
-
     transition-timing-function: ease-out;
 }
 
 #stickerSelectorOpen #sideArrow{
     position: absolute;
-    left:380px;
+    left:310px;
     top: 10px;
     height: 40px;
     width: 40px;
@@ -61,7 +122,6 @@ nav {
     border-radius: 50px;
     transform: rotate(180deg);
     transition: transform 1s, left 1s;
-
     transition-timing-function: ease-out;
     
 }
@@ -69,11 +129,29 @@ nav {
     cursor: pointer
 }
 .stickerButton{
-    border: 2px solid rgb(227, 197, 197);
+    border: 2px solid;
+    border-color: var(--border-color);
+    border-radius: 15px;
     min-width: 70px;
+    min-height: 70px;
+    margin: 8px 0px;
     /* padding: 2% 2%; */
 }
 .stickerButton:hover {
     cursor:pointer;
-    border: 2px solid rgb(142, 108, 108);
+    background-color: var(--border-color) ;
+    transition: background-color 0.2s ease-out;
+}
+.scale{
+    border: 2px solid;
+    border-color: var(--border-color);
+    border-radius: 15px;
+    height: 45px;
+    width: 200px;
+    padding: 25px 0px 0px 0px;
+    margin: 8px 0px;
+}
+.scale:hover{
+    background-color: var(--border-color) ;
+    transition: background-color 0.2s ease-out;
 }
