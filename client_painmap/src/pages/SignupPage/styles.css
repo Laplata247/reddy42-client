@@ -1,0 +1,143 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+/* styles.css */
+
+.signup-container {
+  position: relative; /* This sets up a positioning context for absolutely positioned children */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.circle-3{
+  background: linear-gradient(to top right, #ffffff, #FDAF76);
+  height: 60rem;
+  width: 60rem;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateX(-20%) translateY(-10%);
+}
+
+.circle-4 {
+  background: linear-gradient(to top right, #ffffff, #FDAF76);
+  height: 60rem;
+  width: 60rem;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateX(-20%) translateY(-10%);
+}
+
+.circle-3 {
+  top: 10%; /* Adjust positioning as needed */
+  left: 10%; /* Adjust positioning as needed */
+}
+
+.circle-4 {
+  bottom: 10%; /* Adjust positioning as needed */
+  right: 10%; /* Adjust positioning as needed */
+}
+
+.signup-header {
+  z-index: 1; /* Ensure the header is above the circles */
+  position: relative; /* Needed for z-index to take effect */
+  /* Add other styles for your header here */
+}
+
+
+/* Layout container for the whole page */
+.sign-up-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Styling for the left panel with the introductory content */
+.intro-panel {
+  flex: 1;
+  background: linear-gradient(to bottom right, #FDAF76, #FF8585);
+  color: white;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.intro-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.intro-text {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Styling for the right panel with the sign-up form */
+.form-panel {
+  flex: 1;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Specific styles for the sign-up form */
+.sign-up-form {
+  width: 80%; /* Adjust the width as necessary */
+  max-width: 400px;
+}
+
+.sign-up-form h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.sign-up-form label {
+  display: block;
+  margin-bottom: .5rem;
+}
+
+.sign-up-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.sign-up-form input[type="submit"] {
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+}
+
+.sign-up-form input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.sign-up-form input[type="submit"]:active {
+  background-color: #004299;
+}
+
+/* Styling for the login link below the form */
+.login-link {
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+  color: #007BFF;
+  cursor: pointer;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
