@@ -6,7 +6,6 @@ const HomePage = () => {
   return (
     <div>
       <h1>Home Page</h1>
-      <div id="google_translate_element"></div>
     </div>
   );
 
