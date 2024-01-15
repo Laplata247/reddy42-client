@@ -1,0 +1,44 @@
+.painFormPopup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 90%;
+    height: 90%;
+    background-color: rgba(36, 36, 36, 0.7);
+}
+
+.painFormPopupElements {    
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: rgb(224, 205, 168);
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 10px 15px 20px 5px rgba(19, 19, 19);
+    width: 40%;
+}
+
+.painFormPopupElements h2 {
+    margin-top: 0;
+}
+
+.painFormPopupElements input {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+
+.painFormPopupElements button[type="submit"],
+.painFormPopupElements #closeBtn {
+    margin-top: 10px;
+    width: 100px;
+}
+
+.painFormPopupElements button[type="submit"]:hover,
+.painFormPopupElements #closeBtn:hover {
+    background-color: #25bee4;
+}
