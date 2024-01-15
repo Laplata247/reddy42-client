@@ -7,6 +7,9 @@ nav {
 
 }
 
+.header1{
+background-color: transparent;
+}
 
 #stickerSelectorOpen{
     position: fixed;
