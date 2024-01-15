@@ -17,6 +17,7 @@ const MapPainPage = () => {
   const [sticker, setSticker] = useState('src/assets/Basic_red_dot.png')
   const [scaleMod, setScaleMod] = useState(1)
   const [iconVisible, setIconVisible] = useState(false);
+  
 
   const toggleDrawing = () => {
     setDrawingEnabled(!drawingEnabled);
@@ -40,13 +41,15 @@ const MapPainPage = () => {
   
 
   return (
-    <>
+<div className='PageWrapper'>
+    
       <h1>Map Pain Page</h1>
 
-      <button onClick={toggleDrawing}>
+      {/* <button onClick={toggleDrawing}>
         {drawingEnabled ? 'Disable Drawing' : 'Enable Drawing'}
-      </button>
-
+      </button> */}
+      
+      <div class="center-container">
         <Canvas id='canvasDiv'
           gl={{
             preserveDrawingBuffer: true // allow showing model on the screenshot
@@ -80,16 +83,15 @@ const MapPainPage = () => {
       <button onClick={removeDecal}>Undo</button>
       <Stickers setSticker={setSticker} setScaleMod={setScaleMod}/>
 
-      {/* Conditionally render the DrawingOverlay based on drawingEnabled */}
-      {drawingEnabled && <DrawingOverlay modelRef={Model} />} {/* Pass the modelRef as a prop */}
+      {/* {drawingEnabled && <DrawingOverlay modelRef={Model} />} Pass the modelRef as a prop */}
 
       {/* display screenshot, save in db instead when db is finished */}
      <div id="container">
   {img ? <img width='500' height='500' src={img} alt="Screenshot" /> : <div className="placeholder">Your screenshot will appear here</div>}
 </div>
-
-
-    </>
+</div>
+</div>          
+  
   );
 };
 

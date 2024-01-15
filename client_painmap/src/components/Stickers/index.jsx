@@ -28,9 +28,9 @@ function Stickers({setSticker, setScaleMod}) {
         </header>
         <p class='stickerButton'onClick={e => {
             console.log("sticker set to dot"), 
-            setSticker('src/assets/Basic_red_dot.png')
+            setSticker('src/assets/burning.gif')
             setScaleMod(1)
-            }}><img src={"src/assets/Basic_red_dot.png"} alt="Girl in a jacket" height="50"></img>
+            }}><img src={"src/assets/burning.gif"} alt="burning" height="50" border-radius="20px"></img>
         </p>
         <p class='stickerButton' onClick={e => {
             console.log("sticker set to pizza"),

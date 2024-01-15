@@ -2,4 +2,43 @@ h1{
   font-family: 'Poppins', sans-serif;
   font-weight: 800;
 }
-
+.articulate{
+border-radius: 51% 49% 17% 28% / 48% 48% 52% 30%;
+background-color: rgba(255, 189, 189, 0.41);
+backdrop-filter: blur(7.5px);
+width: 100px;
+height: 100px;
+flex-shrink: 0;
+font-family: 'Poppins', sans-serif;
+font-weight: 600;
+}
+.chat{
+  border-radius: 25% 16% 37% 31% / 19% 18% 46% 47%;
+  background-color: rgba(255, 189, 189, 0.41);
+backdrop-filter: blur(7.5px);
+width: 100px;
+height: 100px;
+flex-shrink: 0;
+font-family: 'Poppins', sans-serif;
+font-weight: 600;
+}
+.history{
+  border-radius: 0% 23% 40% 36% / 40% 18% 35% 32%;
+  background-color: rgba(228, 129, 129, 0.896);
+backdrop-filter: blur(7.5px);
+width: 100px;
+height: 100px;
+flex-shrink: 0;
+font-family: 'Poppins', sans-serif;
+font-weight: 600;
+}
+.images{
+  border-radius: 23% 0% 40% 36% / 20% 18% 35% 32%;
+  background-color: rgba(255, 97, 97, 0.77);
+backdrop-filter: blur(7.5px);
+width: 100px;
+height: 100px;
+flex-shrink: 0;
+font-family: 'Poppins', sans-serif;
+font-weight: 600;
+}
