@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import ReactDOM from 'react-dom'
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, RandomizedLight } from '@react-three/drei';
+import { OrbitControls, RandomizedLight,AccumulativeShadows, Environment} from '@react-three/drei';
 import { DecalGeometry } from 'three/addons/geometries/DecalGeometry.js'; //import decal geometry pakage 
 import html2canvas from 'html2canvas';
 import { Model, Stickers, PainForm } from '../../components';
@@ -15,7 +15,7 @@ const MapPainPage = () => {
   const [drawingEnabled, setDrawingEnabled] = useState(false);
   const [decals, setDecals] = useState([])
   const [img, setImg] = useState('');
-  const [sticker, setSticker] = useState('src/assets/Basic_red_dot.png')
+  const [sticker, setSticker] = useState('src/assets/dot.png')
   const [scaleMod, setScaleMod] = useState(1)
   const [visible, setVisible] = useState(false)
 
@@ -69,9 +69,9 @@ const MapPainPage = () => {
         }}
         camera={{ position: [0, 0, 2] }}
       >
-        <ambientLight intensity={0.5} />
+        <ambientLight intensity={0.5}/>
         <directionalLight
-          position={[5, 5, 5]}
+          position={[1, 5, 5]}
           intensity={3}
           castShadow
           shadow-mapSize-width={1024}
