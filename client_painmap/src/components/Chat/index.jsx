@@ -4,6 +4,7 @@ import ScrollToBottom from "react-scroll-to-bottom";
 function Chat({ socket, username, room }) {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
+  const [historyLoaded, setHistoryLoaded] = useState(false);
 
   const sendMessage = async () => {
     if (currentMessage !== "") {
@@ -11,7 +12,7 @@ function Chat({ socket, username, room }) {
         room: room,
         author: username,
         content: currentMessage,
-        time: `${new Date(Date.now()).getHours()}:${new Date(Date.now()).getMinutes()}`,
+        time: `${new Date(Date.now()).getHours()}:${String(new Date(Date.now()).getMinutes()).padStart(2, '0')}`,
       };
 
       try {
@@ -23,16 +24,63 @@ function Chat({ socket, username, room }) {
     }
   };
 
+  const fetchPreviousMessages = async () => {
+    try {
+      const response = await fetch(`http://localhost:5000/messages/${room}`);
+      const data = await response.json();
+      setMessageList(data.data);
+      setHistoryLoaded(true); 
+    } catch (error) {
+      console.error("Error fetching previous messages:", error);
+    }
+  };
+
   useEffect(() => {
+    if (!historyLoaded) {
+      fetchPreviousMessages();
+    }
+
     socket.on("receive_message", (data) => {
       setMessageList((list) => [...list, data]);
     });
 
-    // Clean up the socket event listener when the component is unmounted
+    socket.on("user_joined", (data) => {
+      setMessageList((list) => [...list, data]);
+    });
+  
+    socket.on("user_left", (data) => {
+      setMessageList((list) => [...list, data]);
+    });
+
     return () => {
       socket.off("receive_message");
+      socket.off("user_joined");
+      socket.off("user_left");
     };
-  }, [socket]);
+  }, [socket, room, historyLoaded]);
+
+  const renderMessageContent = (messageContent) => {
+    if (messageContent.author === 'System') {
+      return (
+        <div className="system-message">
+          <p>{messageContent.content}</p>
+        </div>
+      );
+    } else {
+      return (
+        <div >
+          
+          <div className="message-content">
+            <p>{messageContent.content}</p>
+          </div>
+          <div className="message-meta">
+            <p id="time">{messageContent.time}</p>
+            <p id="author">{messageContent.author}</p>
+          </div>
+        </div>
+      );
+    }
+  };
 
   return (
     <div className="chat-window">
@@ -47,15 +95,7 @@ function Chat({ socket, username, room }) {
               className="message"
               id={username === messageContent.author ? "you" : "other"}
             >
-              <div>
-                <div className="message-content">
-                  <p>{messageContent.content}</p>
-                </div>
-                <div className="message-meta">
-                  <p id="time">{messageContent.time}</p>
-                  <p id="author">{messageContent.author}</p>
-                </div>
-              </div>
+              {renderMessageContent(messageContent)}
             </div>
           ))}
         </ScrollToBottom>
@@ -79,6 +119,7 @@ function Chat({ socket, username, room }) {
 }
 
 export default Chat;
+
 
 
 

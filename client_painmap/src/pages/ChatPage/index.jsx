@@ -14,7 +14,9 @@ function ChatPage() {
   const joinRoom = () => {
     if (username !== "" && room !== "") {
       console.log("Joining room:", room);
-      socket.emit("join_room", { room: room });  // Send an object with the 'room' key
+      const data = { room: room, username: username }
+      socket.emit("join_room", data); 
+      socket.emit("user_joined", data);
       setShowChat(true);
     }
   };
