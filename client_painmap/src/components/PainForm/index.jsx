@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 import './style.css';
 
@@ -7,6 +8,8 @@ const PainForm = (props) => {
     const [description, setDescription] = useState('')
     const today = new Date();
     const [startDate, setStartDate] = useState(today)
+
+    const { user } = useAuthContext();
 
    async function handleSubmit(e) {
         e.preventDefault()
@@ -19,11 +22,10 @@ const PainForm = (props) => {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                // 'Authorization': ?
             },
             body: JSON.stringify(
                 {
-                    "patient_id": 1,  //TODO change to patient id
+                    "patient_email": user.user_id,  //TODO change to patient id
                     "condition_name": condition,
                     "description": description,
                     "start_date": startDate,  //TODO fix time
@@ -38,7 +40,6 @@ const PainForm = (props) => {
         );
 
         console.log(response)
-        
         props.toggle()
     }
 

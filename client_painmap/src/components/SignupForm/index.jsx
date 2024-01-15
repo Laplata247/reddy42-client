@@ -47,10 +47,10 @@ const SignupForm = () => {
 
             // console.log(userData)
 
-            if (response.status === 200) {
+            if (response.status === 201) {
                 setSignupSuccessful(true);
 
-                goTo('/home');
+                goTo('/login');
             }
             else {
                 console.error('Signup failed:', response.data.error);
