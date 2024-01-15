@@ -16,6 +16,7 @@
     "@pixi/filter-kawase-blur": "^5.1.1",
     "@react-three/drei": "^9.93.0",
     "@react-three/fiber": "^8.15.13",
+    "@react-three/test-renderer": "^8.2.1",
     "@types/three": "^0.160.0",
     "axios": "^1.6.5",
     "boxicons": "^2.1.4",
