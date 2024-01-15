@@ -1,12 +1,11 @@
 import React, { useState, useRef } from 'react';
 import ReactDOM from 'react-dom'
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, RandomizedLight} from '@react-three/drei';
+import { OrbitControls, RandomizedLight,AccumulativeShadows, Environment} from '@react-three/drei';
 import { DecalGeometry } from 'three/addons/geometries/DecalGeometry.js'; //import decal geometry pakage 
 import html2canvas from 'html2canvas';
-import { Model, Stickers} from '../../components';
+import { Model, Stickers, PainForm } from '../../components';
 import DrawingOverlay from '../../components/DrawingOverlay';
-
 
 import './style.css';
 
@@ -15,18 +14,25 @@ const MapPainPage = () => {
   const [drawingEnabled, setDrawingEnabled] = useState(false);
   const [decals, setDecals] = useState([])
   const [img, setImg] = useState('');
-  const [sticker, setSticker] = useState('src/assets/Basic_red_dot.png')
+  const [sticker, setSticker] = useState('src/assets/dot.png')
   const [scaleMod, setScaleMod] = useState(1)
+  const [visible, setVisible] = useState(false)
+
+  function togglePopup() {
+    takeScreenshot();
+    setVisible(!visible);
+  };
 
   const toggleDrawing = () => {
     setDrawingEnabled(!drawingEnabled);
   };
 
   const takeScreenshot = () => {
-    const element = document.getElementById("canvasDiv")
+    const element = document.getElementById("canvasDiv");
     html2canvas(element).then((canvas) => {
       let image = canvas.toDataURL("image/jpeg");
       setImg(image)
+      // console.log(image)
       // const a = document.createElement("a")
       // a.href = image
       // a.download = "screenshot.jpeg"
@@ -34,19 +40,23 @@ const MapPainPage = () => {
     })
   }
   const removeDecal = () => {
-    const newDecals = decals.slice(0,-1)
+    const newDecals = decals.slice(0, -1)
     setDecals(newDecals)
 
   }
 
+  
+
   return (
-    <>
+<div className='PageWrapper'>
+    
       <h1>Map Pain Page</h1>
 
-      <button onClick={toggleDrawing}>
+      {/* <button onClick={toggleDrawing}>
         {drawingEnabled ? 'Disable Drawing' : 'Enable Drawing'}
-      </button>
-
+      </button> */}
+      
+      <div class="center-container">
         <Canvas id='canvasDiv'
           gl={{
             preserveDrawingBuffer: true // allow showing model on the screenshot
@@ -57,8 +67,8 @@ const MapPainPage = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            background: 'white',
-            border: '2px solid Green'
+            // background: 'white',
+            // border: '2px solid Green'
           }}
           camera={{ position: [0, 0, 2] }}
         >
@@ -73,22 +83,23 @@ const MapPainPage = () => {
           <Model decals={decals} setDecals={setDecals} sticker={sticker} scaleMod={scaleMod}/>
           {/* <RandomizedLight amount={8} radius={10} ambient={0.5} position={[2.5, 5, -5]} bias={0.001} /> */}
           <OrbitControls enableRotate={true} enablePan={true} enableZoom={true} />
+      </Canvas>
 
-        </Canvas>
+      <button onClick={togglePopup}>Save image</button>
+      {visible ? <PainForm toggle={togglePopup} image={img} /> : null}
 
-      <button onClick={takeScreenshot}>Save image</button>
       <button onClick={removeDecal}>Undo</button>
-      <Stickers setSticker={setSticker} setScaleMod={setScaleMod}/>
+      <Stickers setSticker={setSticker} setScaleMod={setScaleMod} />
 
-      {/* Conditionally render the DrawingOverlay based on drawingEnabled */}
-      {drawingEnabled && <DrawingOverlay modelRef={Model} />} {/* Pass the modelRef as a prop */}
+      {/* {drawingEnabled && <DrawingOverlay modelRef={Model} />} Pass the modelRef as a prop */}
 
       {/* display screenshot, save in db instead when db is finished */}
-      <div id="container">
-        <img width='500' height='500' src={`${img}`} />:
-      </div>
-
-    </>
+     <div id="container">
+  {img ? <img width='500' height='500' src={img} alt="Screenshot" /> : <div className="placeholder">Your screenshot will appear here</div>}
+</div>
+</div>
+</div>          
+  
   );
 };
 
