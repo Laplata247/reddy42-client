@@ -8,4 +8,4 @@ export { default as DrawingOverlay} from './DrawingOverlay'
 export { default as Chat } from './Chat'
 export { default as Stickers} from './Stickers'
 export { default as PainForm } from './PainForm'
-
+export {default as Logo} from './Logo'

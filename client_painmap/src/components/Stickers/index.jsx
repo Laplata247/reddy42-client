@@ -123,6 +123,19 @@ function Stickers({setSticker, setScaleMod}) {
 
             </div>
         </section>
+        <p class='stickerButton'onClick={e => {
+            console.log("sticker set to dot"), 
+            setSticker('src/assets/burning.gif')
+            setScaleMod(1)
+            }}><img src={"src/assets/burning.gif"} alt="burning" height="50" border-radius="20px"></img>
+        </p>
+        <p class='stickerButton' onClick={e => {
+            console.log("sticker set to pizza"),
+            setSticker('src/assets/pizza.png')
+            setScaleMod(1)
+        }}>circle</p>
+        <p class='stickerButton'>bolt</p>
+        <p class='stickerButton'>blur</p>
     </nav>
   )
 }
