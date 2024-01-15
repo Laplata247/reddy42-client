@@ -67,17 +67,21 @@ const MapPainPage = () => {
           background: 'white',
           border: '2px solid Green'
         }}
+        shadows
         camera={{ position: [0, 0, 2] }}
       >
+
         <ambientLight intensity={0.5}/>
+        <spotLight position={[1, 5, -1]} angle={0.45} penumbra={1} />
         <directionalLight
-          position={[1, 5, 5]}
+          position={[1, 5, 1]}
           intensity={3}
           castShadow
           shadow-mapSize-width={1024}
           shadow-mapSize-height={1024}
         />
         <Model decals={decals} setDecals={setDecals} sticker={sticker} scaleMod={scaleMod} />
+        <color attach="background" args={["blue"]} />
         {/* <RandomizedLight amount={8} radius={10} ambient={0.5} position={[2.5, 5, -5]} bias={0.001} /> */}
         <OrbitControls enableRotate={true} enablePan={true} enableZoom={true} />
 
