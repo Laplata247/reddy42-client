@@ -9,3 +9,9 @@ test('mesh is rendered', async () => {
     const renderer = await ReactThreeTestRenderer.create(<Model />)
     expect(renderer).toBeInTheDocument()
   })
+
+  test('mesh has children', async () => {
+    const renderer = await ReactThreeTestRenderer.create(<Model />)
+    const mesh = renderer.scene.children[0].allChildren
+    expect(mesh.length).toBe(2)
+  })
