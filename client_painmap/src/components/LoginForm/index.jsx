@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './styles.css';
+import { useLogin } from "../../hooks/useLogin"
 
 const LoginForm = () => {
 
@@ -10,6 +11,7 @@ const LoginForm = () => {
     const [ email, setEmail ] = useState();
     const [ password, setPassword ] = useState();
     const [loginSuccessful, setLoginSuccessful] = useState(null);
+    const {login, error, Loading} = useLogin()
 
     const handleSubmit = async(e) => {
         e.preventDefault();
@@ -21,7 +23,7 @@ const LoginForm = () => {
                 password: e.target.password.value,
             }
 
-            const response = await axios.post('<backendURL>', userData);
+            const response = await axios.post('http://localhost:5000/login', userData);
 
             if (response.status === 200) {
                 setLoginSuccessful(true);
