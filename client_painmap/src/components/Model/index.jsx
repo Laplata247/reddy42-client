@@ -18,6 +18,7 @@ function Model({decals, setDecals, sticker, scaleMod}) {
   useFrame(()=>{
     // console.log('x axis: ', mouse.x)
     // console.log('y axis: ', mouse.y)
+    console.log(scaleMod)
 
   })
   
@@ -70,8 +71,8 @@ function Model({decals, setDecals, sticker, scaleMod}) {
           position={[decal['x'], decal['y'], decal['z']]} 
           scale={decal['scale']} 
           rotation={[decal['rx'], decal['ry'], decal['rz']]}/>)}
-        <axesHelper args={[5]} />
-        <gridHelper />
+        {/* <axesHelper args={[5]} />
+        <gridHelper /> */}
       </mesh>
 
   );

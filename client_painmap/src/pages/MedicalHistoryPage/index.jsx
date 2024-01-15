@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Consultation } from '../../components'
-import { useConsultations } from '../../components/contexts';
+import { useConsultations } from '../../contexts';
 import './style.css';
 import axios from 'axios';
 
