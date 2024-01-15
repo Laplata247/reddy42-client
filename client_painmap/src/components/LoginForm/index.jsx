@@ -21,7 +21,7 @@ const LoginForm = () => {
                 password: e.target.password.value,
             }
 
-            const response = await axios.post('<backendURL>', userData);
+            const response = await axios.post('http://localhost:5000/login', userData);
 
             if (response.status === 200) {
                 setLoginSuccessful(true);
