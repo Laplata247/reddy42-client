@@ -10,7 +10,7 @@ import Login from '.';
 
 describe('Login Page', () => {
     beforeEach(() => {
-        render (
+        render(
             <BrowserRouter>
                 <Login />
             </BrowserRouter>

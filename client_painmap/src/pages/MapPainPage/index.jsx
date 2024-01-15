@@ -92,11 +92,6 @@ const MapPainPage = () => {
       {/* Conditionally render the DrawingOverlay based on drawingEnabled */}
       {drawingEnabled && <DrawingOverlay modelRef={Model} />} {/* Pass the modelRef as a prop */}
 
-      {/* display screenshot, save in db instead when db is finished */}
-      <div id="container">
-        <img width='500' height='500' src={`${img}`} />:
-      </div>
-
     </>
   );
 };
