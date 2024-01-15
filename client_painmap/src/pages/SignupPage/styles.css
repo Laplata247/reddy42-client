@@ -11,9 +11,11 @@ body, html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 600px
 }
-
+.signup-container::-webkit-scrollbar {
+  display: none;
+}
 /* .circle-3{
   background: linear-gradient(to top right, #ffffff, #FDAF76);
   height: 60rem;
@@ -50,13 +52,6 @@ body, html {
   z-index: 1; /* Ensure the header is above the circles */
   position: relative; /* Needed for z-index to take effect */
   /* Add other styles for your header here */
-}
-
-
-/* Layout container for the whole page */
-.sign-up-container {
-  display: flex;
-  min-height: 100vh;
 }
 
 /* Styling for the left panel with the introductory content */
@@ -141,3 +136,11 @@ body, html {
   text-decoration: underline;
 }
 
+.message{
+  font-weight: 600;
+}
+
+
+.message p{
+  font-weight: 400;
+}

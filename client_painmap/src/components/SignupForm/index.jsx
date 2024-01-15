@@ -147,7 +147,7 @@ const SignupForm = () => {
                         onChange={(e) => e.target.checked && setNhsMember(true)}
                         role='nhsMember'
                     />
-                    <label htmlFor='nhsMemberYes'>True</label>
+                    <label htmlFor='nhsMemberYes'>Yes</label>
 
                     <input
                         type='radio'
@@ -157,7 +157,7 @@ const SignupForm = () => {
                         onChange={(e) => e.target.checked && setNhsMember(false)}
                         role='nhsMember'
                     />
-                    <label htmlFor='nhsMemberNo'>False</label>
+                    <label htmlFor='nhsMemberNo'>No</label>
                 </div>
                 
                 <input type='submit' value='Create Account'/>

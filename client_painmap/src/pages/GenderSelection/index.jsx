@@ -21,7 +21,7 @@ function GenderSelection() {
 
   return (
     <div>
-      <h1>Select Your Gender</h1>
+      <h1>Choose Sex</h1>
       <button onClick={handleSelectMale}>Select Male</button>
       <button onClick={handleSelectFemale}>Select Female</button>
     </div>
