@@ -15,7 +15,7 @@ const MapPainPage = () => {
   const [drawingEnabled, setDrawingEnabled] = useState(false);
   const [decals, setDecals] = useState([])
   const [img, setImg] = useState('');
-  const [sticker, setSticker] = useState('')
+  const [sticker, setSticker] = useState('src/assets/Basic_red_dot.png')
   const [scaleMod, setScaleMod] = useState(1)
   const [visible, setVisible] = useState(false)
 

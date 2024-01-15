@@ -57,9 +57,9 @@ describe("SignupForm component", () => {
         
         expect(userSex.value).toBe("");
 
-        fireEvent.change(userSex, { target: { value: "Female" } });
+        fireEvent.change(userSex, { target: { value: "F" } });
 
-        expect(userSex.value).toBe("Female");
+        expect(userSex.value).toBe("F");
     });
 
     it("updates the ethnicity state correctly", () => {
