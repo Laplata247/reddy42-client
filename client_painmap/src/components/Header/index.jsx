@@ -23,7 +23,7 @@ const Header = () => {
                     <NavLink to="/chat">Chat</NavLink>
                     <NavLink to="/history">Medical History</NavLink>
                 </nav>
-                <div id="google_translate_element"></div>
+                {/* <div id="google_translate_element"></div> */}
                 <button onClick={handleClick}>Log out</button>
             </header>
             <Outlet />
