@@ -7,7 +7,6 @@ import html2canvas from 'html2canvas';
 import { Model, Stickers, PainForm } from '../../components';
 import DrawingOverlay from '../../components/DrawingOverlay';
 
-
 import './style.css';
 
 const MapPainPage = () => {
@@ -29,7 +28,7 @@ const MapPainPage = () => {
   };
 
   const takeScreenshot = () => {
-    const element = document.getElementById("canvasDiv")
+    const element = document.getElementById("canvasDiv");
     html2canvas(element).then((canvas) => {
       let image = canvas.toDataURL("image/jpeg");
       setImg(image)
@@ -46,45 +45,48 @@ const MapPainPage = () => {
 
   }
 
+  
+
   return (
-    <>
+<div className='PageWrapper'>
+    
       <h1>Map Pain Page</h1>
 
-      <button onClick={toggleDrawing}>
+      {/* <button onClick={toggleDrawing}>
         {drawingEnabled ? 'Disable Drawing' : 'Enable Drawing'}
-      </button>
-
-      <Canvas id='canvasDiv'
-        gl={{
-          preserveDrawingBuffer: true // allow showing model on the screenshot
-        }}
-        style={{
-          height: '500px',
-          width: '500px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          background: 'white',
-          border: '2px solid Green'
-        }}
+      </button> */}
+      
+      <div class="center-container">
+        <Canvas id='canvasDiv'
+          gl={{
+            preserveDrawingBuffer: true // allow showing model on the screenshot
+          }}
+          style={{
+            height: '500px',
+            width: '500px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            // background: 'white',
+            // border: '2px solid Green'
+          }}
         shadows
-        camera={{ position: [0, 0, 2] }}
-      >
+          camera={{ position: [0, 0, 2] }}
+        >
 
-        <ambientLight intensity={0.5}/>
+          <ambientLight intensity={0.5} />
         <spotLight position={[1, 5, -1]} angle={0.45} penumbra={1} />
-        <directionalLight
-          position={[1, 5, 1]}
-          intensity={3}
-          castShadow
-          shadow-mapSize-width={1024}
-          shadow-mapSize-height={1024}
-        />
-        <Model decals={decals} setDecals={setDecals} sticker={sticker} scaleMod={scaleMod} />
+          <directionalLight
+            position={[5, 5, 1]}
+            intensity={3}
+            castShadow
+            shadow-mapSize-width={1024}
+            shadow-mapSize-height={1024}
+          />
+          <Model decals={decals} setDecals={setDecals} sticker={sticker} scaleMod={scaleMod}/>
         <color attach="background" args={["blue"]} />
-        {/* <RandomizedLight amount={8} radius={10} ambient={0.5} position={[2.5, 5, -5]} bias={0.001} /> */}
-        <OrbitControls enableRotate={true} enablePan={true} enableZoom={true} />
-
+          {/* <RandomizedLight amount={8} radius={10} ambient={0.5} position={[2.5, 5, -5]} bias={0.001} /> */}
+          <OrbitControls enableRotate={true} enablePan={true} enableZoom={true} />
       </Canvas>
 
       <button onClick={togglePopup}>Save image</button>
@@ -93,15 +95,15 @@ const MapPainPage = () => {
       <button onClick={removeDecal}>Undo</button>
       <Stickers setSticker={setSticker} setScaleMod={setScaleMod} />
 
-      {/* Conditionally render the DrawingOverlay based on drawingEnabled */}
-      {drawingEnabled && <DrawingOverlay modelRef={Model} />} {/* Pass the modelRef as a prop */}
+      {/* {drawingEnabled && <DrawingOverlay modelRef={Model} />} Pass the modelRef as a prop */}
 
       {/* display screenshot, save in db instead when db is finished */}
-      <div id="container">
-        <img width='500' height='500' src={`${img}`} />:
-      </div>
-
-    </>
+     <div id="container">
+  {img ? <img width='500' height='500' src={img} alt="Screenshot" /> : <div className="placeholder">Your screenshot will appear here</div>}
+</div>
+</div>
+</div>          
+  
   );
 };
 
