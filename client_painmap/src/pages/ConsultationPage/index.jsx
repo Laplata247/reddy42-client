@@ -17,7 +17,8 @@ const ConsultationPage = () => {
 
     return (
         <div className='consultationDetails'>
-            <h1>{consultation.condition}</h1>
+            <h1>{consultation.condition_name}</h1>
+            <img width='200' height='200' src={`data:image/jpeg;base64,${consultation.image_data_base64}`} />
             <h2>{consultation.description}</h2>
             <h3>Start date: {consultation.start_date}</h3>
             <h3>End date: {consultation.end_date}</h3>
