@@ -1,10 +1,10 @@
 import React, { useState, useRef } from 'react';
 import ReactDOM from 'react-dom'
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, RandomizedLight} from '@react-three/drei';
+import { OrbitControls, RandomizedLight } from '@react-three/drei';
 import { DecalGeometry } from 'three/addons/geometries/DecalGeometry.js'; //import decal geometry pakage 
 import html2canvas from 'html2canvas';
-import { Model, Stickers} from '../../components';
+import { Model, Stickers, PainForm } from '../../components';
 import DrawingOverlay from '../../components/DrawingOverlay';
 
 
@@ -17,6 +17,12 @@ const MapPainPage = () => {
   const [img, setImg] = useState('');
   const [sticker, setSticker] = useState('')
   const [scaleMod, setScaleMod] = useState(1)
+  const [visible, setVisible] = useState(false)
+
+  function togglePopup() {
+    takeScreenshot();
+    setVisible(!visible);
+  };
 
   const toggleDrawing = () => {
     setDrawingEnabled(!drawingEnabled);
@@ -27,6 +33,7 @@ const MapPainPage = () => {
     html2canvas(element).then((canvas) => {
       let image = canvas.toDataURL("image/jpeg");
       setImg(image)
+      // console.log(image)
       // const a = document.createElement("a")
       // a.href = image
       // a.download = "screenshot.jpeg"
@@ -34,7 +41,7 @@ const MapPainPage = () => {
     })
   }
   const removeDecal = () => {
-    const newDecals = decals.slice(0,-1)
+    const newDecals = decals.slice(0, -1)
     setDecals(newDecals)
 
   }
@@ -47,38 +54,40 @@ const MapPainPage = () => {
         {drawingEnabled ? 'Disable Drawing' : 'Enable Drawing'}
       </button>
 
-        <Canvas id='canvasDiv'
-          gl={{
-            preserveDrawingBuffer: true // allow showing model on the screenshot
-          }}
-          style={{
-            height: '500px',
-            width: '500px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            background: 'white',
-            border: '2px solid Green'
-          }}
-          camera={{ position: [0, 0, 2] }}
-        >
-          <ambientLight intensity={0.5} />
-          <directionalLight
-            position={[5, 5, 5]}
-            intensity={3}
-            castShadow
-            shadow-mapSize-width={1024}
-            shadow-mapSize-height={1024}
-          />
-          <Model decals={decals} setDecals={setDecals} sticker={sticker} scaleMod={scaleMod}/>
-          {/* <RandomizedLight amount={8} radius={10} ambient={0.5} position={[2.5, 5, -5]} bias={0.001} /> */}
-          <OrbitControls enableRotate={true} enablePan={true} enableZoom={true} />
+      <Canvas id='canvasDiv'
+        gl={{
+          preserveDrawingBuffer: true // allow showing model on the screenshot
+        }}
+        style={{
+          height: '500px',
+          width: '500px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          background: 'white',
+          border: '2px solid Green'
+        }}
+        camera={{ position: [0, 0, 2] }}
+      >
+        <ambientLight intensity={0.5} />
+        <directionalLight
+          position={[5, 5, 5]}
+          intensity={3}
+          castShadow
+          shadow-mapSize-width={1024}
+          shadow-mapSize-height={1024}
+        />
+        <Model decals={decals} setDecals={setDecals} sticker={sticker} scaleMod={scaleMod} />
+        {/* <RandomizedLight amount={8} radius={10} ambient={0.5} position={[2.5, 5, -5]} bias={0.001} /> */}
+        <OrbitControls enableRotate={true} enablePan={true} enableZoom={true} />
 
-        </Canvas>
+      </Canvas>
 
-      <button onClick={takeScreenshot}>Save image</button>
+      <button onClick={togglePopup}>Save image</button>
+      {visible ? <PainForm toggle={togglePopup} image={img} /> : null}
+
       <button onClick={removeDecal}>Undo</button>
-      <Stickers setSticker={setSticker} setScaleMod={setScaleMod}/>
+      <Stickers setSticker={setSticker} setScaleMod={setScaleMod} />
 
       {/* Conditionally render the DrawingOverlay based on drawingEnabled */}
       {drawingEnabled && <DrawingOverlay modelRef={Model} />} {/* Pass the modelRef as a prop */}
