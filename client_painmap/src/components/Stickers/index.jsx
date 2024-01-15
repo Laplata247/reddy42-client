@@ -49,10 +49,10 @@ function Stickers({setSticker, setScaleMod}) {
 
   return (
     <nav id={className}>
-        <header>
+        <header1>
             {(open? <h2 class='title'>PS</h2>: <h2 class='title'>Pain Selector</h2> )}
             <box-icon id='sideArrow' name='right-arrow-circle' onClick={openMenu}></box-icon>
-        </header>
+        </header1>
         <section id='menu'>
             <div id='choices'>
                 <p class='choiceTitle'>Symbol</p>
