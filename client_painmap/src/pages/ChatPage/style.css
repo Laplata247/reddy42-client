@@ -1,13 +1,18 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
 
 .livechat {
-    width: 100vw;
-    height: 100vh;
-    background: #fff;
-    color: #212121;
-    font-family: "Open Sans", sans-serif;
+    width: 600px;
+    height: 450px;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
     display: grid;
     place-items: center;
+    border-radius: 20px;
+    background: rgba(93, 93, 93, 0.55);
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 10px;
   }
   body {
     margin: 0%;
@@ -28,27 +33,30 @@
     width: 210px;
     height: 40px;
     margin: 7px;
-    border: 2px solid #43a047;
-    border-radius: 5px;
+    /* border: 2px solid #43a047; */
+    border-radius: 15px;
     padding: 5px;
     font-size: 16px;
   }
   
   .joinChatContainer button {
-    width: 225px;
-    height: 50px;
-    margin: 7px;
-    border: none;
-    border-radius: 5px;
-    padding: 5px;
-    font-size: 16px;
-    background: #43a047;
-    color: #fff;
+    display: inline-block;
+    padding: 24px 32px;
+    text-decoration: none;
+    border-radius: 15px;
+    background-color: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(30px);
+    color: rgba(255,255,255,0.8);
+    font-size: 14px;
+    letter-spacing: 2px;
     cursor: pointer;
+    text-transform: uppercase;
   }
   
   .joinChatContainer button:hover {
-    background: #2e7d32;
+    background-color: rgba(255,255,255,0.2);
+    border:0;
   }
   
   .chat-window {
@@ -102,11 +110,12 @@
     height: auto;
     min-height: 40px;
     max-width: 120px;
-    background-color: #43a047;
+    background-color: cornflowerblue;
     border-radius: 5px;
     color: white;
     display: flex;
     align-items: center;
+    text-align: justify;
     margin-right: 5px;
     margin-left: 5px;
     padding-right: 5px;
@@ -115,31 +124,37 @@
     word-break: break-word;
   }
   
-  #you {
+  #other {
     justify-content: flex-start;
   }
   
-  #you .message-content {
+  #other .message-content {
     justify-content: flex-start;
   }
   
-  #you .message-meta {
+  #other .message-meta {
     justify-content: flex-start;
     margin-left: 5px;
   }
   
-  #other {
+  #you {
     justify-content: flex-end;
   }
   
-  #other .message-content {
+  #you .message-content {
     justify-content: flex-end;
-    background-color: cornflowerblue;
+    background-color: #43a047;
   }
   
-  #other .message-meta {
+  #you .message-meta {
     justify-content: flex-end;
     margin-right: 5px;
+  }
+
+  .system-message{
+    width: 100%;
+    font-size: small;
+    text-align: center;
   }
   
   .message-meta #author {
@@ -185,7 +200,7 @@
   }
   
   .chat-window .chat-footer button:hover {
-    color: #43a047;
+    color: #c0f7c3;
   }
   .hide {
     opacity: 0 !important;
