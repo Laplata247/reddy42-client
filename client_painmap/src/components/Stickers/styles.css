@@ -1,10 +1,14 @@
 nav {
     --side-color: rgb(183, 197, 198);
     --border-color: rgb(208, 205, 202);
-    --active-color: rgb(62, 62, 101);
+    --active-color: rgba(255, 233, 185, 0.644);
     box-sizing: border-box;
     background: (--side-color);
-
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+nav::-webkit-scrollbar {
+    display: none;
 }
 
 h2.title{
