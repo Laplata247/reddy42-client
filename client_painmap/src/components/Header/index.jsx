@@ -38,7 +38,6 @@ const Header = () => {
                     )}
                 </nav>
                 <div id="google_translate_element"></div>
-                <button onClick={handleClick}>Log out</button>
             </header>
             <Outlet />
         </main>
