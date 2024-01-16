@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import * as Pages from './pages';
+import { Layout } from './components';
 import { Header } from './components';
 import { useAuthContext } from './hooks/useAuthContext'
 
@@ -43,6 +44,7 @@ function App() {
   }, []);
 
   return (
+    <>
     <Routes>
       <Route path="/landing" element={<Pages.LandingPage />} />
 
@@ -63,6 +65,7 @@ function App() {
       <Route path="/login" element={<Pages.Login />} />
       <Route path="*" element={<Pages.NotFoundPage />} />
     </Routes>
+    </>
   );
 }
 

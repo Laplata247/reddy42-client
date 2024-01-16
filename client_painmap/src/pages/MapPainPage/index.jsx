@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import ReactDOM from 'react-dom'
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, RandomizedLight,AccumulativeShadows, Environment} from '@react-three/drei';
+import { OrbitControls, RandomizedLight, AccumulativeShadows, Environment } from '@react-three/drei';
 import { DecalGeometry } from 'three/addons/geometries/DecalGeometry.js'; //import decal geometry pakage 
 import html2canvas from 'html2canvas';
 import { Model, Stickers, PainForm } from '../../components';
@@ -45,7 +45,7 @@ const MapPainPage = () => {
 
   }
 
-  
+
 
   return (
 <div role="wrapper" className='PageWrapper'>
@@ -55,7 +55,7 @@ const MapPainPage = () => {
       {/* <button onClick={toggleDrawing}>
         {drawingEnabled ? 'Disable Drawing' : 'Enable Drawing'}
       </button> */}
-      
+
       <div class="center-container">
         <Canvas id='canvasDiv'
           gl={{
@@ -87,23 +87,19 @@ const MapPainPage = () => {
         <color attach="background" args={["lightpink"]} />
           {/* <RandomizedLight amount={8} radius={10} ambient={0.5} position={[2.5, 5, -5]} bias={0.001} /> */}
           <OrbitControls enableRotate={true} enablePan={true} enableZoom={true} />
-      </Canvas>
+        </Canvas>
 
-      <button onClick={togglePopup}>Save image</button>
-      {visible ? <PainForm toggle={togglePopup} image={img} /> : null}
+        <button onClick={togglePopup}>Save image</button>
+        {visible ? <PainForm toggle={togglePopup} image={img} /> : null}
 
-      <button onClick={removeDecal}>Undo</button>
-      <Stickers setSticker={setSticker} setScaleMod={setScaleMod} />
+        <button onClick={removeDecal}>Undo</button>
+        <Stickers setSticker={setSticker} setScaleMod={setScaleMod} />
 
-      {/* {drawingEnabled && <DrawingOverlay modelRef={Model} />} Pass the modelRef as a prop */}
+        {/* {drawingEnabled && <DrawingOverlay modelRef={Model} />} Pass the modelRef as a prop */}
 
-      {/* display screenshot, save in db instead when db is finished */}
-     <div id="container">
-  {img ? <img width='500' height='500' src={img} alt="Screenshot" /> : <div className="placeholder">Your screenshot will appear here</div>}
-</div>
-</div>
-</div>          
-  
+      </div>
+    </div>
+
   );
 };
 
