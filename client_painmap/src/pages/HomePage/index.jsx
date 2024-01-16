@@ -27,6 +27,7 @@ const HomePage = () => {
       <p>Past Images</p>
       </div>
     </div>
+    </div>
   );
 };
 

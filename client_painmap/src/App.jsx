@@ -18,12 +18,8 @@ function App() {
 
     if (window.google && window.google.translate) {
       googleTranslateElementInit();
-<<<<<<< HEAD
-    } else {
-=======
     }
     else {
->>>>>>> a6484fa7df170a4fb3be0fb257f5918d45801f62
       const script = document.createElement('script');
       script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
       script.defer = true;
@@ -53,26 +49,6 @@ function App() {
     <>
     <Routes>
       <Route path="/landing" element={<Pages.LandingPage />} />
-<<<<<<< HEAD
-      <Route path="/signup" element={<Pages.SignupPage />} />
-      <Route path="/login" element={<Pages.Login />} />
-
-      {showHeader && (
-        <Route path="/" element={<Header />}>
-          <Route index element={<Pages.HomePage />} />
-
-          <Route path="/select-gender" element={<Pages.GenderSelection />} />
-          <Route path="/painmap" element={<Pages.MapPainPage />} />
-
-          <Route path="/chat" element={<Pages.ChatPage />} />
-          <Route path="/history">
-            <Route index element={<Pages.MedicalHistoryPage />} />
-            <Route path=":id" element={<Pages.ConsultationPage />} />
-          </Route>
-          <Route path="*" element={<Pages.NotFoundPage />} />
-        </Route>
-      )}
-=======
 
       <Route path="/" element={<Layout />}>
         <Route index element={<Pages.HomePage />} />
@@ -90,7 +66,6 @@ function App() {
       <Route path="/signup" element={<Pages.SignupPage />} />
       <Route path="/login" element={<Pages.Login />} />
       <Route path="*" element={<Pages.NotFoundPage />} />
->>>>>>> a6484fa7df170a4fb3be0fb257f5918d45801f62
     </Routes>
     </>
   );
