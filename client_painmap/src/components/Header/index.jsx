@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 import { Link } from "react-router-dom";
-import './style.css'; 
+import './style.css';
 
 import { useLogout } from "../../hooks/useLogout";
 import { useAuthContext } from "../../hooks/useAuthContext";
@@ -11,9 +11,9 @@ const Header = () => {
 
     const { logout } = useLogout();
     const { user } = useAuthContext();
-  
+
     const handleClick = () => {
-      logout();
+        logout();
     };
     return (
         <main>
@@ -28,20 +28,16 @@ const Header = () => {
                             <span>{user.email}</span>
                             <button onClick={handleClick}>Log out</button>
                         </div>
-                        )}
+                    )}
                     {!user && (
                         <div className="userDisplay">
-                        <Link to="/login">Login</Link>
-                        <Link to="/signup">Signup</Link>
+                            <Link to="/login">Login</Link>
+                            <Link to="/signup">Signup</Link>
                         </div>
-                        )}
+                    )}
                 </nav>
-<<<<<<< HEAD
                 <div id="google_translate_element"></div>
-=======
-                {/* <div id="google_translate_element"></div> */}
                 <button onClick={handleClick}>Log out</button>
->>>>>>> fad330f64f507f8710c29603231b2d74b0586411
             </header>
             <Outlet />
         </main>

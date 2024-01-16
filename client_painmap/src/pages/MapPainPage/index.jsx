@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import ReactDOM from 'react-dom'
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, RandomizedLight,AccumulativeShadows, Environment} from '@react-three/drei';
+import { OrbitControls, RandomizedLight, AccumulativeShadows, Environment } from '@react-three/drei';
 import { DecalGeometry } from 'three/addons/geometries/DecalGeometry.js'; //import decal geometry pakage 
 import html2canvas from 'html2canvas';
 import { Model, Stickers, PainForm } from '../../components';
@@ -45,17 +45,17 @@ const MapPainPage = () => {
 
   }
 
-  
+
 
   return (
-<div className='PageWrapper'>
-    
+    <div className='PageWrapper'>
+
       <h1>Map Pain Page</h1>
 
       {/* <button onClick={toggleDrawing}>
         {drawingEnabled ? 'Disable Drawing' : 'Enable Drawing'}
       </button> */}
-      
+
       <div class="center-container">
         <Canvas id='canvasDiv'
           gl={{
@@ -80,20 +80,22 @@ const MapPainPage = () => {
             shadow-mapSize-width={1024}
             shadow-mapSize-height={1024}
           />
-          <Model decals={decals} setDecals={setDecals} sticker={sticker} scaleMod={scaleMod}/>
+          <Model decals={decals} setDecals={setDecals} sticker={sticker} scaleMod={scaleMod} />
           {/* <RandomizedLight amount={8} radius={10} ambient={0.5} position={[2.5, 5, -5]} bias={0.001} /> */}
           <OrbitControls enableRotate={true} enablePan={true} enableZoom={true} />
-      </Canvas>
+        </Canvas>
 
-      <button onClick={togglePopup}>Save image</button>
-      {visible ? <PainForm toggle={togglePopup} image={img} /> : null}
+        <button onClick={togglePopup}>Save image</button>
+        {visible ? <PainForm toggle={togglePopup} image={img} /> : null}
 
-      <button onClick={removeDecal}>Undo</button>
-      <Stickers setSticker={setSticker} setScaleMod={setScaleMod} />
+        <button onClick={removeDecal}>Undo</button>
+        <Stickers setSticker={setSticker} setScaleMod={setScaleMod} />
 
-      {/* {drawingEnabled && <DrawingOverlay modelRef={Model} />} Pass the modelRef as a prop */}
+        {/* {drawingEnabled && <DrawingOverlay modelRef={Model} />} Pass the modelRef as a prop */}
 
-    </>
+      </div>
+    </div>
+
   );
 };
 
