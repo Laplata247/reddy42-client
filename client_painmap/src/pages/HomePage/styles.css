@@ -1,3 +1,8 @@
+
+.home {
+    z-index: 10;
+}
+
 h1{
   font-family: 'Poppins', sans-serif;
   font-weight: 800;
@@ -42,3 +47,4 @@ flex-shrink: 0;
 font-family: 'Poppins', sans-serif;
 font-weight: 600;
 }
+
