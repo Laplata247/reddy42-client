@@ -27,25 +27,30 @@ const SignupForm = () => {
         try {
             //order is very important here - had to rearrrange to make work on back end
             const userData = {
-                firstName: e.target.firstName.value,
-                lastName: e.target.lastName.value,
+                first_name: e.target.firstName.value,
+                last_name: e.target.lastName.value,
                 email: e.target.email.value,
                 password: e.target.password.value,
-                nhsMember: e.target.nhsMember.value,
-                dateOfBirth: e.target.dateOfBirth.value,
+                nhs_number: e.target.nhsMember.value,
+                date_of_birth: e.target.dateOfBirth.value,
                 sex: e.target.sex.value,
                 ethnicity: e.target.ethnicity.value
             }
 
+            console.log(userData)
+
             // const response = await axios.post('<backendURL>', userData);
             // const response = await axios.post('http://localhost:4000/patients', userData, { withCredentials: true });
 
-            const response = await axios.post('http://localhost:4000/patients', userData);
+            //changed to 5000
+            const response = await axios.post('http://localhost:5000/patients', userData);
 
-            if (response.status === 200) {
+            // console.log(userData)
+
+            if (response.status === 201) {
                 setSignupSuccessful(true);
 
-                goTo('/home');
+                goTo('/login');
             }
             else {
                 console.error('Signup failed:', response.data.error);

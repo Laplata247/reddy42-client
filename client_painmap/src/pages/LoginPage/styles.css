@@ -1,6 +1,7 @@
 body {
-    background-color: white;
+    -color: rgba(255, 255, 255, 0);
     margin: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 .login-container {
@@ -43,4 +44,39 @@ body {
     position: absolute;
     top: 20%;
     right: 25%;
+}
+
+/* styles.css (or your CSS file) */
+
+.logo-svg {
+    width: 550px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    position: absolute;
+    top: 10%;
+    right: 25%;
+    position: absolute; /* or absolute or fixed, depending on your layout needs */
+  z-index: 9999;
+  }
+  
+  /* Add more styles as needed */
+.login-submit {
+  border-radius: 50px;
+  background: #dedede;
+  box-shadow:  27px 27px 54px #bdbdbd,
+               -27px -27px 54px #ffffff;
+  color: black;
+}
+
+.login-submit:hover {
+  background-color: #b9b9b9; /* Darker shade for hover effect */
+}
+
+.login-submit:active {
+  background-color: #ffffff; /* Even darker shade to simulate the button being pressed */
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.2); /* Inner shadow for depth */
+  transform: translateY(2px); /* Moves the button down slightly */
 }

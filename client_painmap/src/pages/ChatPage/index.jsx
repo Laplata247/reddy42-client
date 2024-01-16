@@ -4,7 +4,7 @@ import Chat from "../../components/Chat";
 
 import './style.css'
 
-const socket = io("http://localhost:5000");
+const socket = io.connect("http://localhost:5000");
 
 function ChatPage() {
   const [username, setUsername] = useState("");
@@ -13,7 +13,10 @@ function ChatPage() {
 
   const joinRoom = () => {
     if (username !== "" && room !== "") {
-      socket.emit("join_room", room);
+      console.log("Joining room:", room);
+      const data = { room: room, username: username }
+      socket.emit("join_room", data); 
+      socket.emit("user_joined", data);
       setShowChat(true);
     }
   };

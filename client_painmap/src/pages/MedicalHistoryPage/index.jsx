@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Consultation } from '../../components'
-import { useConsultations } from '../../components/contexts';
+import { useConsultations } from '../../contexts';
 import './style.css';
 import axios from 'axios';
+
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 const MedicalHistoryPage = () => {
   const { consultations, setConsultations } = useConsultations()
   const [loading, setLoading] = useState(true);
 
+  const { user } = useAuthContext();
+
   useEffect(() => {
     const displayConsultations = async () => {
-      const { data } = await axios.get("http://localhost:5000/conditions")
+      const { data } = await axios.get(`http://localhost:5000/conditions/users/${user.user_id}`)
       setConsultations(data.data)
       setLoading(false)
     }

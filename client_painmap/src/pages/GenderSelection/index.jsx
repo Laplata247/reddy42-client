@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 // import { Model } from '../../components/Model';
 import { useGender } from '../../components/contexts';
 import './styles.css';
+import { useGender } from '../../contexts';
 
 
 
