@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useLogin } from "../../hooks/useLogin"
 import { Link, useNavigate } from 'react-router-dom';
-import { Logo } from '../../components/Logo';
+// import { Logo } from '../../components/Logo';
 import './styles.css'
 
 const Login = () => {
