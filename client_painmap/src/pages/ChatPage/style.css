@@ -157,6 +157,7 @@
     width: 100%;
     font-size: small;
     text-align: center;
+    color: #607d8b;
   }
   
   .message-meta #author {
@@ -167,6 +168,7 @@
   .chat-window .chat-body .message .message-meta {
     display: flex;
     font-size: 12px;
+    color: #607d8b;
   }
   
   .chat-window .chat-footer {
