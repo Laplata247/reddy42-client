@@ -1,26 +1,25 @@
 import React, { useEffect } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import * as Pages from './pages';
 import { Header } from './components';
 
 function App() {
+  const location = useLocation();
 
   useEffect(() => {
-
     function googleTranslateElementInit() {
-      new window.google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+      new window.google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
     }
 
     if (window.google && window.google.translate) {
       googleTranslateElementInit();
-    } 
-    else {
+    } else {
       const script = document.createElement('script');
       script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
       script.defer = true;
       script.async = true;
-    
+
       script.onload = () => {
         setTimeout(() => {
           if (typeof window.google.translate.TranslateElement === 'function') {
@@ -39,26 +38,29 @@ function App() {
     }
   }, []);
 
+  const showHeader = location.pathname !== ''; // Adjust this condition as needed
+
   return (
     <Routes>
       <Route path="/landing" element={<Pages.LandingPage />} />
       <Route path="/signup" element={<Pages.SignupPage />} />
-      {/* <Route path="/login" element={<Pages.LoginPage />} /> */}
       <Route path="/login" element={<Pages.Login />} />
 
-      <Route path="/" element={<Header />}>
-        <Route index element={<Pages.HomePage />} />
-        
-        <Route path="/select-gender" element={<Pages.GenderSelection />} />
-        <Route path="/painmap" element={<Pages.MapPainPage />} />
+      {showHeader && (
+        <Route path="/" element={<Header />}>
+          <Route index element={<Pages.HomePage />} />
 
-        <Route path="/chat" element={<Pages.ChatPage />} />
-        <Route path="/history">
-          <Route index element={<Pages.MedicalHistoryPage />} />
-          <Route path=":id" element={<Pages.ConsultationPage />} />
+          <Route path="/select-gender" element={<Pages.GenderSelection />} />
+          <Route path="/painmap" element={<Pages.MapPainPage />} />
+
+          <Route path="/chat" element={<Pages.ChatPage />} />
+          <Route path="/history">
+            <Route index element={<Pages.MedicalHistoryPage />} />
+            <Route path=":id" element={<Pages.ConsultationPage />} />
+          </Route>
+          <Route path="*" element={<Pages.NotFoundPage />} />
         </Route>
-        <Route path="*" element={<Pages.NotFoundPage />} />
-      </Route>
+      )}
     </Routes>
   );
 }

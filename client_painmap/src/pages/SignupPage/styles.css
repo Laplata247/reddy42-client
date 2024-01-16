@@ -2,20 +2,52 @@ body, html {
   height: 100%;
   margin: 0;
   font-family: 'Poppins', sans-serif;
+  overflow: auto;
+  max-height: 100vh;
+  padding: 20px;
 }
-/* styles.css */
+
+.Signup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  height: 100vh; /* This will take the full height of the viewport */
+}
+
+.Signup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  height: 100vh; /* This will take the full height of the viewport */
+}
 
 .signup-container {
-  position: relative; /* This sets up a positioning context for absolutely positioned children */
+  flex: 1;
+  padding: 20px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  height: 600px
+  align-items: center;
 }
+
+.message {
+  flex: 1;
+  padding: 20px;
+}
+
+
 .signup-container::-webkit-scrollbar {
   display: none;
 }
+
+.message{
+  position: relative; /* This sets up a positioning context for absolutely positioned children */
+  display: flex;
+  align-items: left;
+  justify-content: left;
+}
+
 /* .circle-3{
   background: linear-gradient(to top right, #ffffff, #FDAF76);
   height: 60rem;
@@ -48,11 +80,6 @@ body, html {
   right: 10%; /* Adjust positioning as needed */
 } */
 
-.signup-header {
-  z-index: 1; /* Ensure the header is above the circles */
-  position: relative; /* Needed for z-index to take effect */
-  /* Add other styles for your header here */
-}
 
 /* Styling for the left panel with the introductory content */
 .intro-panel {

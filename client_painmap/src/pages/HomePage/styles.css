@@ -11,6 +11,7 @@ height: 100px;
 flex-shrink: 0;
 font-family: 'Poppins', sans-serif;
 font-weight: 600;
+color: white;
 }
 .chat{
   border-radius: 25% 16% 37% 31% / 19% 18% 46% 47%;
@@ -21,6 +22,7 @@ height: 100px;
 flex-shrink: 0;
 font-family: 'Poppins', sans-serif;
 font-weight: 600;
+color: white;
 }
 .history{
   border-radius: 0% 23% 40% 36% / 40% 18% 35% 32%;
@@ -31,6 +33,7 @@ height: 100px;
 flex-shrink: 0;
 font-family: 'Poppins', sans-serif;
 font-weight: 600;
+color: white;
 }
 .images{
   border-radius: 23% 0% 40% 36% / 20% 18% 35% 32%;
@@ -41,4 +44,5 @@ height: 100px;
 flex-shrink: 0;
 font-family: 'Poppins', sans-serif;
 font-weight: 600;
+color: white;
 }

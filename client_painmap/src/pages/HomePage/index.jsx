@@ -1,27 +1,31 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './styles.css';
 
 const HomePage = () => {
-
   return (
     <div className='PageWrapper'>
       <h1>Welcome back, name!</h1>
-      <div class="articulate">
-      <p>Articulate Pain</p>
-      </div>
-      <div class="chat">
-      <p>Chat with GP</p>
-      </div>
-      <div class="history">
-      <p>Medical History</p>
-      </div>
+      <Link to="/chat">
+        <div className="chat">
+          <p>Chat with GP</p>
+        </div>
+      </Link>
+      <Link to="/history">
+        <div className="history">
+          <p>Medical History</p>
+        </div>
+      </Link>
+      <Link to="/select-gender">
+        <div className="articulate">
+          <p>Articulate Pain</p>
+        </div>
+      </Link>
       <div class="images">
       <p>Past Images</p>
       </div>
     </div>
-      
   );
+};
 
-}
-
-export default HomePage
+export default HomePage;

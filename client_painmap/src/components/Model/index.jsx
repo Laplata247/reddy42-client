@@ -18,7 +18,7 @@ function Model({decals, setDecals, sticker, scaleMod}) {
   useFrame(()=>{
     // console.log('x axis: ', mouse.x)
     // console.log('y axis: ', mouse.y)
-    console.log(scaleMod)
+    //console.log(scaleMod)
 
   })
   
