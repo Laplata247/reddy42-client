@@ -52,7 +52,7 @@ const MapPainPage = () => {
 
 
       <div class="center-container">
-      <button onClick={removeDecal}>Undo</button>
+      
         <Canvas id='canvasDiv'
           gl={{
             preserveDrawingBuffer: true // allow showing model on the screenshot
@@ -89,7 +89,7 @@ const MapPainPage = () => {
         {visible ? <PainForm toggle={togglePopup} image={img} /> : null}
         
         <Stickers setSticker={setSticker} setScaleMod={setScaleMod} />
-
+        <button onClick={removeDecal}>Undo</button>
       </div>
    
 </>
