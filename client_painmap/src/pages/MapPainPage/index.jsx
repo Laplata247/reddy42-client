@@ -47,7 +47,7 @@ const MapPainPage = () => {
   }
 
   return (
-    <>
+    <div className='map-pain-page'>
       <h1>Map Pain Page</h1>
 
       <button onClick={toggleDrawing}>
@@ -97,7 +97,7 @@ const MapPainPage = () => {
         <img width='500' height='500' src={`${img}`} />:
       </div>
 
-    </>
+    </div>
   );
 };
 

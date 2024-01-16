@@ -11,7 +11,7 @@ body {
     overflow: hidden;
 }
 
-.circle-1 {
+.login-circle-1 {
     /* background-color: #FDAF76; */
     background: linear-gradient(to top right, #ffffff, #FDAF76);
     height: 60rem;
@@ -23,7 +23,7 @@ body {
     transform: translateX(-20%) translateY(-10%);
 }
 
-.circle-2 {
+.login-circle-2 {
     /* background-color: #FF8484; */
     background: linear-gradient(to top right, #ffffff, #FF8585);
     height: 60rem;

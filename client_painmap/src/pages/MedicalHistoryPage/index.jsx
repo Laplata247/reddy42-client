@@ -19,8 +19,8 @@ const MedicalHistoryPage = () => {
   }, [])
 
   return (
-    <>
-      <h1>Medical History Page</h1 >
+    <div className='history-page'>
+      <h1>Medical History Page</h1>
       <div className='consultations'>
         {
           loading
@@ -36,7 +36,7 @@ const MedicalHistoryPage = () => {
             </>
         }
       </div>
-    </>
+    </div>
   )
 }
 

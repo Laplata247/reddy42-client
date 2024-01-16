@@ -4,8 +4,9 @@ import './styles.css';
 const HomePage = () => {
 
   return (
-    <div>
+    <div className='home'>
       <h1>Home Page</h1>
+      {/* <div id="google_translate_element"></div> */}
     </div>
   );
 

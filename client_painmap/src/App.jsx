@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import * as Pages from './pages';
-import { Header } from './components';
+import { Layout } from './components';
 
 function App() {
 
@@ -40,12 +40,13 @@ function App() {
   }, []);
 
   return (
+    <>
     <Routes>
       <Route path="/landing" element={<Pages.LandingPage />} />
       <Route path="/signup" element={<Pages.SignupPage />} />
       <Route path="/login" element={<Pages.LoginPage />} />
 
-      <Route path="/" element={<Header />}>
+      <Route path="/" element={<Layout />}>
         <Route index element={<Pages.HomePage />} />
         
         <Route path="/select-gender" element={<Pages.GenderSelection />} />
@@ -59,6 +60,7 @@ function App() {
         <Route path="*" element={<Pages.NotFoundPage />} />
       </Route>
     </Routes>
+    </>
   );
 }
 

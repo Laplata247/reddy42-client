@@ -2,9 +2,12 @@ header {
   display: flex;
   justify-content: space-around;
   width: 100%;
+  position: fixed;
+  top: 40px;
+  z-index: 10;
 }
 nav > a {
     margin-right: 0.5rem;
     color: var(--text);
-  }
+}
   

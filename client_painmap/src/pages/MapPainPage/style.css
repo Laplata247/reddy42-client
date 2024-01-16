@@ -1,3 +1,6 @@
+.map.pain-page {
+    z-index: 10;
+}
 #canvasDiv {
     height: 60vh;
     width: 70vw;
