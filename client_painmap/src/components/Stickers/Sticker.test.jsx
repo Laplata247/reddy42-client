@@ -17,7 +17,7 @@ describe("Navbar Component", () => {
   it("displays menu when the page is rendered", () => {
     const nav = screen.getByRole("menu");
     expect(nav).toBeInTheDocument();
-    expect(nav.childNodes.length).toBe(6);
+    expect(nav.childNodes.length).toBe(2);
   });
 
   it("opens the menue when clicking on the arrow", () => {
