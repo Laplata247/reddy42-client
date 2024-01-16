@@ -57,6 +57,7 @@ const MapPainPage = () => {
       </button> */}
 
       <div class="center-container">
+      <button onClick={removeDecal}>Undo</button>
         <Canvas id='canvasDiv'
           gl={{
             preserveDrawingBuffer: true // allow showing model on the screenshot
@@ -91,8 +92,7 @@ const MapPainPage = () => {
 
         <button onClick={togglePopup}>Save image</button>
         {visible ? <PainForm toggle={togglePopup} image={img} /> : null}
-
-        <button onClick={removeDecal}>Undo</button>
+        
         <Stickers setSticker={setSticker} setScaleMod={setScaleMod} />
 
         {/* {drawingEnabled && <DrawingOverlay modelRef={Model} />} Pass the modelRef as a prop */}
