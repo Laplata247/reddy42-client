@@ -12,7 +12,7 @@ const Login = () => {
     e.preventDefault()
 
     await login(email, password)
-    navigate("/");
+    // navigate("/");
   }
 
   return (
@@ -33,11 +33,11 @@ const Login = () => {
           value={password}
         />
 
-        <button disabled={Loading} id="loginButton">Log in</button>
+        <button role='thisButton'disabled={Loading} id="loginButton">Log in</button>
         {error && <div className="error">{error}</div>}
       </form>
 
-      <Link to="/signup"><button id="signupLink">No account?</button></Link>
+      <Link to="/signup"><button role='thatButton'id="signupLink">No account?</button></Link>
 
     </>
   )
