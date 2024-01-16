@@ -48,8 +48,8 @@ const MapPainPage = () => {
 
 
   return (
-    <div className='PageWrapper'>
-
+<div role="wrapper" className='PageWrapper'>
+    
       <h1>Map Pain Page</h1>
 
       {/* <button onClick={toggleDrawing}>
@@ -57,6 +57,7 @@ const MapPainPage = () => {
       </button> */}
 
       <div class="center-container">
+      <button onClick={removeDecal}>Undo</button>
         <Canvas id='canvasDiv'
           gl={{
             preserveDrawingBuffer: true // allow showing model on the screenshot
@@ -70,25 +71,28 @@ const MapPainPage = () => {
             // background: 'white',
             // border: '2px solid Green'
           }}
+        shadows
           camera={{ position: [0, 0, 2] }}
         >
+
           <ambientLight intensity={0.5} />
+        <spotLight position={[1, 5, -1]} angle={0.45} penumbra={1} />
           <directionalLight
-            position={[5, 5, 5]}
+            position={[5, 5, 1]}
             intensity={3}
             castShadow
             shadow-mapSize-width={1024}
             shadow-mapSize-height={1024}
           />
-          <Model decals={decals} setDecals={setDecals} sticker={sticker} scaleMod={scaleMod} />
+          <Model decals={decals} setDecals={setDecals} sticker={sticker} scaleMod={scaleMod}/>
+        <color attach="background" args={["lightpink"]} />
           {/* <RandomizedLight amount={8} radius={10} ambient={0.5} position={[2.5, 5, -5]} bias={0.001} /> */}
           <OrbitControls enableRotate={true} enablePan={true} enableZoom={true} />
         </Canvas>
 
         <button onClick={togglePopup}>Save image</button>
         {visible ? <PainForm toggle={togglePopup} image={img} /> : null}
-
-        <button onClick={removeDecal}>Undo</button>
+        
         <Stickers setSticker={setSticker} setScaleMod={setScaleMod} />
 
         {/* {drawingEnabled && <DrawingOverlay modelRef={Model} />} Pass the modelRef as a prop */}

@@ -6,7 +6,7 @@ const HomePage = () => {
   return (
     <div className='home'>
       <h1>Home Page</h1>
-      <div className='PageWrapper'>
+      <div role="PageWrapper"className='PageWrapper'>
         <h1>Welcome back, name!</h1>
         <div class="articulate">
           <p>Articulate Pain</p>
