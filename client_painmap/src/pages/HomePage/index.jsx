@@ -5,7 +5,6 @@ const HomePage = () => {
 
   return (
     <div className='home'>
-      <h1>Home Page</h1>
       <div className='PageWrapper'>
         <h1>Welcome back, name!</h1>
         <div className="articulate">

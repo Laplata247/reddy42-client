@@ -18,8 +18,7 @@ const Header = () => {
     return (
         <main>
             <header>
-                <div id="google_translate_element"></div>
-                <nav>
+                <nav className='navbar'>
                     {user && (
                         <div className="userDisplay">
                             <NavLink to="/">Home</NavLink>
