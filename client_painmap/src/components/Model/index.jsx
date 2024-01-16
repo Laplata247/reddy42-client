@@ -18,7 +18,7 @@ function Model({decals, setDecals, sticker, scaleMod}) {
   useFrame(()=>{
     // console.log('x axis: ', mouse.x)
     // console.log('y axis: ', mouse.y)
-    console.log(scaleMod)
+    //console.log(scaleMod)
 
   })
   
@@ -63,7 +63,9 @@ function Model({decals, setDecals, sticker, scaleMod}) {
   return (
       <mesh onClick={handleClick} ref={modelRef}
         castShadow receiveShadow position={[0, -1.1, 0]}  geometry={geometry} dispose={null} scale={[1.3, 1.3, 1.3]}>
-       <meshStandardMaterial/>
+       {/* <meshStandardMaterial color='#d1b2b8'/> */}
+       {/* <meshNormalMaterial color='#d1b2b8'/> */}
+       <meshNormalMaterial color="pink" />
        {decals.map(decal => 
         <Decals 
           key={decal['x']}
@@ -71,8 +73,7 @@ function Model({decals, setDecals, sticker, scaleMod}) {
           position={[decal['x'], decal['y'], decal['z']]} 
           scale={decal['scale']} 
           rotation={[decal['rx'], decal['ry'], decal['rz']]}/>)}
-        {/* <axesHelper args={[5]} />
-        <gridHelper /> */}
+        {/* <gridHelper /> */}
       </mesh>
 
   );

@@ -1,10 +1,6 @@
 
-body {
-  overflow-y: hidden;
-  /* padding: 10%; */
-}
 #canvasDiv {
-    background: rgba(65, 65, 65, 0.4);
+    background: rgba(87, 133, 118, 0.4);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(9px);
     -webkit-backdrop-filter: blur(9px);
@@ -16,12 +12,7 @@ body {
     border-radius: 20px;
 }
 
-.PageWrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100vh; /* Full viewport height */
-  overflow-y: auto; /* Enable scrolling */
-}
+
 
 .center-container{
   display: flex;
@@ -30,7 +21,7 @@ body {
   margin-top: 90px;
   padding-bottom: 50px;
 }
-
+/* 
 .PageWrapper::-webkit-scrollbar {
   display: none;
-}
+} */

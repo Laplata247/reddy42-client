@@ -7,6 +7,17 @@ nav {
 
 }
 
+h2.title{
+    font-size: 20px;
+    width: 100px;
+   
+}
+
+
+.header1{
+max-width: 100px;
+
+}
 
 #stickerSelectorOpen{
     position: fixed;
