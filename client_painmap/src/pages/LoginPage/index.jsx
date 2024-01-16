@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 // Correct import statements
-import { LoginForm, Logo } from '/src/components';
+import {Logo } from '../../components/Logo';
 
 import './styles.css';
 
@@ -18,10 +18,9 @@ const Login = () => {
             <div className='login-circle-2'></div>
             <div className='login-div'>
                 <h1>Hi, there!</h1>
-                <LoginForm />
             </div>
         </div>
       )
     }   
 
-export default Login;
+export default Login; 

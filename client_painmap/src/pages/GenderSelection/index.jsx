@@ -21,10 +21,10 @@ function GenderSelection() {
   };
 
   return (
-    <div className='select-gender'>
+    <div role="selector"className='select-gender'>
       <h1>Choose Sex</h1>
-      <button className='gender-btn' onClick={handleSelectMale}>Select Male</button>
-      <button className='gender-btn' onClick={handleSelectFemale}>Select Female</button>
+      <button role='butt1' className='gender-btn' onClick={handleSelectMale}>Select Male</button>
+      <button role='butt2' className='gender-btn' onClick={handleSelectFemale}>Select Female</button>
     </div>
   );
 }

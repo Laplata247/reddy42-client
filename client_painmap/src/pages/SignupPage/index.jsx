@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { SignupForm } from '../../components';
 import './styles.css';
 
+
 const Signup = () => {
 
     useEffect(() => {
@@ -9,13 +10,20 @@ const Signup = () => {
     }, []);
 
     return (
-        <div className="signup-container"> {/* This container will help position your circles */}
-            {/* <div className='circle-3'></div>
-            <div className='circle-4'></div> */}
-            <h1 className="signup-header">Sign up</h1>
-            <SignupForm />
+        <div className='Signup'>
+            <div className="message">
+                <div className="header">
+                    <h1>Visualize Your Health, Simplify Your Care.</h1>
+                </div>
+                <p>Our app transforms pain into clear images, making doctor communication easy and frustration-free. Sign up for honest, efficient medical consultations.</p>
+            </div>
+            <div className="signup-container">
+                <SignupForm />
+            </div>
         </div>
     );
+    
+    
 }
 
 export default Signup;

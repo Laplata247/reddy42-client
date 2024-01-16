@@ -5,7 +5,6 @@ import { OrbitControls, RandomizedLight, AccumulativeShadows, Environment } from
 import { DecalGeometry } from 'three/addons/geometries/DecalGeometry.js'; //import decal geometry pakage 
 import html2canvas from 'html2canvas';
 import { Model, Stickers, PainForm } from '../../components';
-import DrawingOverlay from '../../components/DrawingOverlay';
 
 import './style.css';
 
@@ -48,15 +47,12 @@ const MapPainPage = () => {
 
 
   return (
-    <div className='PageWrapper'>
-
+<>
       <h1>Map Pain Page</h1>
 
-      {/* <button onClick={toggleDrawing}>
-        {drawingEnabled ? 'Disable Drawing' : 'Enable Drawing'}
-      </button> */}
 
       <div class="center-container">
+      
         <Canvas id='canvasDiv'
           gl={{
             preserveDrawingBuffer: true // allow showing model on the screenshot
@@ -70,32 +66,37 @@ const MapPainPage = () => {
             // background: 'white',
             // border: '2px solid Green'
           }}
+        shadows
           camera={{ position: [0, 0, 2] }}
         >
+
           <ambientLight intensity={0.5} />
+        <spotLight position={[1, 5, -1]} angle={0.45} penumbra={1} />
           <directionalLight
-            position={[5, 5, 5]}
+            position={[5, 5, 1]}
             intensity={3}
             castShadow
             shadow-mapSize-width={1024}
             shadow-mapSize-height={1024}
           />
-          <Model decals={decals} setDecals={setDecals} sticker={sticker} scaleMod={scaleMod} />
+          <Model decals={decals} setDecals={setDecals} sticker={sticker} scaleMod={scaleMod}/>
+        {/* <color attach="background" args={["lightpink"]} /> */}
           {/* <RandomizedLight amount={8} radius={10} ambient={0.5} position={[2.5, 5, -5]} bias={0.001} /> */}
           <OrbitControls enableRotate={true} enablePan={true} enableZoom={true} />
         </Canvas>
 
-        <button onClick={togglePopup}>Save image</button>
-        {visible ? <PainForm toggle={togglePopup} image={img} /> : null}
-
-        <button onClick={removeDecal}>Undo</button>
+        {/* <button onClick={togglePopup}>Save image</button>
+        {visible ? <PainForm toggle={togglePopup} image={img} /> : null} */}
+        
         <Stickers setSticker={setSticker} setScaleMod={setScaleMod} />
-
-        {/* {drawingEnabled && <DrawingOverlay modelRef={Model} />} Pass the modelRef as a prop */}
-
-      </div>
-    </div>
-
+      
+      <div id="button-container">
+      <button onClick={togglePopup}>Save image</button>
+        {visible ? <PainForm toggle={togglePopup} image={img} /> : null}
+          <button onClick={removeDecal}>Undo</button>
+        </div>
+        </div>
+</>
   );
 };
 

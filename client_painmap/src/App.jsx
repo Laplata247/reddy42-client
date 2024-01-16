@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import * as Pages from './pages';
 import { Layout } from './components';
@@ -7,11 +7,11 @@ import { Header } from './components';
 import { useAuthContext } from './hooks/useAuthContext'
 
 function App() {
+  const location = useLocation();
 
   const { user } = useAuthContext();
 
   useEffect(() => {
-
     function googleTranslateElementInit() {
       new window.google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
     }
@@ -43,6 +43,8 @@ function App() {
     }
   }, []);
 
+  const showHeader = location.pathname !== ''; // Adjust this condition as needed
+
   return (
     <>
     <Routes>
@@ -63,7 +65,22 @@ function App() {
 
       <Route path="/signup" element={<Pages.SignupPage />} />
       <Route path="/login" element={<Pages.Login />} />
-      <Route path="*" element={<Pages.NotFoundPage />} />
+
+      {showHeader && (
+        <Route path="/" element={<Header />}>
+          <Route index element={<Pages.HomePage />} />
+
+          <Route path="/select-gender" element={<Pages.GenderSelection />} />
+          <Route path="/painmap" element={<Pages.MapPainPage />} />
+
+          <Route path="/chat" element={<Pages.ChatPage />} />
+          <Route path="/history">
+            <Route index element={<Pages.MedicalHistoryPage />} />
+            <Route path=":id" element={<Pages.ConsultationPage />} />
+          </Route>
+          <Route path="*" element={<Pages.NotFoundPage />} />
+        </Route>
+      )}
     </Routes>
     </>
   );

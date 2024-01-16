@@ -21,7 +21,7 @@ const ConsultationPage = () => {
     }, [])
 
     return (
-        <div className='consultationDetails'>
+        <div role='details'className='consultationDetails'>
             {
                 loading
                     ? <p style={{ marginTop: "200px", fontSize: "70px" }}>Loading...</p>
