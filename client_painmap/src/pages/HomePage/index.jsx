@@ -8,16 +8,16 @@ const HomePage = () => {
       <h1>Home Page</h1>
       <div className='PageWrapper'>
         <h1>Welcome back, name!</h1>
-        <div class="articulate">
+        <div className="articulate">
           <p>Articulate Pain</p>
         </div>
-        <div class="chat">
+        <div className="chat">
           <p>Chat with GP</p>
         </div>
-        <div class="history">
+        <div className="history">
           <p>Medical History</p>
         </div>
-        <div class="images">
+        <div className="images">
           <p>Past Images</p>
         </div>
       </div>
