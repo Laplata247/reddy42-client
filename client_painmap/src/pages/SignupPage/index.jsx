@@ -10,8 +10,8 @@ const Signup = () => {
 
     return (
         <div className="signup-container"> {/* This container will help position your circles */}
-            <div className='circle-3'></div>
-            <div className='circle-4'></div>
+            {/* <div className='circle-3'></div>
+            <div className='circle-4'></div> */}
             <h1 className="signup-header">Sign up</h1>
             <SignupForm />
         </div>
