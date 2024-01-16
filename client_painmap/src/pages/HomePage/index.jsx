@@ -4,20 +4,10 @@ import './styles.css';
 
 const HomePage = () => {
   return (
-    <div className='home'>
+    <div role='PageWrapper'className='home'>
+      <h1>Home Page</h1>
       <div className='PageWrapper'>
         <h1>Welcome back, name!</h1>
-<<<<<<< HEAD
-        <div className="articulate">
-          <p>Articulate Pain</p>
-        </div>
-        <div className="chat">
-          <p>Chat with GP</p>
-        </div>
-        <div className="history">
-          <p>Medical History</p>
-        </div>
-=======
         <Link to="/chat">
           <div className="chat">
             <p>Chat with GP</p>
@@ -33,7 +23,6 @@ const HomePage = () => {
             <p>Articulate Pain</p>
           </div>
         </Link>
->>>>>>> 3d331cf21464ab698f939ad05f1095cb72fafa73
         <div className="images">
           <p>Past Images</p>
         </div>

@@ -4,9 +4,20 @@ nav {
     --activeSticker-color: rgb(62, 62, 101);
     box-sizing: border-box;
     background: (--side-color);
-
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+nav::-webkit-scrollbar {
+    display: none;
 }
 
+nav ::-webkit-scrollbar-thumb {
+    background: transparent; /* Make the scrollbar thumb transparent */
+}
+
+nav ::-webkit-scrollbar-track {
+    background: transparent; /* Make the scrollbar track transparent */
+}
 h2.title{
     font-size: 20px;
     width: 100px;

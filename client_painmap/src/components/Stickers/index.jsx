@@ -48,10 +48,10 @@ function Stickers({setSticker, setScaleMod}) {
 
 
   return (
-    <nav role="menu" id={className}>
+    <nav role="menu" role="menu" id={className}>
         <header>
             {(open? <h2 class='title'>PS</h2>: <h2 class='title'>Pain Selector</h2> )}
-            <box-icon role='arrow'id='sideArrow' name='right-arrow-circle' onClick={openMenu}></box-icon>
+            <box-icon role='arrow'role='arrow'id='sideArrow' name='right-arrow-circle' onClick={openMenu}></box-icon>
         </header>
         <section id='menu'>
             <div id='choices'>
@@ -62,12 +62,10 @@ function Stickers({setSticker, setScaleMod}) {
                     handleClick(1)
                 }}><img src={"src/assets/dot_4Sticker.png"} alt="basic dot" height={55*size1*0.35} width={65*size1*0.35}/>
                 </p>
-<<<<<<< HEAD
-                <p class={activeSticker2} onClick={e => {
-=======
-                <p role="sticker" class={active2} onClick={e => {
+
+                <p role="sticker" class={activeSticker2} onClick={e => {
                     handleClick(2)
->>>>>>> 3d331cf21464ab698f939ad05f1095cb72fafa73
+                    handleClick(2)
                     setSticker('src/assets/bolts.png')
                     setScaleMod(size2)
                     
