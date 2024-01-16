@@ -52,19 +52,19 @@ const PainForm = (props) => {
                 <form onSubmit={handleSubmit}>
                     <label>
                         Add title:
-                        <input type="text" value={condition} required={true}
+                        <input role="condition" type="text" value={condition} required={true}
                         placeholder='e.g. headache'
                         onChange={e => setCondition(e.target.value)} />
                     </label>
                     <label>
                         Description:
-                        <input type="text" value={description} required={true}
+                        <input role="description"type="text" value={description} required={true}
                         placeholder='e.g. throbbing pain on left side of head'
                         onChange={e => setDescription(e.target.value)} />
                     </label>
                     <label>
                         Start date:
-                        <input type="datetime-local" value={startDate} required={true}
+                        <input role='date' type="datetime-local" value={startDate} required={true}
                         onChange={e => setStartDate(e.target.value)} />
                     </label>
                     <button type="submit">Add</button>

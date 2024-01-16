@@ -49,6 +49,20 @@ function App() {
     <>
     <Routes>
       <Route path="/landing" element={<Pages.LandingPage />} />
+
+      <Route path="/" element={<Header />}>
+        <Route index element={<Pages.HomePage />} />
+
+        <Route path="/select-gender" element={user ? <Pages.GenderSelection /> : < Pages.HomePage />} />
+        <Route path="/painmap" element={user ? <Pages.MapPainPage /> : < Pages.HomePage />} />
+
+        <Route path="/chat" element={user ? <Pages.ChatPage /> : < Pages.HomePage />} />
+        <Route path="/history">
+          <Route index element={user ? <Pages.MedicalHistoryPage /> : < Pages.HomePage />} />
+          <Route path=":id" element={user ? <Pages.ConsultationPage /> : < Pages.HomePage />} />
+        </Route>
+      </Route>
+
       <Route path="/signup" element={<Pages.SignupPage />} />
       <Route path="/login" element={<Pages.Login />} />
 

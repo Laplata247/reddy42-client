@@ -48,11 +48,11 @@ function Stickers({setSticker, setScaleMod}) {
 
 
   return (
-    <nav id={className}>
-        <header1>
+    <nav role="menu" id={className}>
+        <header>
             {(open? <h2 class='title'>PS</h2>: <h2 class='title'>Pain Selector</h2> )}
-            <box-icon id='sideArrow' name='right-arrow-circle' onClick={openMenu}></box-icon>
-        </header1>
+            <box-icon role='arrow'id='sideArrow' name='right-arrow-circle' onClick={openMenu}></box-icon>
+        </header>
         <section id='menu'>
             <div id='choices'>
                 <p class='choiceTitle'>Symbol</p>
@@ -62,10 +62,11 @@ function Stickers({setSticker, setScaleMod}) {
                     handleClick(1)
                 }}><img src={"src/assets/dot_4Sticker.png"} alt="basic dot" height={55*size1*0.35} width={65*size1*0.35}/>
                 </p>
-                <p class={active2} onClick={e => {
+                <p role="sticker" class={active2} onClick={e => {
+                    handleClick(2)
                     setSticker('src/assets/bolts.png')
                     setScaleMod(size2)
-                    handleClick(2)
+                    
                 }}><img src={"src/assets/boltsSticker.png"} alt="bolts" height={65*size2*0.3} width={65*size2*0.3}/></p>
                 <p class={active3} onClick={e => {
                     setSticker('src/assets/circles.png')
@@ -97,7 +98,7 @@ function Stickers({setSticker, setScaleMod}) {
                 </div>
                 <div class='scale'>
                     <label for="size2">s</label>
-                    <input type="range" id="size2" name="volume" min="1" max="10" onChange={e =>{setSize2(e.target.value*0.3); setScaleMod(size2)}}/>
+                    <input role='scale' type="range" id="size2" name="volume" min="1" max="10" onChange={e =>{setSize2(e.target.value*0.3); setScaleMod(size2)}}/>
                     <label for="size2">L</label>
                 </div>
                 <div class='scale'>
@@ -123,19 +124,6 @@ function Stickers({setSticker, setScaleMod}) {
 
             </div>
         </section>
-        {/* <p class='stickerButton'onClick={e => {
-            console.log("sticker set to dot"), 
-            setSticker('src/assets/burning.gif')
-            setScaleMod(1)
-            }}><img src={"src/assets/burning.gif"} alt="burning" height="50" border-radius="20px"></img>
-        </p> */}
-        {/* <p class='stickerButton' onClick={e => {
-            console.log("sticker set to pizza"),
-            setSticker('src/assets/pizza.png')
-            setScaleMod(1)
-        }}>circle</p> */}
-        {/* <p class='stickerButton'>bolt</p>
-        <p class='stickerButton'>blur</p> */}
     </nav>
   )
 }

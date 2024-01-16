@@ -1,6 +1,3 @@
-html{
-  padding: 50px;
-}
 
 #canvasDiv {
     background: rgba(87, 133, 118, 0.4);
@@ -15,12 +12,7 @@ html{
     border-radius: 20px;
 }
 
-/* .PageWrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  overflow-y: auto;
-} */
+
 
 .center-container{
   display: flex;
