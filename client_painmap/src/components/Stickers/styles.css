@@ -7,8 +7,16 @@ nav {
 
 }
 
+h2.title{
+    font-size: 20px;
+    width: 100px;
+   
+}
+
+
 .header1{
-background-color: transparent;
+max-width: 100px;
+
 }
 
 #stickerSelectorOpen{

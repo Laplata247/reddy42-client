@@ -5,7 +5,6 @@ import { OrbitControls, RandomizedLight, AccumulativeShadows, Environment } from
 import { DecalGeometry } from 'three/addons/geometries/DecalGeometry.js'; //import decal geometry pakage 
 import html2canvas from 'html2canvas';
 import { Model, Stickers, PainForm } from '../../components';
-import DrawingOverlay from '../../components/DrawingOverlay';
 
 import './style.css';
 
@@ -48,13 +47,9 @@ const MapPainPage = () => {
 
 
   return (
-    <div className='PageWrapper'>
-
+<>
       <h1>Map Pain Page</h1>
 
-      {/* <button onClick={toggleDrawing}>
-        {drawingEnabled ? 'Disable Drawing' : 'Enable Drawing'}
-      </button> */}
 
       <div class="center-container">
         <Canvas id='canvasDiv'
@@ -91,11 +86,9 @@ const MapPainPage = () => {
         <button onClick={removeDecal}>Undo</button>
         <Stickers setSticker={setSticker} setScaleMod={setScaleMod} />
 
-        {/* {drawingEnabled && <DrawingOverlay modelRef={Model} />} Pass the modelRef as a prop */}
-
       </div>
-    </div>
-
+   
+</>
   );
 };
 
