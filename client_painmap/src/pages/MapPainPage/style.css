@@ -25,3 +25,7 @@
 .PageWrapper::-webkit-scrollbar {
   display: none;
 } */
+
+.center-container .button{
+  display: flex;
+}
