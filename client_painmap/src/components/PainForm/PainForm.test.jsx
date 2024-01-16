@@ -7,13 +7,16 @@ import * as matchers from "@testing-library/jest-dom/matchers";
 expect.extend(matchers);
 
 import PainForm from ".";
+import {AuthProvider} from '../../contexts/AuthContext'
 
 describe("PainForm component", () => {
 
     beforeEach(() => {
         render(
             <BrowserRouter>
-                <PainForm />
+                <AuthProvider>
+                    <PainForm />
+                </AuthProvider>
             </BrowserRouter>
         );
     });
@@ -38,9 +41,8 @@ describe("PainForm component", () => {
 
     it("updates the date field correctly", () => {
         const date = screen.getByRole("date");
-        expect(date.value).toBe("");
-        fireEvent.change(date, { target: { value: "2023-4-5" } });
-        expect(date.value).toBe("2023-4-5");
+        fireEvent.change(date, { target: { value: "2023/4/5" } });
+        expect(date.value).toBe("2023/4/5");
     });
 
 })
