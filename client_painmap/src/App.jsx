@@ -48,7 +48,7 @@ function App() {
     <Routes>
       <Route path="/landing" element={<Pages.LandingPage />} />
 
-      <Route path="/" element={<Layout />}>
+      <Route path="/" element={<Header />}>
         <Route index element={<Pages.HomePage />} />
 
         <Route path="/select-gender" element={user ? <Pages.GenderSelection /> : < Pages.HomePage />} />
