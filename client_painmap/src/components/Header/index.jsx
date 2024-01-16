@@ -26,7 +26,7 @@ const Header = () => {
                             <NavLink to="/chat">Chat</NavLink>
                             <NavLink to="/history">Medical History</NavLink>
                             <span>{user.email}</span>
-                            <button onClick={handleClick}>Log out</button>
+                            {/* <button onClick={handleClick}>Log out</button> */}
                         </div>
                     )}
                     {!user && (
@@ -37,6 +37,11 @@ const Header = () => {
                     )}
                 </nav>
                 <div id="google_translate_element"></div>
+                {user && (
+                        <div className="userDisplay">
+                            <button onClick={handleClick}>Log out</button>
+                        </div>
+                    )}
             </header>
             <Outlet />
         </main>
