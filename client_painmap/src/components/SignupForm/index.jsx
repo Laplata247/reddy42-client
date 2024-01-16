@@ -138,7 +138,7 @@ const SignupForm = () => {
                 <input type='password' name='password' placeholder='must be 8 characters' onChange={updatePassword} role='password' />
 
                 <label>Are you a NHS member?</label>
-                <div>
+                <div className='questions'>
                     <input
                         type='radio'
                         name='nhsMember'
@@ -147,7 +147,7 @@ const SignupForm = () => {
                         onChange={(e) => e.target.checked && setNhsMember(true)}
                         role='nhsMember'
                     />
-                    <label htmlFor='nhsMemberYes'>True</label>
+                    <label htmlFor='nhsMemberYes'>Yes</label>
 
                     <input
                         type='radio'
@@ -157,7 +157,7 @@ const SignupForm = () => {
                         onChange={(e) => e.target.checked && setNhsMember(false)}
                         role='nhsMember'
                     />
-                    <label htmlFor='nhsMemberNo'>False</label>
+                    <label htmlFor='nhsMemberNo'>No</label>
                 </div>
                 
                 <input type='submit' value='Create Account'/>
