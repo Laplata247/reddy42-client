@@ -12,7 +12,6 @@ body, html {
   backdrop-filter: blur( 7px );
   -webkit-backdrop-filter: blur( 7px );
   border-radius: 10px;
-  height: 400px;
   width: 400px;
   overflow: auto;
   border-radius: 20px;
@@ -63,4 +62,9 @@ border-radius: 10px;
   display: flex; /* Aligns radio buttons inline */
   gap: 10px; /* Space between radio buttons */
   margin-bottom: 1rem;
+}
+
+.signup-container .questions{
+display: flex;
+background-color: transparent;
 }

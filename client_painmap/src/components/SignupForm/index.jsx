@@ -138,7 +138,7 @@ const SignupForm = () => {
                 <input type='password' name='password' placeholder='must be 8 characters' onChange={updatePassword} role='password' />
 
                 <label>Are you a NHS member?</label>
-                <div>
+                <div className='questions'>
                     <input
                         type='radio'
                         name='nhsMember'
