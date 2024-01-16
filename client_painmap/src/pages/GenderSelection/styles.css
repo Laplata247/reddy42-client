@@ -1,0 +1,12 @@
+.select-gender {
+    z-index: 10;
+}
+
+.gender-btn {
+    margin: 0 1rem;
+    border-radius:10px;
+    border: 0;
+    box-shadow:  0 0 10px 1px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    padding: 1rem;
+}

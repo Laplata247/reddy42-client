@@ -48,8 +48,8 @@ const MapPainPage = () => {
   
 
   return (
+
 <div className='PageWrapper'>
-    
       <h1>Map Pain Page</h1>
 
       {/* <button onClick={toggleDrawing}>
@@ -99,7 +99,6 @@ const MapPainPage = () => {
 </div>
 </div>
 </div>          
-  
   );
 };
 

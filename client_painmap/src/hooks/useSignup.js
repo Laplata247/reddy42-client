@@ -10,7 +10,7 @@
 //     setLoading(true)
 //     setError(null)
 
-//     const response = await fetch('http://localhost:3000/users/signup', {
+//     const response = await fetch('http://localhost:5000/signup', {
 //       method: 'POST',
 //       headers: {'Content-Type': 'application/json'},
 //       body: JSON.stringify({ email, password })
