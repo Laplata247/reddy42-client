@@ -52,7 +52,7 @@ const MapPainPage = () => {
 
 
       <div class="center-container">
-      <button onClick={removeDecal}>Undo</button>
+      
         <Canvas id='canvasDiv'
           gl={{
             preserveDrawingBuffer: true // allow showing model on the screenshot
@@ -85,13 +85,17 @@ const MapPainPage = () => {
           <OrbitControls enableRotate={true} enablePan={true} enableZoom={true} />
         </Canvas>
 
-        <button onClick={togglePopup}>Save image</button>
-        {visible ? <PainForm toggle={togglePopup} image={img} /> : null}
+        {/* <button onClick={togglePopup}>Save image</button>
+        {visible ? <PainForm toggle={togglePopup} image={img} /> : null} */}
         
         <Stickers setSticker={setSticker} setScaleMod={setScaleMod} />
-
-      </div>
-   
+      
+      <div id="button-container">
+      <button onClick={togglePopup}>Save image</button>
+        {visible ? <PainForm toggle={togglePopup} image={img} /> : null}
+          <button onClick={removeDecal}>Undo</button>
+        </div>
+        </div>
 </>
   );
 };
