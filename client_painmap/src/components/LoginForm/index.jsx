@@ -26,7 +26,7 @@ const LoginForm = () => {
 
             if (response.status === 200) {
                 setLoginSuccessful(true);
-                goTo('/home');
+                goTo('/');
             } else {
                 console.error('Login failed:', response.data.error);
                 setLoginSuccessful(false);
