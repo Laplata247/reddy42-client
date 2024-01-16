@@ -36,12 +36,9 @@ const Header = () => {
                         </div>
                         )}
                 </nav>
-<<<<<<< HEAD
                 <div id="google_translate_element"></div>
-=======
                 {/* <div id="google_translate_element"></div> */}
                 <button onClick={handleClick}>Log out</button>
->>>>>>> fad330f64f507f8710c29603231b2d74b0586411
             </header>
             <Outlet />
         </main>
