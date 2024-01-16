@@ -5,7 +5,6 @@ import { OrbitControls, RandomizedLight, AccumulativeShadows, Environment } from
 import { DecalGeometry } from 'three/addons/geometries/DecalGeometry.js'; //import decal geometry pakage 
 import html2canvas from 'html2canvas';
 import { Model, Stickers, PainForm } from '../../components';
-import DrawingOverlay from '../../components/DrawingOverlay';
 
 import './style.css';
 
@@ -48,13 +47,9 @@ const MapPainPage = () => {
 
 
   return (
-<div role="wrapper" className='PageWrapper'>
-    
+<>
       <h1>Map Pain Page</h1>
 
-      {/* <button onClick={toggleDrawing}>
-        {drawingEnabled ? 'Disable Drawing' : 'Enable Drawing'}
-      </button> */}
 
       <div class="center-container">
       <button onClick={removeDecal}>Undo</button>
@@ -85,7 +80,7 @@ const MapPainPage = () => {
             shadow-mapSize-height={1024}
           />
           <Model decals={decals} setDecals={setDecals} sticker={sticker} scaleMod={scaleMod}/>
-        <color attach="background" args={["lightpink"]} />
+        {/* <color attach="background" args={["lightpink"]} /> */}
           {/* <RandomizedLight amount={8} radius={10} ambient={0.5} position={[2.5, 5, -5]} bias={0.001} /> */}
           <OrbitControls enableRotate={true} enablePan={true} enableZoom={true} />
         </Canvas>
@@ -95,11 +90,9 @@ const MapPainPage = () => {
         
         <Stickers setSticker={setSticker} setScaleMod={setScaleMod} />
 
-        {/* {drawingEnabled && <DrawingOverlay modelRef={Model} />} Pass the modelRef as a prop */}
-
       </div>
-    </div>
-
+   
+</>
   );
 };
 
