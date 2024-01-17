@@ -65,7 +65,7 @@ function Model({decals, setDecals, sticker, scaleMod}) {
         castShadow receiveShadow position={[0, -1.1, 0]}  geometry={geometry} dispose={null} scale={[1.3, 1.3, 1.3]}>
        {/* <meshStandardMaterial color='#d1b2b8'/> */}
        {/* <meshNormalMaterial color='#d1b2b8'/> */}
-       <meshStandardMaterial color="pink" />
+       <meshNormalMaterial color="pink" />
        {decals.map(decal => 
         <Decals 
           key={decal['x']}

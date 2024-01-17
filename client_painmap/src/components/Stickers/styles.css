@@ -1,12 +1,23 @@
 nav {
     --side-color: rgb(183, 197, 198);
     --border-color: rgb(208, 205, 202);
-    --active-color: rgb(62, 62, 101);
+    --activeSticker-color: rgb(62, 62, 101);
     box-sizing: border-box;
     background: (--side-color);
-
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+nav::-webkit-scrollbar {
+    display: none;
 }
 
+nav ::-webkit-scrollbar-thumb {
+    background: transparent; /* Make the scrollbar thumb transparent */
+}
+
+nav ::-webkit-scrollbar-track {
+    background: transparent; /* Make the scrollbar track transparent */
+}
 h2.title{
     font-size: 20px;
     width: 100px;
@@ -144,20 +155,20 @@ max-width: 100px;
 #sideArrow:hover{
     cursor: pointer
 }
-.active{
+.activeSticker{
     display: flex;
     justify-content: center;
     align-items: center;
     border: 2px solid;
     border-color: var(--border-color);
-    background-color: var(--active-color) ;
+    background-color: var(--activeSticker-color) ;
     border-radius: 15px;
     min-width: 70px;
     min-height: 70px;
     margin: 9px 0px;
     /* padding: 2% 2%; */
 }
-.inactive{
+.inactiveSticker{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -169,7 +180,7 @@ max-width: 100px;
     margin: 9px 0px;
     /* padding: 2% 2%; */
 }
-.inactive:hover {
+.inactiveSticker:hover {
     cursor:pointer;
     background-color: var(--border-color) ;
     transition: background-color 0.2s ease-out;

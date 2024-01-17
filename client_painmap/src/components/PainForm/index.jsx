@@ -47,7 +47,7 @@ const PainForm = (props) => {
         <div className="painFormPopup">
             <div className="painFormPopupElements">
                 <h2>Add new consultation</h2>
-                <img width='300' height='300' src={`${props.image}`}  />:
+                <img width='300' height='300' src={`${props.image}`} border-radius="20px" />
 
                 <form onSubmit={handleSubmit}>
                     <label>

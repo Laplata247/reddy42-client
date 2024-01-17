@@ -146,6 +146,7 @@ const SignupForm = () => {
                         defaultChecked={false}
                         onChange={(e) => e.target.checked && setNhsMember(true)}
                         role='nhsMember'
+                        className='radio-input'
                     />
                     <label htmlFor='nhsMemberYes'>Yes</label>
 
@@ -156,6 +157,7 @@ const SignupForm = () => {
                         defaultChecked={true}
                         onChange={(e) => e.target.checked && setNhsMember(false)}
                         role='nhsMember'
+                        className='radio-input'
                     />
                     <label htmlFor='nhsMemberNo'>No</label>
                 </div>
@@ -163,7 +165,7 @@ const SignupForm = () => {
                 <input type='submit' value='Create Account'/>
             </form>
 
-            <p>Already have an account? <span onClick={() => goTo('/login')}>Log in</span> here</p>
+            <p>Already have an account? <span className='login-signup-link' onClick={() => goTo('/login')}>Log in</span> here</p>
         </>
     )
 }

@@ -3,7 +3,6 @@ body, html {
   font-family: 'Poppins', sans-serif;
 }
 .signup-container {
- 
   flex-direction: column;
   margin: auto; /* This will center your form in the middle of the page */
   padding: 2rem; /* Add some padding around your form */
@@ -15,6 +14,7 @@ body, html {
   width: 400px;
   overflow: auto;
   border-radius: 20px;
+  height: 75vh;
 }
 
 .signup-container input,
@@ -66,5 +66,13 @@ border-radius: 10px;
 
 .signup-container .questions{
 display: flex;
-background-color: transparent;
+}
+
+.login-signup-link {
+  color: #004299;
+}
+
+.login-signup-link:hover {
+  cursor: pointer;
+  color: #007BFF;
 }
