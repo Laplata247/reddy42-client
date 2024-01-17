@@ -1,4 +1,4 @@
-.painFormPopup {
+.familyFormPopup {
     position: fixed;
     left: 0;
     top: 0;
@@ -12,7 +12,7 @@
     z-index: 1;
 }
 
-.painFormPopupElements {
+.familyFormPopupElements {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -27,11 +27,11 @@
 
 }
 
-.painFormPopupElements h2 {
+.familyFormPopupElements h2 {
     margin-top: 0;
 }
 
-.painFormPopupElements input {
+.familyFormPopupElements input {
     width: 100%;
     padding: 5px;
     border-radius: 5px;
@@ -40,21 +40,13 @@
 }
 
 
-.painFormPopupElements button[type="submit"],
-.painFormPopupElements #closeBtn {
+.familyFormPopupElements button[type="submit"],
+.familyFormPopupElements #closeBtn {
     margin-top: 10px;
     width: 100px;
 }
 
-.painFormPopupElements button[type="submit"]:hover,
-.painFormPopupElements #closeBtn:hover {
+.familyFormPopupElements button[type="submit"]:hover,
+.familyFormPopupElements #closeBtn:hover {
     background-color: #25bee4;
-}
-
-#img {
-    border-radius: 20px;
-}
-
-#img {
-    border-radius: 20px;
 }
