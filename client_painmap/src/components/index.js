@@ -8,4 +8,5 @@ export { default as Stickers} from './Stickers'
 export { default as PainForm } from './PainForm'
 export { default as Logo} from './Logo'
 export { default as SearchForm } from './SearchForm';
-
+export { default as FamilyMember } from './FamilyMember'
+export { default as HereditaryCondition } from './HereditaryCondition'

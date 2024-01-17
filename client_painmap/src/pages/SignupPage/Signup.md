@@ -1,18 +1,17 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
-import { screen, render, cleanup } from '@testing-library/react';
-
+import { screen, render, cleanup} from '@testing-library/react';
+import '@testing-library/jest-dom'
 import * as matchers from '@testing-library/jest-dom/matchers';
 expect.extend(matchers);
+import Signup from '.';
 
-import Login from '.';
-
-describe('Login Page', () => {
+describe('Signup Page', () => {
     beforeEach(() => {
-        render(
+        render (
             <BrowserRouter>
-                <Login />
+                <Signup />
             </BrowserRouter>
         );
     });
@@ -24,7 +23,7 @@ describe('Login Page', () => {
     it('displays a heading with appropriate text', () => {
         const heading = screen.getByRole("heading");
         expect(heading).toBeInTheDocument();
-        expect(heading.textContent).toBe("Hi, there!");
+        expect(heading.textContent).toBe("Sign up");
     });
 
 });

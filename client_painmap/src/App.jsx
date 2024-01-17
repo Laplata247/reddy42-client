@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import * as Pages from './pages';
-// import { Layout } from './components';
 import { Header } from './components';
 import { useAuthContext } from './hooks/useAuthContext'
 
@@ -71,7 +70,7 @@ function App() {
       <Route path="/signup" element={<Pages.SignupPage />} />
       <Route path="/login" element={<Pages.Login />} />
 
-      {showHeader && (
+      {/* {showHeader && (
         <Route path="/" element={<Header />}>
           <Route index element={<Pages.HomePage />} />
 
@@ -85,7 +84,7 @@ function App() {
           </Route>
           <Route path="*" element={<Pages.NotFoundPage />} />
         </Route>
-      )}
+      )} */}
     </Routes>
     </>
   );

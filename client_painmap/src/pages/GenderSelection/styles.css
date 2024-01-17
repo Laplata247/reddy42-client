@@ -1,3 +1,14 @@
+.body .html{
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    max-height: 100vh;
+    padding: 20px;
+}
+body{
+    background-image: url(./assets/select-gender.png);
+}
+
 .select-gender {
     z-index: 10;
 }
