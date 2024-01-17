@@ -6,9 +6,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 35rem;
+    margin-left: 20rem;
     justify-content: space-around;
-
 }
 
 .login-page img {
