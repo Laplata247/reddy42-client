@@ -2,18 +2,22 @@
 .home {
     z-index: 10;
 }
+/* 
+.pagewrapper{
+  display: grid;
+  gap: 50px;
+} */
 
 h1{
   font-family: 'Poppins', sans-serif;
   font-weight: 800;
 }
-.articulate{
+/* .articulate{
 border-radius: 51% 49% 17% 28% / 48% 48% 52% 30%;
 background-color: rgba(255, 189, 189, 0.41);
 backdrop-filter: blur(7.5px);
 width: 100px;
 height: 100px;
-flex-shrink: 0;
 font-family: 'Poppins', sans-serif;
 font-weight: 600;
 color: white;
@@ -24,7 +28,6 @@ color: white;
 backdrop-filter: blur(7.5px);
 width: 100px;
 height: 100px;
-flex-shrink: 0;
 font-family: 'Poppins', sans-serif;
 font-weight: 600;
 color: white;
@@ -35,7 +38,6 @@ color: white;
 backdrop-filter: blur(7.5px);
 width: 100px;
 height: 100px;
-flex-shrink: 0;
 font-family: 'Poppins', sans-serif;
 font-weight: 600;
 color: white;
@@ -46,8 +48,56 @@ color: white;
 backdrop-filter: blur(7.5px);
 width: 100px;
 height: 100px;
-flex-shrink: 0;
 font-family: 'Poppins', sans-serif;
 font-weight: 600;
 color: white;
+} */
+
+.PageWrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Creates two columns */
+  grid-gap: 20px; /* Adjusts the gap between the grid items */
+  justify-items: center; /* Centers the items horizontally */
+  align-items: start; /* Aligns the items to the start vertically */
+  padding: 20px; /* Adds some padding around the grid */
+}
+
+.chat, .history, .articulate, .images {
+  display: flex; /* Enables flexbox */
+  justify-content: center; /* Centers horizontally */
+  align-items: center; 
+  background-color: #f8dada;
+  border: none; /* Removes the border */
+  padding: 20px; /* Adds padding inside the buttons */
+  text-align: center; /* Centers the text inside the buttons */
+  font-size: 40px; /* Sets the font size */
+  /* border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%; */
+  border-radius: 51% 18% 51% 49% / 53% 18% 48% 47%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: Adds a slight shadow for depth */
+  backdrop-filter: blur(7.5px);
+  height: 250px;
+  width: 250px;
+}
+
+.chat{
+  border-radius: 51% 49% 18% 51% / 50% 50% 21% 50%;
+}
+
+.history{
+  border-radius: 51% 49% 50% 17% / 50% 50% 50% 18%;
+}
+
+
+/* Additional styling for the links to remove default text decoration */
+.PageWrapper a {
+  text-decoration: none; /* Removes the underline from links */
+  color: inherit; /* Inherits the font color from the parent element */
+}
+
+/* You may want to add :hover effects for better user interaction */
+.PageWrapper a:hover .chat, 
+.PageWrapper a:hover .history, 
+.PageWrapper a:hover .articulate, 
+.PageWrapper a:hover .images {
+  background-color: #e8e8e8; /* Slightly changes color on hover */
 }
