@@ -18,6 +18,7 @@ const Login = () => {
 
   return (
     <div className="login-page">
+      <div className="new-div">
       <Logo />
       <h1>Hi, there!</h1>
 
@@ -28,14 +29,14 @@ const Login = () => {
           type="email"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
-          placeholder='Enter your email'
+          // placeholder='Enter your email'
         />
         <label>Password:</label>
         <input
           type="password"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
-          placeholder='Enter your password'
+          // placeholder='Enter your password'
         />
 
         <button role='thisButton' disabled={Loading} id="loginButton">Log in</button>
@@ -45,6 +46,7 @@ const Login = () => {
       </form>
 
       {/* <Link to="/signup"><button role='thatButton'id="signupLink">No account?</button></Link> */}
+      </div>
 
     </div>
   )
