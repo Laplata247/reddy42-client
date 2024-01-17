@@ -28,14 +28,14 @@ const Login = () => {
           type="email"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
-          placeholder='Enter your email'
+          // placeholder='Enter your email'
         />
         <label>Password:</label>
         <input
           type="password"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
-          placeholder='Enter your password'
+          // placeholder='Enter your password'
         />
 
         <button role='thisButton' disabled={Loading} id="loginButton">Log in</button>
