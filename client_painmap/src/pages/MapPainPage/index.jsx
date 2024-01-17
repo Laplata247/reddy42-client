@@ -43,14 +43,12 @@ const MapPainPage = () => {
     setDecals(newDecals)
 
   }
-  
+
   return (
-<>
-  <h1>Map Pain Page</h1>
-
-
+<div id='painPage'>
+  <h1 class='pain_map_title'>Map Pain Page</h1>
+  <p></p>
   <div class="center-container">
-  
     <Canvas id='canvasDiv'
       gl={{
         preserveDrawingBuffer: true // allow showing model on the screenshot
@@ -65,7 +63,7 @@ const MapPainPage = () => {
         // border: '2px solid Green'
       }}
       shadows
-        camera={{ position: [0, 0, 2] }}>
+      camera={{ position: [0, 0, 2] }}>
 
       <ambientLight intensity={0.5} />
       <spotLight position={[1, 5, -1]} angle={0.45} penumbra={1} />
@@ -75,7 +73,7 @@ const MapPainPage = () => {
         castShadow
         shadow-mapSize-width={1024}
         shadow-mapSize-height={1024}
-      />
+        />
       <Model decals={decals} setDecals={setDecals} sticker={sticker} scaleMod={scaleMod}/>
       <OrbitControls enableRotate={true} enablePan={true} enableZoom={true} />
     </Canvas>
@@ -87,8 +85,13 @@ const MapPainPage = () => {
         {visible ? <PainForm toggle={togglePopup} image={img} /> : null}
           
       </div>
+      <section class='diagram'>
+        <img src="src/assets/clickIcon.png" alt="click on icon" height={70}/>   
+        <img src="src/assets/scaleIcon.png" alt="click on icon" height={80} />
+        <img src="src/assets/placeIcon.png" alt="click on icon" height={70}/>
+      </section>
   </div>
-</>
+  </div>
   );
 };
 

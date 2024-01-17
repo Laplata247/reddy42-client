@@ -17,7 +17,7 @@ const Header = () => {
     };
     return (
         <main>
-            <header>
+            <header id='navigationMenu'>
                 <nav className='navbar'>
                     {user && (
                         <div className="userDisplay">

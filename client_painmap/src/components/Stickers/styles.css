@@ -1,7 +1,8 @@
 nav {
-    --side-color: rgb(183, 197, 198);
-    --border-color: rgb(208, 205, 202);
-    --activeSticker-color: rgb(62, 62, 101);
+    --side-color: rgba( 115, 160, 237, 0.5 );
+    --border-color: rgba( 31, 38, 135, 0.37 );
+    --activeSticker-color: rgba( 199, 219, 255, 0.65 );
+    
     box-sizing: border-box;
     background: (--side-color);
     /* overflow-y: scroll;
@@ -129,21 +130,21 @@ max-width: 100px;
 
 #stickerSelectorClosed #sideArrow{
     position: absolute;
-    left:90px;
-    top: 20px;
+    left:115px;
+    top: 10px;
     height: 40px;
     width: 40px;
     background-color: var(--side-color);
     border-radius: 50px;
     transition: transform 1s, left 1s;
     transition-timing-function: ease-out;
-    z-index: 1;
+    z-index: 5;
 }
 
 #stickerSelectorOpen #sideArrow{
     position: absolute;
-    left:310px;
-    top: 20px;
+    left:335px;
+    top: 10px;
     height: 40px;
     width: 40px;
     background-color: var(--side-color);
@@ -163,6 +164,9 @@ max-width: 100px;
     border: 2px solid;
     border-color: var(--border-color);
     background-color: var(--activeSticker-color) ;
+    -webkit-box-shadow: inset -8px 0px 10px rgba( 31, 38, 135, 0.37 );
+    border-radius: 15px;
+    transition: all 0.5s;
     border-radius: 15px;
     min-width: 70px;
     min-height: 70px;

@@ -1,17 +1,18 @@
-header {
+#navigationMenu {
   display: flex;
   align-items: center;
   justify-content: space-around;
   width: 100%;
   position: fixed;
-  top: 3rem;
+  top: 0;
   left: 0;
-  /* background: rgba( 255, 213, 182, 0.65 );
+  height: 16%;
+  background: rgba( 115, 160, 237, 0.5 );
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 3px );
-  -webkit-backdrop-filter: blur( 3px );
-  border-radius: 0% 0% 4% 4% / 26% 26% 36% 36%; */
-  z-index: 10;
+  -webkit-backdrop-filter: blur( 7px );
+  border-radius: 20px;
+  z-index: 4;
 }
 
 /* nav > a {
@@ -30,23 +31,27 @@ header {
   margin-left: 15px;
   font-weight: 500;  
   width: fit-content;
-  border-radius: 0 0 8px 8px; 
 	padding: 1rem 3rem;
   font-size: 1rem;
 }
 
 .navbar a:hover {
-  color: #66d7fa;
+  color: rgba(255, 97, 97, 0.77);
+  transition: all 0.3s;
 }
 
 .logout-btn {
-  background-color: #FF6161;
+  background-color: rgba(255, 189, 189, 0.41);
   color: #ffffff;
+  z-index: 10;
 }
 
 .active {
   background-color: #996df0;
-  color: #ffffff;
+  background: rgba( 199, 219, 255, 0.65 );
+  -webkit-box-shadow: inset -4px 0px 10px rgba( 31, 38, 135, 0.37 );
+  border-radius: 15px;
+  transition: all 0.5s;
 }
 
 
