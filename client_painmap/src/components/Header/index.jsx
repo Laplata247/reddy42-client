@@ -25,8 +25,13 @@ const Header = () => {
                             <NavLink to="/select-gender">Articulate Your Pain</NavLink>
                             <NavLink to="/chat">Chat</NavLink>
                             <NavLink to="/history">Medical History</NavLink>
-                            <span>{user.email}</span>
-                            {/* <button onClick={handleClick}>Log out</button> */}
+                            <span>{user.user_id}</span>
+                            <button onClick={handleClick}>Log out</button>
+                            {user.user_id =="NHS@email.com" && (
+                                <div className="userDisplay">
+                                    <Link to="/search">Search patients</Link>
+                                </div>
+                            )}
                         </div>
                     )}
                     {!user && (
@@ -35,6 +40,7 @@ const Header = () => {
                             <Link to="/signup">Signup</Link>
                         </div>
                     )}
+
                 </nav>
                 <div id="google_translate_element"></div>            
                 {user && (
