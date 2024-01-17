@@ -5,13 +5,14 @@ body, html {
   overflow: auto;
   max-height: 100vh;
   padding: 20px;
-
-  background-image: url('C:\Users\mattb\Desktop\LafosseAcademy\Lap-4\project42\reddy42-client\client_painmap\src\assets\signup.png');
-        background-size: cover; /* Adjust as needed */
-        background-repeat: no-repeat;
-        background-attachment: fixed; 
 }
 
+body{
+  background-image: url('C:\Users\mattb\Desktop\LafosseAcademy\Lap-4\project42\reddy42-client\client_painmap\src\assets\signup.png');
+  background-size: cover; /* Adjust as needed */
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+}
 
 /* Styling for the left column (message) */
 .message {

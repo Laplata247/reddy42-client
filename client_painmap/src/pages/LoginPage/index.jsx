@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 // Correct import statements
 // import {Logo } from '../../components/Logo';
-
 import './styles.css';
 
 
