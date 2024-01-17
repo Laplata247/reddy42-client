@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ScrollToBottom from "react-scroll-to-bottom";
+import RenderMessageContent from "../RenderMessageContent";
 
 function Chat({ socket, username, room }) {
   const [currentMessage, setCurrentMessage] = useState("");
@@ -59,29 +60,6 @@ function Chat({ socket, username, room }) {
     };
   }, [socket, room, historyLoaded]);
 
-  const renderMessageContent = (messageContent) => {
-    if (messageContent.author === 'System') {
-      return (
-        <div className="system-message">
-          <p>{messageContent.content}</p>
-        </div>
-      );
-    } else {
-      return (
-        <div >
-          
-          <div className="message-content">
-            <p>{messageContent.content}</p>
-          </div>
-          <div className="message-meta">
-            <p id="time">{messageContent.time}</p>
-            <p id="author">{messageContent.author}</p>
-          </div>
-        </div>
-      );
-    }
-  };
-
   return (
     <div className="chat-window">
       <div className="chat-header">
@@ -95,7 +73,7 @@ function Chat({ socket, username, room }) {
               className="message"
               id={username === messageContent.author ? "you" : "other"}
             >
-              {renderMessageContent(messageContent)}
+              <RenderMessageContent messageContent={messageContent} />
             </div>
           ))}
         </ScrollToBottom>
@@ -119,7 +97,3 @@ function Chat({ socket, username, room }) {
 }
 
 export default Chat;
-
-
-
-
