@@ -61,7 +61,8 @@ body, html {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 100vh; /* This will take the full height of the viewport */
+  height: 100%; /* This will take the full height of the viewport */
+  width: 100%;
 }
 
 
