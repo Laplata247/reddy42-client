@@ -22,9 +22,9 @@ const HomePage = () => {
             <p>Articulate Pain</p>
           </div>
         </Link>
-        {/* <div className="images">
-          <p>Past Images</p>
-        </div> only invoke for experimental */}
+        <div className="images">
+          <p>Learn, coming soon...</p>
+        </div>
       </div>
     </div>
   );
