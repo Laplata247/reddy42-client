@@ -18,7 +18,7 @@ const Header = () => {
     return (
         <main>
             <header>
-                <nav className='navbar'>
+                <nav className='navbar' >
                     {user && (
                         <div className="userDisplay">
                             <NavLink to="/">Home</NavLink>
