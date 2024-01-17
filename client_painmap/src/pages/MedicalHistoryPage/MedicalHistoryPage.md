@@ -27,7 +27,7 @@ describe("MedicalHistoryPage", () => {
   it("displays one header with correct text", () => {
     const heading1 = screen.getByRole('heading', {level: 1})
     expect(heading1).toBeInTheDocument();
-    expect(heading1).toHaveTextContent('Medical History Page')
+    expect(heading1).toHaveTextContent('My Medical History')
   });
 
   it("displays at least one previous condition", () => {
