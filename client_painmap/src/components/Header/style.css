@@ -19,6 +19,10 @@ header {
     color: var(--text);
 } */
 
+.navbar {
+  padding: 3rem;
+}
+
 .navbar a {
   text-decoration: none;
   color: #181818;
@@ -30,6 +34,16 @@ header {
 	padding: 1rem 3rem;
   font-size: 1rem;
 }
+
+.navbar a:hover {
+  color: #66d7fa;
+}
+
+.logout-btn {
+  background-color: #FF6161;
+  color: #ffffff;
+}
+
 .active {
   background-color: #996df0;
   color: #ffffff;

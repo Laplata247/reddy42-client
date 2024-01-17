@@ -48,7 +48,7 @@ function Stickers({setSticker, setScaleMod}) {
 
 
   return (
-    <nav role="menu" role="menu" id={className}>
+    <nav role="menu" id={className}>
         {/* <header>
             {(open? <h2 class='title'>PS</h2>: <h2 class='title'>Pain Selector</h2> )}
         </header> */}

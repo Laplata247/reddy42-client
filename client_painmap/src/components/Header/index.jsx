@@ -38,10 +38,10 @@ const Header = () => {
                 </nav>
                 <div id="google_translate_element"></div>            
                 {user && (
-                        <div className="userDisplay">
-                            <button onClick={handleClick}>Log out</button>
-                        </div>
-                    )}
+                    <div className="userDisplay">
+                        <button className='logout-btn' onClick={handleClick}>Log out</button>
+                    </div>
+                )}
             </header>
             <Outlet />
         </main>
