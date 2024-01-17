@@ -18,8 +18,7 @@ const Header = () => {
     return (
         <main>
             <header>
-                <div id="google_translate_element"></div>
-                <nav>
+                <nav className='navbar'>
                     {user && (
                         <div className="userDisplay">
                             <NavLink to="/">Home</NavLink>
@@ -27,7 +26,7 @@ const Header = () => {
                             <NavLink to="/chat">Chat</NavLink>
                             <NavLink to="/history">Medical History</NavLink>
                             <span>{user.email}</span>
-                            <button onClick={handleClick}>Log out</button>
+                            {/* <button onClick={handleClick}>Log out</button> */}
                         </div>
                     )}
                     {!user && (
@@ -37,9 +36,12 @@ const Header = () => {
                         </div>
                     )}
                 </nav>
-                <div id="google_translate_element"></div>
-                {/* <div id="google_translate_element"></div> */}
-                <button onClick={handleClick}>Log out</button>
+                <div id="google_translate_element"></div>            
+                {user && (
+                        <div className="userDisplay">
+                            <button onClick={handleClick}>Log out</button>
+                        </div>
+                    )}
             </header>
             <Outlet />
         </main>
