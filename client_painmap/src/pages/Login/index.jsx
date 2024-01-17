@@ -18,6 +18,7 @@ const Login = () => {
 
   return (
     <div className="login-page">
+      <div className="new-div">
       <Logo />
       <h1>Hi, there!</h1>
 
@@ -45,6 +46,7 @@ const Login = () => {
       </form>
 
       {/* <Link to="/signup"><button role='thatButton'id="signupLink">No account?</button></Link> */}
+      </div>
 
     </div>
   )
