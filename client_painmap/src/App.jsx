@@ -86,6 +86,8 @@ function App() {
         </Route>
       )}
     </Routes>
+    
+    <div id="google_translate_element"></div> 
     </>
   );
 }

@@ -35,55 +35,65 @@ const MedicalHistoryPage = () => {
 
   return (
     <div className='history-page'>
-      <h1>Medical History Page</h1>
-      <div className='consultations'>
-        {
-          loading
-            ? <p style={{ marginTop: "200px", fontSize: "70px" }}>Loading...</p>
-            : <>
-              {
-                consultations.map(consultation => (
-                  <Link to={`${consultation.id}`} key={consultation.id}>
-                    <Consultation consultation={consultation} />
-                  </Link>
-                ))
-              }
-            </>
-        }
-      </div>
+      <h1>My Medical History</h1>
 
-      <div className='hereditary-conditions'>
-        <p>Hereditary conditions:</p>
-        {
-          loading
-            ? <p style={{ marginTop: "200px", fontSize: "70px" }}>Loading...</p>
-            : (
-              hereditaryConditions.length > 0 ? (
-                <>
-                  {hereditaryConditions.map((condition, index) => (
-                    <HereditaryCondition key={index} condition={condition} />
-                  ))}
-                </>
-              ) : (
-                <p>No hereditary conditions available.</p>
+      <div className='history-container'>
+
+      <div className='hereditary-family-container'>
+
+        <div className='hereditary-conditions'>
+          <p>Hereditary conditions:</p>
+          {
+            loading
+              ? <p style={{ marginTop: "200px", fontSize: "70px" }}>Loading...</p>
+              : (
+                hereditaryConditions.length > 0 ? (
+                  <>
+                    {hereditaryConditions.map((condition, index) => (
+                      <HereditaryCondition key={index} condition={condition} />
+                    ))}
+                  </>
+                ) : (
+                  <p>No hereditary conditions available.</p>
+                )
               )
-            )
-        }
+          }
+          <button>Add</button>
+        </div>
+
+        <div className='family-members'>
+          <p>Family members:</p>
+          {
+            loading
+              ? <p style={{ marginTop: "200px", fontSize: "70px" }}>Loading...</p>
+              : <>
+                {
+                  family.map(member => (
+                      <FamilyMember member={member} />
+                  ))
+                }
+              </>
+          }
+          <button>Add</button>
+        </div>        
       </div>
 
-      <div className='family-members'>
-        <p>Family members:</p>
-        {
-          loading
-            ? <p style={{ marginTop: "200px", fontSize: "70px" }}>Loading...</p>
-            : <>
-              {
-                family.map(member => (
-                    <FamilyMember member={member} />
-                ))
-              }
-            </>
-        }
+        <div className='consultations'>
+          {
+            loading
+              ? <p style={{ marginTop: "200px", fontSize: "70px" }}>Loading...</p>
+              : <>
+                {
+                  consultations.map(consultation => (
+                    <Link to={`${consultation.id}`} key={consultation.id}>
+                      <Consultation consultation={consultation} />
+                    </Link>
+                  ))
+                }
+              </>
+          }
+        </div>
+
       </div>
     </div>
   )

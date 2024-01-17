@@ -5,6 +5,23 @@ body, html {
   height: 100vh;
 }
 
+.Signup {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-image: url('../../assets/signup.png');
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.signup-logo {
+  margin-bottom: 2rem;
+  width: 25rem;
+}
+
 /* Styling for the left column (message) */
 .message {
   flex: 1;
@@ -15,12 +32,13 @@ body, html {
   align-items: left;
   text-align: left;
   width: 40rem;
-  margin-right: 30rem;
+  margin-right: 25rem;
+  margin-left: 15rem;
   color: #004299;
 }
 
 .message .header {
-  margin-bottom: 1rem; /* Add some spacing between h1 and p */
+  margin-top: 1rem;
   text-align: left;
 }
 
@@ -57,14 +75,10 @@ body, html {
   }
 }
 
-.Signup {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 100%; /* This will take the full height of the viewport */
-  width: 100%;
-}
 
+.signup-upper-container {
+  margin-right: 15rem;
+}
 
 .signup-container {
   flex: 1;
