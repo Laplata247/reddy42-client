@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { SignupForm } from '../../components';
+import { Logo } from '../../components';
 import './styles.css';
 
 
@@ -17,8 +18,11 @@ const Signup = () => {
                 </div>
                 <p>Our app transforms pain into clear images, making doctor communication easy and frustration-free. Sign up for honest, efficient medical consultations.</p>
             </div>
+            <div>
+                <h1>Signup</h1>
             <div className="signup-container">
                 <SignupForm />
+            </div>
             </div>
         </div>
     );
