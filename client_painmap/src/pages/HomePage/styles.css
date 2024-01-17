@@ -1,12 +1,6 @@
-
 .home {
     z-index: 10;
 }
-/* 
-.pagewrapper{
-  display: grid;
-  gap: 50px;
-} */
 
 h1{
   font-family: 'Poppins', sans-serif;
@@ -30,8 +24,6 @@ h1{
   padding: 20px; /* Adds padding inside the buttons */
   text-align: center; /* Centers the text inside the buttons */
   font-size: 40px; /* Sets the font size */
-  /* border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%; */
-  border-radius: 51% 18% 51% 49% / 53% 18% 48% 47%;
   height: 250px;
   width: 250px;
   background: rgba( 255, 130, 130, 0.25 );
@@ -44,11 +36,9 @@ backdrop-filter: blur( 6.5px );
   border-radius: 16% 50% 50% 50% / 13% 50% 50% 50%;
 }
 
-
 .history{
   border-radius: 51% 49% 50% 17% / 50% 50% 50% 18%;
 }
-
 
 /* Additional styling for the links to remove default text decoration */
 .PageWrapper a {
@@ -63,8 +53,6 @@ backdrop-filter: blur( 6.5px );
 .PageWrapper a:hover .images {
   background-color: #e8e8e8; /* Slightly changes color on hover */
 }
-
-
 
 /* CSS */
 .chat{
