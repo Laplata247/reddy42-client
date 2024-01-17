@@ -9,7 +9,8 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "test": "vitest run --reporter verbose",
+    "test": "vitest src/pages/LoginPage/Login.test.jsx --reporter verbose",
+    "testing": "vitest --reporter verbose",
     "coverage": "vitest run --coverage"
   },
   "jest": {
@@ -28,6 +29,7 @@
     "debounce": "^2.0.0",
     "hsl-to-hex": "^1.0.0",
     "html2canvas": "^1.4.1",
+    "lottie-web": "^5.12.2",
     "pixi.js": "^7.3.3",
     "react-router-dom": "^6.20.1",
     "react-scroll-to-bottom": "^4.2.0",

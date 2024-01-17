@@ -60,6 +60,11 @@ function App() {
           <Route index element={user ? <Pages.MedicalHistoryPage /> : < Pages.HomePage />} />
           <Route path=":id" element={user ? <Pages.ConsultationPage /> : < Pages.HomePage />} />
         </Route>
+        <Route path="/search">
+          <Route index element={ user ? (user.user_id =="NHS@email.com" ? <Pages.DoctorSearch /> :< Pages.HomePage /> ) : < Pages.HomePage />} />
+          <Route path=":id" element={ user ? (user.user_id =="NHS@email.com" ? <Pages.ConsultationPage /> :< Pages.HomePage /> ) : < Pages.HomePage />} />
+          
+        </Route>
       </Route>
 
       <Route path="/signup" element={<Pages.SignupPage />} />
@@ -81,6 +86,8 @@ function App() {
         </Route>
       )}
     </Routes>
+    
+    <div id="google_translate_element"></div> 
     </>
   );
 }

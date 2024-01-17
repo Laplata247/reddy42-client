@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 import { Link } from "react-router-dom";
+// import { Logo } from "../Logo";
 import './style.css';
 
 import { useLogout } from "../../hooks/useLogout";
@@ -17,16 +18,23 @@ const Header = () => {
     };
     return (
         <main>
-            <header>
-                <nav className='navbar' >
+            <header id='navigationMenu'>
+            <Link to="/">
+                <img src='../../logo.png' className='nav-logo'></img>
+            </Link>
+                <nav className='navbar'>
                     {user && (
                         <div className="userDisplay">
                             <NavLink to="/">Home</NavLink>
                             <NavLink to="/select-gender">Articulate Your Pain</NavLink>
                             <NavLink to="/chat">Chat</NavLink>
                             <NavLink to="/history">Medical History</NavLink>
-                            <span>{user.email}</span>
-                            {/* <button onClick={handleClick}>Log out</button> */}
+                            {/* <span>{user.user_id}</span> */}
+                            {user.user_id =="NHS@email.com" && (
+                                <div className="userDisplay">
+                                    <Link to="/search">Search patients</Link>
+                                </div>
+                            )}
                         </div>
                     )}
                     {!user && (
@@ -35,8 +43,8 @@ const Header = () => {
                             <Link to="/signup">Signup</Link>
                         </div>
                     )}
+
                 </nav>
-                <div id="google_translate_element"></div>            
                 {user && (
                     <div className="userDisplay">
                         <button className='logout-btn' onClick={handleClick}>Log out</button>

@@ -21,25 +21,27 @@ const ConsultationPage = () => {
     }, [])
 
     return (
-        <div role='details'className='consultationDetails'>
-            {
-                loading
-                    ? <p style={{ marginTop: "200px", fontSize: "70px" }}>Loading...</p>
-                    : <>
+        <div className='consultation-container'>
+            <div role='details'className='consultationDetails'>
+                {
+                    loading
+                        ? <p style={{ marginTop: "200px", fontSize: "70px" }}>Loading...</p>
+                        : <>
 
-                        <h1>{consultation.condition_name}</h1>
-                        <img width='200' height='200' src={`data:image/jpeg;base64,${consultation.image_data_base64}`} />
-                        <h2>{consultation.description}</h2>
-                        <h3>Start date: {consultation.start_date}</h3>
-                        <h3>End date: {consultation.end_date}</h3>
-                        <Link to=".." relative="path">
-                            <button className='backBtn'>
-                                Go Back
-                            </button>
-                        </Link>
-                    </>
+                            <h1>{consultation.condition_name}</h1>
+                            <img width='200' height='200' src={`data:image/jpeg;base64,${consultation.image_data_base64}`} />
+                            <h2>{consultation.description}</h2>
+                            <h3>Start date: {consultation.start_date}</h3>
+                            <h3>End date: {consultation.end_date}</h3>
+                            <Link to=".." relative="path">
+                                <button className='backBtn'>
+                                    Go Back
+                                </button>
+                            </Link>
+                        </>
 
-            }
+                }
+            </div>
         </div>
     )
 }

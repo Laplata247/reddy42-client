@@ -1,3 +1,15 @@
+.consultation-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-image: url('../../assets/signup.png');
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
 .consultationDetails {
   width: 60vw;
   height: 60vh;
@@ -5,6 +17,6 @@
   padding: 1vw;
   border: 1px solid black;
   border-radius: 20px;
-  background-color: #FDAF76;
+  background-color: rgba(253, 175, 118, 0.5);
   z-index: 10;
 }
