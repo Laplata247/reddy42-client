@@ -35,14 +35,13 @@ const MedicalHistoryPage = () => {
 
   return (
     <div className='history-page'>
-      <h1>My Medical History</h1>
 
       <div className='history-container'>
 
       <div className='hereditary-family-container'>
 
         <div className='hereditary-conditions'>
-          <p>Hereditary conditions:</p>
+          <h2>Hereditary conditions:</h2>
           {
             loading
               ? <p style={{ marginTop: "200px", fontSize: "70px" }}>Loading...</p>
@@ -62,7 +61,7 @@ const MedicalHistoryPage = () => {
         </div>
 
         <div className='family-members'>
-          <p>Family members:</p>
+          <h2>Family members:</h2>
           {
             loading
               ? <p style={{ marginTop: "200px", fontSize: "70px" }}>Loading...</p>
@@ -77,7 +76,9 @@ const MedicalHistoryPage = () => {
           <button>Add</button>
         </div>        
       </div>
+      <div className='consultations-container'>
 
+        <h1>My Medical History</h1>
         <div className='consultations'>
           {
             loading
@@ -93,6 +94,8 @@ const MedicalHistoryPage = () => {
               </>
           }
         </div>
+        
+      </div>
 
       </div>
     </div>
