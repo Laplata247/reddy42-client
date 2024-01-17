@@ -1,16 +1,35 @@
-/* body {
-    background-image: url('../../assets/login.png');
-} */
-
 .login-page {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-image: url('../../assets/signup.png');
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.doctor-img-login {
+    margin-left: 20%;
+    height: 60%;
+}
+
+.login-logo {
+    width: 25rem;
+}
+
+.login-upper-container {
+    /* margin-left: 15%; */
+    margin-top: -5%;
+}
+
+.login-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 20rem;
+    /* margin-left: 20rem; */
     justify-content: space-around;
-}
-.logo-svg {
-    right: 20%;
 }
 
 .login {
