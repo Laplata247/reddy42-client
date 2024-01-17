@@ -1,11 +1,12 @@
 nav {
-    --side-color: rgb(183, 197, 198);
-    --border-color: rgb(208, 205, 202);
-    --activeSticker-color: rgb(62, 62, 101);
+    --side-color: rgba( 115, 160, 237, 0.5 );
+    --border-color: rgba( 31, 38, 135, 0.37 );
+    --activeSticker-color: rgba( 199, 219, 255, 0.65 );
+    
     box-sizing: border-box;
     background: (--side-color);
-    overflow-y: scroll;
-    overflow-x: hidden;
+    /* overflow-y: scroll;
+    overflow-x: hidden; */
 }
 nav::-webkit-scrollbar {
     display: none;
@@ -18,11 +19,11 @@ nav ::-webkit-scrollbar-thumb {
 nav ::-webkit-scrollbar-track {
     background: transparent; /* Make the scrollbar track transparent */
 }
-h2.title{
+/* h2.title{
     font-size: 20px;
     width: 100px;
    
-}
+} */
 
 
 .header1{
@@ -32,10 +33,10 @@ max-width: 100px;
 
 #stickerSelectorOpen{
     position: fixed;
-    top:5%;
+    top:15%;
     left: 5%;
     width: 330px;
-    height: 90%;
+    height: 82%;
     background: var(--side-color);
     border-radius: 15px;
     padding: 10px 0px;
@@ -45,10 +46,10 @@ max-width: 100px;
 }
 #stickerSelectorClosed{
     position: fixed;
-    top:5%;
+    top:15%;
     left: 5%;
     width: 110px;
-    height: 90%;
+    height: 82%;
     background: var(--side-color);
     border-radius: 15px;
     padding: 10px 0px;
@@ -129,7 +130,7 @@ max-width: 100px;
 
 #stickerSelectorClosed #sideArrow{
     position: absolute;
-    left:90px;
+    left:115px;
     top: 10px;
     height: 40px;
     width: 40px;
@@ -137,11 +138,12 @@ max-width: 100px;
     border-radius: 50px;
     transition: transform 1s, left 1s;
     transition-timing-function: ease-out;
+    z-index: 5;
 }
 
 #stickerSelectorOpen #sideArrow{
     position: absolute;
-    left:310px;
+    left:335px;
     top: 10px;
     height: 40px;
     width: 40px;
@@ -162,6 +164,9 @@ max-width: 100px;
     border: 2px solid;
     border-color: var(--border-color);
     background-color: var(--activeSticker-color) ;
+    -webkit-box-shadow: inset -8px 0px 10px rgba( 31, 38, 135, 0.37 );
+    border-radius: 15px;
+    transition: all 0.5s;
     border-radius: 15px;
     min-width: 70px;
     min-height: 70px;
