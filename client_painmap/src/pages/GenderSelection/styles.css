@@ -6,10 +6,7 @@
     padding: 20px;
 }
 body{
-    background-image: url('C:\Users\mattb\Desktop\LafosseAcademy\Lap-4\project42\reddy42-client\client_painmap\src\assets\select-gender.png');
-    background-size: cover; /* Adjust as needed */
-    background-repeat: no-repeat;
-    background-attachment: fixed; 
+    background-image: url(./assets/select-gender.png);
 }
 
 .select-gender {

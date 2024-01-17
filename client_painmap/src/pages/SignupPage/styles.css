@@ -3,7 +3,6 @@ body, html {
   font-family: 'Poppins', sans-serif;
   overflow: auto;
   height: 100vh;
-  background-image: url('../../assets/signup.png');
 }
 
 /* Styling for the left column (message) */
