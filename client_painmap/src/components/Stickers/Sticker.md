@@ -32,9 +32,9 @@ describe("Navbar Component", () => {
 
   it("changes the active sticker when clicking on one", () => {
     const sticker = screen.getByRole("sticker")
-    expect(sticker.className).toBe("inactive");
+    expect(sticker.className).toBe("inactiveSticker");
     fireEvent.click(sticker)
-    expect(sticker.className).toBe("active")
+    expect(sticker.className).toBe("activeSticker")
   })
 
   it("changes the size of the sticker when the bar is moved", () => {
