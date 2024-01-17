@@ -10,9 +10,8 @@ body {
     justify-content: space-around;
 
 }
-
-.login-page img {
-    margin-left: 350rem;
+.logo-svg {
+    right: 20%;
 }
 
 .login {
