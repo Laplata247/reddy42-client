@@ -11,12 +11,14 @@ function ChatPage() {
   const [username, setUsername] = useState("");
   const [room, setRoom] = useState("");
   const [showChat, setShowChat] = useState(false);
+  const [isLoading, setIsLoading] = useState(true)
+  const [isStaff, setIsStaff] = useState(true)
 
   const joinRoom = () => {
     if (username !== "" && room !== "") {
       console.log("Joining room:", room);
       const data = { room: room, username: username }
-      socket.emit("join_room", data); 
+      socket.emit("join_room", data);
       socket.emit("user_joined", data);
       setShowChat(true);
     }
@@ -35,6 +37,7 @@ function ChatPage() {
         setUsername(userData.first_name);
         if (userData.nhs_number === "False") {
           setRoom(userData.id)
+          setIsStaff(false)
           console.log("before join room")
           joinRoom()
           console.log("after join room")
@@ -47,12 +50,15 @@ function ChatPage() {
     };
   
     fetchData();
+    setIsLoading(false)
+
+   
   }, [username]);
   
-
   return (
     <div className="livechat">
-      {!showChat ? (
+      {isLoading && <div>Loading...</div>}
+      {!showChat && isStaff && !isLoading ? (
         <div className="joinChatContainer">
           <h3>Join A Chat</h3>
           <input
@@ -69,6 +75,7 @@ function ChatPage() {
       )}
     </div>
   );
+  
 }
 
 export default ChatPage;
