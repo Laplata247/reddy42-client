@@ -25,3 +25,22 @@
     background-color: #FF8484;
     cursor: pointer;
 }
+
+
+
+.hereditary-conditions {
+  width: 20vw;
+  padding: 1vw;
+  border: 1px solid black;
+  border-radius: 20px;
+  background-color: #FDAF76;
+}
+
+
+.family-members {
+  width: 20vw;
+  padding: 1vw;
+  border: 1px solid black;
+  border-radius: 20px;
+  background-color: #FDAF76;
+}

@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import * as Pages from './pages';
-// import { Layout } from './components';
 import { Header } from './components';
 import { useAuthContext } from './hooks/useAuthContext'
 
