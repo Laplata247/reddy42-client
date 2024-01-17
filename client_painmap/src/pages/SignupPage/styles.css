@@ -1,17 +1,9 @@
 body, html {
-  height: 100%;
   margin: 0;
   font-family: 'Poppins', sans-serif;
   overflow: auto;
-  max-height: 100vh;
-  padding: 20px;
-}
-
-body{
-  background-image: url('C:\Users\mattb\Desktop\LafosseAcademy\Lap-4\project42\reddy42-client\client_painmap\src\assets\signup.png');
-  background-size: cover; /* Adjust as needed */
-  background-repeat: no-repeat;
-  background-attachment: fixed; 
+  height: 100vh;
+  background-image: url('../../assets/signup.png');
 }
 
 /* Styling for the left column (message) */
@@ -23,8 +15,9 @@ body{
   justify-content: left;
   align-items: left;
   text-align: left;
-  width: 500px;
-  margin-right: 100px;
+  width: 40rem;
+  margin-right: 30rem;
+  color: #004299;
 }
 
 .message .header {
@@ -33,27 +26,31 @@ body{
 }
 
 .message h1 {
-  font-size: 36px;
+  font-size: 3rem;
   font-weight: 600;
   text-align: left;
 }
 
+.message p {
+  font-size: 1.5rem;
+}
+
 /* Styling for the right column (signup-container) */
-.signup-container {
+/* .signup-container {
   flex: 1;
-  padding: 20px;
+  padding: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
-/* Specific styles for the sign-up form */
-.sign-up-form {
-  width: 80%; /* Adjust the width as necessary */
-  max-width: 400px;
+#signup-form {
+  width: 90%;
+  text-align: left;
 }
 
 /* Add media query for responsive layout adjustments */
+
 @media (max-width: 768px) {
   .Signup {
       flex-direction: column; /* Stack columns on smaller screens */
@@ -63,9 +60,8 @@ body{
 
 .Signup {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  padding: 0px;
   height: 100vh; /* This will take the full height of the viewport */
 }
 
@@ -95,10 +91,11 @@ body{
 .sign-up-form label {
   display: block;
   margin-bottom: .5rem;
+  font-weight: bold;
 }
 
 .sign-up-form input {
-  width: 100%;
+  width: 10%;
   padding: 10px;
   margin-bottom: 1rem;
   border-radius: 5px;
@@ -130,15 +127,5 @@ body{
 
 .login-link:hover {
   text-decoration: underline;
-  cursor: pointer;
-}
-
-.message{
-  font-weight: 600;
-}
-
-
-.message p{
-  font-weight: 400;
 }
 

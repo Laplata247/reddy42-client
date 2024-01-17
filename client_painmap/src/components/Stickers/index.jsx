@@ -13,12 +13,12 @@ function Stickers({setSticker, setScaleMod}) {
     const [size4, setSize4] = useState(3)
     const [size5, setSize5] = useState(3)
     const [size6, setSize6] = useState(3)
-    const [active1, setActive1] = useState('active')
-    const [active2, setActive2] = useState('inactive')
-    const [active3, setActive3] = useState('inactive')
-    const [active4, setActive4] = useState('inactive')
-    const [active5, setActive5] = useState('inactive')
-    const [active6, setActive6] = useState('inactive')
+    const [activeSticker1, setactiveSticker1] = useState('activeSticker')
+    const [activeSticker2, setactiveSticker2] = useState('inactiveSticker')
+    const [activeSticker3, setactiveSticker3] = useState('inactiveSticker')
+    const [activeSticker4, setactiveSticker4] = useState('inactiveSticker')
+    const [activeSticker5, setactiveSticker5] = useState('inactiveSticker')
+    const [activeSticker6, setactiveSticker6] = useState('inactiveSticker')
 
 
 
@@ -32,17 +32,17 @@ function Stickers({setSticker, setScaleMod}) {
     }
     const handleClick=(num)=>{
         if(num===1){
-            setActive1('active'), setActive2('inactive'), setActive3('inactive'), setActive4('inactive'), setActive5('inactive'),setActive6('inactive')
+            setactiveSticker1('activeSticker'), setactiveSticker2('inactiveSticker'), setactiveSticker3('inactiveSticker'), setactiveSticker4('inactiveSticker'), setactiveSticker5('inactiveSticker'),setactiveSticker6('inactiveSticker')
         }else if(num===2){
-            setActive1('inactive'), setActive2('active'), setActive3('inactive'), setActive4('inactive'), setActive5('inactive'),setActive6('inactive')
+            setactiveSticker1('inactiveSticker'), setactiveSticker2('activeSticker'), setactiveSticker3('inactiveSticker'), setactiveSticker4('inactiveSticker'), setactiveSticker5('inactiveSticker'),setactiveSticker6('inactiveSticker')
         } else if(num===3){
-            setActive1('inactive'), setActive2('inactive'), setActive3('active'), setActive4('inactive'), setActive5('inactive'),setActive6('inactive')
+            setactiveSticker1('inactiveSticker'), setactiveSticker2('inactiveSticker'), setactiveSticker3('activeSticker'), setactiveSticker4('inactiveSticker'), setactiveSticker5('inactiveSticker'),setactiveSticker6('inactiveSticker')
         } else if(num===4){
-            setActive1('inactive'), setActive2('inactive'), setActive3('inactive'), setActive4('active'), setActive5('inactive'),setActive6('inactive')
+            setactiveSticker1('inactiveSticker'), setactiveSticker2('inactiveSticker'), setactiveSticker3('inactiveSticker'), setactiveSticker4('activeSticker'), setactiveSticker5('inactiveSticker'),setactiveSticker6('inactiveSticker')
         } else if(num===5){
-            setActive1('inactive'), setActive2('inactive'), setActive3('inactive'), setActive4('inactive'), setActive5('active'),setActive6('inactive')
+            setactiveSticker1('inactiveSticker'), setactiveSticker2('inactiveSticker'), setactiveSticker3('inactiveSticker'), setactiveSticker4('inactiveSticker'), setactiveSticker5('activeSticker'),setactiveSticker6('inactiveSticker')
         } else{
-            setActive1('inactive'), setActive2('inactive'), setActive3('inactive'), setActive4('inactive'), setActive5('inactive'),setActive6('active')
+            setactiveSticker1('inactiveSticker'), setactiveSticker2('inactiveSticker'), setactiveSticker3('inactiveSticker'), setactiveSticker4('inactiveSticker'), setactiveSticker5('inactiveSticker'),setactiveSticker6('activeSticker')
         }
     }
 
@@ -51,39 +51,41 @@ function Stickers({setSticker, setScaleMod}) {
     <nav role="menu" id={className}>
         <header>
             {(open? <h2 class='title'>PS</h2>: <h2 class='title'>Pain Selector</h2> )}
-            <box-icon role='arrow'id='sideArrow' name='right-arrow-circle' onClick={openMenu}></box-icon>
+            <box-icon role='arrow' id='sideArrow' name='right-arrow-circle' onClick={openMenu}></box-icon>
         </header>
         <section id='menu'>
             <div id='choices'>
                 <p class='choiceTitle'>Symbol</p>
-                <p class={active1} onClick={e => {
+                <p class={activeSticker1} onClick={e => {
                     setSticker('src/assets/dot_3.png')
                     setScaleMod(size1)
                     handleClick(1)
                 }}><img src={"src/assets/dot_4Sticker.png"} alt="basic dot" height={55*size1*0.35} width={65*size1*0.35}/>
                 </p>
-                <p role="sticker" class={active2} onClick={e => {
+
+                <p role="sticker" class={activeSticker2} onClick={e => {
+                    handleClick(2)
                     handleClick(2)
                     setSticker('src/assets/bolts.png')
                     setScaleMod(size2)
                     
                 }}><img src={"src/assets/boltsSticker.png"} alt="bolts" height={65*size2*0.3} width={65*size2*0.3}/></p>
-                <p class={active3} onClick={e => {
+                <p class={activeSticker3} onClick={e => {
                     setSticker('src/assets/circles.png')
                     setScaleMod(size3)
                     handleClick(3)
                 }}><img src={"src/assets/circlesSticker.png"} alt="circles within eachother" height={65*size3*0.27} width={65*size3*0.27}/></p>
-                <p class={active4} onClick={e => {
+                <p class={activeSticker4} onClick={e => {
                     setSticker('src/assets/wiggly.png')
                     setScaleMod(size4)
                     handleClick(4)
                 }}><img src={"src/assets/wigglySticker.png"} alt="wiggles" height={65*size4*0.35} width={65*size4*0.35}/></p>
-                <p class={active5} onClick={e => {
+                <p class={activeSticker5} onClick={e => {
                     setSticker('src/assets/blur.png')
                     setScaleMod(size5)
                     handleClick(5)
                 }}><img class='stickerPic'src={"src/assets/blurSticker.png"} alt="blur" height={65*size5*0.3} width={65*size5*0.3}/></p>
-                <p class={active6} onClick={e => {
+                <p class={activeSticker6} onClick={e => {
                     setSticker('src/assets/sharp.png')
                     setScaleMod(size6)
                     handleClick(6)
