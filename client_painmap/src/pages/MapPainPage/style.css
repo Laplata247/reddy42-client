@@ -1,4 +1,9 @@
-
+.painPage{
+  background-image: url('/src/assets/signup.png');
+  background-size: cover; /* Adjust as needed */
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+}
 #canvasDiv {
     background: rgba(120, 181, 160, 0.4);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -6,6 +11,7 @@
     -webkit-backdrop-filter: blur(9px);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
+
   }
 
 #container{
@@ -19,11 +25,17 @@
   margin-top: 90px;
   padding-bottom: 50px;
 }
-/* /* 
-.PageWrapper::-webkit-scrollbar {
-  display: none;
-} */
 
 .center-container .undobutton{
   display: flex;
+}
+
+#button-container{
+  display:flex;
+  width: 90%;
+  justify-content: space-around;
+}
+
+.butt{
+  margin: 3% 0%;
 }
