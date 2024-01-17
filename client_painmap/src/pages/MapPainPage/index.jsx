@@ -44,59 +44,54 @@ const MapPainPage = () => {
 
   }
 
-
-
   return (
-<>
-      <h1>Map Pain Page</h1>
+<div id='painPage'>
+  <h1 class='pain_map_title'>Map Pain Page</h1>
+  <p></p>
+  <div class="center-container">
+    <Canvas id='canvasDiv'
+      gl={{
+        preserveDrawingBuffer: true // allow showing model on the screenshot
+      }}
+      style={{
+        height: '500px',
+        width: '500px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        // background: 'white',
+        // border: '2px solid Green'
+      }}
+      shadows
+      camera={{ position: [0, 0, 2] }}>
 
-
-      <div class="center-container">
-      
-        <Canvas id='canvasDiv'
-          gl={{
-            preserveDrawingBuffer: true // allow showing model on the screenshot
-          }}
-          style={{
-            height: '500px',
-            width: '500px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            // background: 'white',
-            // border: '2px solid Green'
-          }}
-        shadows
-          camera={{ position: [0, 0, 2] }}
-        >
-
-          <ambientLight intensity={0.5} />
-        <spotLight position={[1, 5, -1]} angle={0.45} penumbra={1} />
-          <directionalLight
-            position={[5, 5, 1]}
-            intensity={3}
-            castShadow
-            shadow-mapSize-width={1024}
-            shadow-mapSize-height={1024}
-          />
-          <Model decals={decals} setDecals={setDecals} sticker={sticker} scaleMod={scaleMod}/>
-        {/* <color attach="background" args={["lightpink"]} /> */}
-          {/* <RandomizedLight amount={8} radius={10} ambient={0.5} position={[2.5, 5, -5]} bias={0.001} /> */}
-          <OrbitControls enableRotate={true} enablePan={true} enableZoom={true} />
-        </Canvas>
-
-        {/* <button onClick={togglePopup}>Save image</button>
-        {visible ? <PainForm toggle={togglePopup} image={img} /> : null} */}
-        
-        <Stickers setSticker={setSticker} setScaleMod={setScaleMod} />
-      
+      <ambientLight intensity={0.5} />
+      <spotLight position={[1, 5, -1]} angle={0.45} penumbra={1} />
+      <directionalLight
+        position={[5, 5, 1]}
+        intensity={3}
+        castShadow
+        shadow-mapSize-width={1024}
+        shadow-mapSize-height={1024}
+        />
+      <Model decals={decals} setDecals={setDecals} sticker={sticker} scaleMod={scaleMod}/>
+      <OrbitControls enableRotate={true} enablePan={true} enableZoom={true} />
+    </Canvas>
+    <Stickers setSticker={setSticker} setScaleMod={setScaleMod} />
+  
       <div id="button-container">
-      <button onClick={togglePopup}>Save image</button>
+        <button class='butt' onClick={removeDecal}>Undo</button>
+        <button class='butt' onClick={togglePopup}>Save image</button>
         {visible ? <PainForm toggle={togglePopup} image={img} /> : null}
-          <button onClick={removeDecal}>Undo</button>
-        </div>
-        </div>
-</>
+          
+      </div>
+      <section class='diagram'>
+        <img src="src/assets/clickIcon.png" alt="click on icon" height={70}/>   
+        <img src="src/assets/scaleIcon.png" alt="click on icon" height={80} />
+        <img src="src/assets/placeIcon.png" alt="click on icon" height={70}/>
+      </section>
+  </div>
+  </div>
   );
 };
 
