@@ -14,7 +14,6 @@ const Login = () => {
     e.preventDefault()
 
     await login(email, password)
-    // navigate("/");
   }
 
   return (
@@ -29,7 +28,7 @@ const Login = () => {
         <input
           type="email"
           onChange={(e) => setEmail(e.target.value)}
-          value={email} 
+          value={email}
           placeholder='Enter your email'
         />
         <label>Password:</label>
@@ -40,9 +39,9 @@ const Login = () => {
           placeholder='Enter your password'
         />
 
-        <button role='thisButton'disabled={Loading} id="loginButton">Log in</button>
+        <button role='thisButton' disabled={Loading} id="loginButton">Log in</button>
         {error && <div className="error">{error}</div>}
-        
+
         <p>Do not have an account? <span className='login-signup-link' onClick={() => navigate('/signup')} role='thatButton'>Signup</span> here</p>
       </form>
 
