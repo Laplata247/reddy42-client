@@ -13,11 +13,6 @@
     "testing": "vitest --reporter verbose",
     "coverage": "vitest run --coverage"
   },
-  "jest": {
-    "setupFiles": [
-      "jest-canvas-mock"
-    ]
-  },
   "dependencies": {
     "@pixi/filter-kawase-blur": "^5.1.1",
     "@react-three/drei": "^9.93.0",

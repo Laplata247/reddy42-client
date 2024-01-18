@@ -1,5 +1,5 @@
-import React from "react";
-import { describe, it, expect, beforeEach, afterEach } from "vitest";
+import React, {useState}from "react";
+import { describe, it, expect, beforeEach, afterEach, vitest } from "vitest";
 import { screen, render, cleanup, fireEvent } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import * as matchers from "@testing-library/jest-dom/matchers";
@@ -7,7 +7,11 @@ expect.extend(matchers);
 
 import Sticker from ".";
 
-describe("Navbar Component", () => {
+describe("Stickers Component", () => {
+  const setState = vitest.fn();
+  vitest
+    .spyOn(React, 'useState')
+    .mockImplementationOnce(initState => [initState, setState]);
   render(
       <MemoryRouter>
         <Sticker />
@@ -35,6 +39,7 @@ describe("Navbar Component", () => {
     expect(sticker.className).toBe("inactiveSticker");
     fireEvent.click(sticker)
     expect(sticker.className).toBe("activeSticker")
+    // expect(setState).toHaveBeenCalledWith('src/assets/bolts.png');
   })
 
   it("changes the size of the sticker when the bar is moved", () => {

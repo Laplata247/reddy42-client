@@ -20,7 +20,6 @@ const FamilyForm = (props) => {
                     "patient_email": user.user_id, 
                     "related_patient_email": familyEmail
                 })
-
         }
         const response = await fetch(
             `http://127.0.0.1:5000/create_relationship`,
