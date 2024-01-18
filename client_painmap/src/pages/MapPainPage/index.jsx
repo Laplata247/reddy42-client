@@ -45,51 +45,54 @@ const MapPainPage = () => {
   }
 
   return (
-<div id='painPage'>
-  <h1 class='pain_map_title'>Map Pain Page</h1>
-  <p></p>
-  <div class="center-container">
-    <Canvas id='canvasDiv'
-      gl={{
-        preserveDrawingBuffer: true
-      }}
-      style={{
-        height: '500px',
-        width: '500px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-      shadows
-      camera={{ position: [0, 0, 2] }}>
+    <div className='map-pain-page'>
+      <div id='painPage'>
+        <h1 class='pain_map_title'>Map Pain Page</h1>
+        <p></p>
+        <div class="center-container">
+          <Canvas id='canvasDiv'
+            gl={{
+              preserveDrawingBuffer: true
+            }}
+            style={{
+              height: '500px',
+              width: '500px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+            shadows
+            camera={{ position: [0, 0, 2] }}>
 
-      <ambientLight intensity={0.5} />
-      <spotLight position={[1, 5, -1]} angle={0.45} penumbra={1} />
-      <directionalLight
-        position={[5, 5, 1]}
-        intensity={3}
-        castShadow
-        shadow-mapSize-width={1024}
-        shadow-mapSize-height={1024}
-        />
-      <Model decals={decals} setDecals={setDecals} sticker={sticker} scaleMod={scaleMod}/>
-      <OrbitControls enableRotate={true} enablePan={true} enableZoom={true} />
-    </Canvas>
-    <Stickers setSticker={setSticker} setScaleMod={setScaleMod} />
-  
-      <div id="button-container">
-        <button class='butt' onClick={removeDecal}>Undo</button>
-        <button class='butt' onClick={togglePopup}>Save image</button>
-        {visible ? <PainForm toggle={togglePopup} image={img} /> : null}
-          
-      </div>
-      <section class='diagram'>
-        <h3>Instructions</h3>
-        <img src="src/assets/clickIcon.png" alt="click on icon" height={120} width={120}/>   
-        <img src="src/assets/scaleIcon.png" alt="click on icon" height={120} width={120}/>
-        <img src="src/assets/placeIcon.png" alt="click on icon" height={120} width={120}/>
-      </section>
-  </div>
+            <ambientLight intensity={0.5} />
+            <spotLight position={[1, 5, -1]} angle={0.45} penumbra={1} />
+            <directionalLight
+              position={[5, 5, 1]}
+              intensity={3}
+              castShadow
+              shadow-mapSize-width={1024}
+              shadow-mapSize-height={1024}
+              />
+            <Model decals={decals} setDecals={setDecals} sticker={sticker} scaleMod={scaleMod}/>
+            <OrbitControls enableRotate={true} enablePan={true} enableZoom={true} />
+          </Canvas>
+          <Stickers setSticker={setSticker} setScaleMod={setScaleMod} />
+        
+            <div id="button-container">
+              <button class='butt' onClick={removeDecal}>Undo</button>
+              <button class='butt' onClick={togglePopup}>Save image</button>
+              {visible ? <PainForm toggle={togglePopup} image={img} /> : null}
+                
+            </div>
+            <section class='diagram'>
+              <h3>Instructions</h3>
+              <img src="src/assets/clickIcon.png" alt="click on icon" height={120} width={120}/>   
+              <img src="src/assets/scaleIcon.png" alt="click on icon" height={120} width={120}/>
+              <img src="src/assets/placeIcon.png" alt="click on icon" height={120} width={120}/>
+            </section>
+        </div>
+        </div>
+
   </div>
   );
 };
