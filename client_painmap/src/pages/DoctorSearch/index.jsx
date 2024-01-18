@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react'
 import { Consultation } from '../../components'
 import { useConsultations } from '../../contexts';
 import axios from 'axios';
+import './styles.css';
 
 import { useAuthContext } from "../../hooks/useAuthContext";
 
@@ -31,27 +32,30 @@ const DoctorSearch = () => {
 
   //////////////////////////////////////////////////////////
   return (
-    <>
+    <div className='doctor-search-page'>
       <SearchForm handleSearch={handleSearch} lastSearch={searchString}/>
       {/* <Link to="/">Home</Link> */}
-
-      <h1>Patient medical history:</h1 >
-      <div className='consultations'>
-        {
-          loading
-            ? <p style={{ marginTop: "200px", fontSize: "70px" }}>Loading...</p>
-            : <>
-            {
-              consultations.map(consultation => (
-                <Link to={`${consultation.id}`} key={consultation.id}>
-                  <Consultation consultation={consultation} />
-                </Link>
-              ))
-            }
-            </>
-        }
+      <div className='searched-patient-container'>
+        <h1>Patient medical history:</h1>
+        <div className='searched-consultation'>
+        <div className='consultations'>
+          {
+            loading
+              ? <p style={{ marginTop: "200px", fontSize: "70px" }}>Loading...</p>
+              : <>
+              {
+                consultations.map(consultation => (
+                  <Link to={`${consultation.id}`} key={consultation.id}>
+                    <Consultation consultation={consultation} />
+                  </Link>
+                ))
+              }
+              </>
+          }
+      </div> 
       </div>
-    </>
+      </div>
+    </div>
   )
 }
 

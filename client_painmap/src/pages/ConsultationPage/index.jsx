@@ -30,9 +30,11 @@ const ConsultationPage = () => {
 
                             <h1>{consultation.condition_name}</h1>
                             <img width='200' height='200' src={`data:image/jpeg;base64,${consultation.image_data_base64}`} />
-                            <h2>{consultation.description}</h2>
-                            <h3>Start date: {consultation.start_date}</h3>
-                            <h3>End date: {consultation.end_date}</h3>
+                            <div className='consultation-description'>
+                                <h2>Description: <span>{consultation.description}</span></h2>
+                                <h3>Start date: <span>{consultation.start_date}</span></h3>
+                                <h3>End date: <span>{consultation.end_date}</span></h3>
+                            </div>
                             <Link to=".." relative="path">
                                 <button className='backBtn'>
                                     Go Back
