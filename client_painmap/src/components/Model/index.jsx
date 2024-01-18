@@ -5,7 +5,7 @@ import { Vector2, Raycaster, Vector3, Euler, Matrix4} from 'three';
 import Decals from '../Decals';
 
 function Model({decals, setDecals, sticker, scaleMod}) {
-  const gltf = useLoader(GLTFLoader, 'public/3Dmale.gltf');
+  const gltf = useLoader(GLTFLoader, '/3Dmale.gltf');
   let [num, setNum] = useState(0)
   const {camera, mouse} = useThree()
   const modelRef = useRef();

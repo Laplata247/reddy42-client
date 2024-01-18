@@ -75,15 +75,15 @@ const MapPainPage = () => {
         
             <div id="button-container">
               <button class='butt' onClick={removeDecal}>Undo</button>
-              <button class='butt' onClick={togglePopup}>Save image</button>
+              <button class='butt butt-save' onClick={togglePopup}>Save image</button>
               {visible ? <PainForm toggle={togglePopup} image={img} /> : null}
                 
             </div>
             <section class='diagram'>
               <h3>Instructions</h3>
-              <img src="src/assets/clickIcon.png" alt="click on icon" height={120} width={120}/>   
-              <img src="src/assets/scaleIcon.png" alt="click on icon" height={120} width={120}/>
-              <img src="src/assets/placeIcon.png" alt="click on icon" height={120} width={120}/>
+              <img src="src/assets/clickIcon.png" alt="click on icon" height={120} width={115}/>   
+              <img src="src/assets/scaleIcon.png" alt="click on icon" height={110} width={120}/>
+              <img src="src/assets/placeIcon.png" alt="click on icon" height={90} width={120}/>
             </section>
         </div>
         </div>
