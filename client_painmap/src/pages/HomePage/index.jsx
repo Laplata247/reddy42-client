@@ -4,9 +4,9 @@ import './styles.css';
 
 const HomePage = () => {
   return (
-    <div role='PageWrapper'className='home'>
-      <div className='PageWrapper'>
-        <h1>Welcome back, name!</h1>
+    <div role='PageWrapper' className='home'>
+      <h1>Welcome back!👋</h1>
+      <div className='PageWrapper'> {/* This div will now use the grid layout */}
         <Link to="/chat">
           <div className="chat">
             <p>Chat with GP</p>
@@ -23,7 +23,7 @@ const HomePage = () => {
           </div>
         </Link>
         <div className="images">
-          <p>Past Images</p>
+          <p>Learn, coming soon...</p>
         </div>
       </div>
     </div>

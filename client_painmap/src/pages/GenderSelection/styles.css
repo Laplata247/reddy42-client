@@ -5,8 +5,10 @@
     max-height: 100vh;
     padding: 20px;
 }
-body{
-    background-image: url(./assets/select-gender.png);
+.body {
+    background-image: url('../../assets/mappain.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .select-gender {

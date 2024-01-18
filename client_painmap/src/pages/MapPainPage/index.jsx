@@ -51,7 +51,7 @@ const MapPainPage = () => {
   <div class="center-container">
     <Canvas id='canvasDiv'
       gl={{
-        preserveDrawingBuffer: true // allow showing model on the screenshot
+        preserveDrawingBuffer: true
       }}
       style={{
         height: '500px',
@@ -59,8 +59,6 @@ const MapPainPage = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        // background: 'white',
-        // border: '2px solid Green'
       }}
       shadows
       camera={{ position: [0, 0, 2] }}>
@@ -86,9 +84,10 @@ const MapPainPage = () => {
           
       </div>
       <section class='diagram'>
-        <img src="src/assets/clickIcon.png" alt="click on icon" height={70}/>   
-        <img src="src/assets/scaleIcon.png" alt="click on icon" height={80} />
-        <img src="src/assets/placeIcon.png" alt="click on icon" height={70}/>
+        <h3>Instructions</h3>
+        <img src="src/assets/clickIcon.png" alt="click on icon" height={120} width={120}/>   
+        <img src="src/assets/scaleIcon.png" alt="click on icon" height={120} width={120}/>
+        <img src="src/assets/placeIcon.png" alt="click on icon" height={120} width={120}/>
       </section>
   </div>
   </div>

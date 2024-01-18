@@ -1,1 +1,1 @@
-setupFiles: [     "jest-canvas-mock"   ]
+// setupFiles: [     "jest-canvas-mock"   ]

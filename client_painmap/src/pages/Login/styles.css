@@ -5,6 +5,8 @@
     height: 100%;
     width: 100%;
     background-image: url('../../assets/signup.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
     position: fixed;
     top: 0;
     left: 0;
@@ -86,3 +88,7 @@
 #loginButton:hover {
     background-color: #0056b3;
 }
+
+/* #logo{
+    width: 180%;
+    /* height: 120%; */
