@@ -56,23 +56,25 @@ function ChatPage() {
   }, [username]);
   
   return (
-    <div className="livechat">
-      {isLoading && <div>Loading...</div>}
-      {!showChat && isStaff && !isLoading ? (
-        <div className="joinChatContainer">
-          <h3>Join A Chat</h3>
-          <input
-            type="text"
-            placeholder="Room ID..."
-            onChange={(event) => {
-              setRoom(event.target.value);
-            }}
-          />
-          <button onClick={joinRoom}>Join A Room</button>
-        </div>
-      ) : (
-        <Chat socket={socket} username={username} room={room} />
-      )}
+    <div className="livechat-page">
+      <div className="livechat">
+        {isLoading && <div>Loading...</div>}
+        {!showChat && isStaff && !isLoading ? (
+          <div className="joinChatContainer">
+            <h3>Join A Chat</h3>
+            <input
+              type="text"
+              placeholder="Room ID..."
+              onChange={(event) => {
+                setRoom(event.target.value);
+              }}
+            />
+            <button onClick={joinRoom}>Join A Room</button>
+          </div>
+        ) : (
+          <Chat socket={socket} username={username} room={room} />
+        )}
+      </div>
     </div>
   );
   
