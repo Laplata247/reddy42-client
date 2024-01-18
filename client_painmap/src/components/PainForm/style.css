@@ -4,15 +4,15 @@
     top: 0;
     width: 100%;
     height: 100vh;
-    background: rgba( 148, 175, 193, 0.45 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 2.5px );
-    -webkit-backdrop-filter: blur( 2.5px );
+    background: rgba(148, 175, 193, 0.45);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(2.5px);
+    -webkit-backdrop-filter: blur(2.5px);
     border-radius: 10px;
     z-index: 1;
 }
 
-.painFormPopupElements {    
+.painFormPopupElements {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -20,11 +20,11 @@
     padding: 40px;
     border-radius: 20px;
     background: rgba(255, 215, 169, 0.45);
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 2.5px );
--webkit-backdrop-filter: blur( 2.5px );
-border-radius: 10px;
-   
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(2.5px);
+    -webkit-backdrop-filter: blur(2.5px);
+    border-radius: 10px;
+
 }
 
 .painFormPopupElements h2 {
@@ -51,10 +51,10 @@ border-radius: 10px;
     background-color: #25bee4;
 }
 
-#img{
-border-radius: 20px;
+#img {
+    border-radius: 20px;
 }
 
-#img{
-border-radius: 20px;
+#img {
+    border-radius: 20px;
 }

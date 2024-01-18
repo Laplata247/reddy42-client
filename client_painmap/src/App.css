@@ -5,7 +5,8 @@
   /* width: 100%; */
 }
 
-/* #google_translate_element {
+#google_translate_element {
   position: fixed;
-  top: 0;
-} */
+  bottom: 0;
+  right: 0;
+}

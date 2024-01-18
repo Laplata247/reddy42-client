@@ -10,3 +10,5 @@ export { default as Logo} from './Logo'
 export { default as SearchForm } from './SearchForm';
 export { default as FamilyMember } from './FamilyMember'
 export { default as HereditaryCondition } from './HereditaryCondition'
+export { default as FamilyForm } from './FamilyForm'
+export { default as HereditaryForm } from './HereditaryForm'

@@ -1,0 +1,52 @@
+.familyFormPopup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(148, 175, 193, 0.45);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(2.5px);
+    -webkit-backdrop-filter: blur(2.5px);
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.familyFormPopupElements {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(255, 215, 169, 0.45);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(2.5px);
+    -webkit-backdrop-filter: blur(2.5px);
+    border-radius: 10px;
+
+}
+
+.familyFormPopupElements h2 {
+    margin-top: 0;
+}
+
+.familyFormPopupElements input {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #cccccc00;
+    margin-bottom: 10px;
+}
+
+
+.familyFormPopupElements button[type="submit"],
+.familyFormPopupElements #closeBtn {
+    margin-top: 10px;
+    width: 100px;
+}
+
+.familyFormPopupElements button[type="submit"]:hover,
+.familyFormPopupElements #closeBtn:hover {
+    background-color: #25bee4;
+}
