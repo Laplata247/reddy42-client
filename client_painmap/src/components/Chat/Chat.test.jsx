@@ -1,86 +1,78 @@
-import { describe, it, expect, beforeEach, afterEach, render, screen } from 'vitest';
-import { act } from '@testing-library/react';
-import Chat from './Chat';
+import React from "react";
+import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
+// import { useVite } from 'vite-plu'
+import { screen, render, cleanup, fireEvent } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
+import * as matchers from "@testing-library/jest-dom/matchers";
+expect.extend(matchers);
 
-// Mock socket and fetch
-let mockSocket;
-let originalFetch;
+import Chat from ".";
 
 describe('Chat Component', () => {
+  let mockSocket;
+
   beforeEach(() => {
-    // Mock socket and fetch
+    // Mock socket
     mockSocket = {
-      emit: () => {},
-      on: () => {},
-      off: () => {},
+      emit: vi.fn(),
+      on: vi.fn(),
+      off: vi.fn(),
     };
-    originalFetch = global.fetch;
-    global.fetch = () =>
-      Promise.resolve({
-        json: () => Promise.resolve({ data: [] }),
-      });
+
+    render(
+      <BrowserRouter>
+        <Chat socket={mockSocket} username="TestUser" room="TestRoom" />
+      </BrowserRouter>,
+      // Ensure you use `useVite` to handle asynchronous code
+      // useVite(),
+    );
   });
 
   afterEach(() => {
-    // Restore original fetch
-    global.fetch = originalFetch;
+    cleanup();
   });
 
-  it.skip('renders the Chat component', async () => {
-    render(<Chat socket={mockSocket} username="TestUser" room="TestRoom" />);
-
-    await act(async () => {
-      await Promise.resolve();
-    });
-
-    expect(screen.getByText('Live Chat')).toBeTruthy();
+  it('renders the Chat component', () => {
+    const chatWindow = screen.getByText('Live Chat');
+    expect(chatWindow).toBeInTheDocument();
   });
 
   it.skip('sends a message when the button is clicked', async () => {
     render(<Chat socket={mockSocket} username="TestUser" room="TestRoom" />);
-
-    await act(async () => {
-      await Promise.resolve();
-    });
-
+    
     // Mock user input
-    const input = screen.getByPlaceholderText('Hey...');
-    const sendButton = screen.getByText('▶');
+    const inputList = screen.getAllByPlaceholderText('Hey...');
+    const sendButtonList = screen.getAllByText('►');
+    const input = inputList[0];
+    const sendButton = sendButtonList[0];
     input.value = 'Hello';
-
-    await act(async () => {
-      await Promise.resolve();
+  
+    // Trigger the click event
+    fireEvent.click(sendButton);
+  
+    // Additional logging for debugging
+    console.log('mockSocket.emit calls:', mockSocket.emit.mock.calls);
+  
+    // Assertions
+    // Check if socket.emit is called with the expected parameters
+    expect(mockSocket.emit).toHaveBeenCalledWith('send_message', {
+      room: 'TestRoom',
+      author: 'TestUser',
+      content: 'Hello',
+      time: expect.any(String),
     });
-
+  
+    // Check if the input value is cleared after sending the message
     expect(input.value).toBe('');
-
-    // Your assertions related to socket.emit can be added here.
   });
+  
 
   it.skip('fetches previous messages on mount', async () => {
-    render(<Chat socket={mockSocket} username="TestUser" room="TestRoom" />);
+    // Ensure socket.on is called for receive_message and user_joined events
+    expect(mockSocket.on).toHaveBeenCalledWith('receive_message', expect.any(Function));
+    expect(mockSocket.on).toHaveBeenCalledWith('user_joined', expect.any(Function));
 
-    await act(async () => {
-      await Promise.resolve();
-    });
-
-    // Your assertions related to global.fetch can be added here.
-  });
-
-  it.skip('handles an empty message input on send', async () => {
-    render(<Chat socket={mockSocket} username="TestUser" room="TestRoom" />);
-
-    await act(async () => {
-      await Promise.resolve();
-    });
-
-    // Mock user trying to send an empty message
-    const sendButton = screen.getByText('▶');
-
-    await act(async () => {
-      await Promise.resolve();
-    });
-
-    // Your assertions related to socket.emit should not be called here.
+    // Ensure fetch is called with the correct URL
+    expect(globalThis.fetch).toHaveBeenCalledWith('http://localhost:5000/messages/TestRoom');
   });
 });
