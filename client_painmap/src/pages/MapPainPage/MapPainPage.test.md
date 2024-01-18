@@ -3,7 +3,7 @@ import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import { render, cleanup, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import MapPainPage from '.';
-import "jest-canvas-mock";
+// import "jest-canvas-mock";
 
 describe("MapPainPage component", () => {
 
