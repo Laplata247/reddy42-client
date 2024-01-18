@@ -17,10 +17,10 @@ describe("Navbar Component", () => {
       </MemoryRouter>
   );
 
-  it("displays a navbar with 4 children", () => {
+  it("displays a navbar with 1 div when user is not logged in", () => {
     const nav = screen.getByRole("navigation");
     expect(nav).toBeInTheDocument();
-    expect(nav.childNodes.length).toBe(1); //fails because when the user is not logged in only one signIn is displayed
+    expect(nav.childNodes.length).toBe(1); 
   });
 
   it("takes you to the login page when login is pressed", () => {
@@ -34,10 +34,20 @@ describe("Navbar Component", () => {
     expect(location.pathname).toBe('/');
   });
 
-  it.skip("displays a navbar with correct names", () => {
+  it("takes you to the login page when login is pressed", () => {
+    const login = screen.getByRole('login')
+    fireEvent.click(login);
+    expect(location.pathname).toBe('/');
+  });
+  it("takes you to the login page when login is pressed", () => {
+    const signup = screen.getByRole('signup') 
+    fireEvent.click(signup);
+    expect(location.pathname).toBe('/');
+  });
+
+  it("displays a navbar with correct names", () => {
     const nav = screen.getByRole("navigation");
-    expect(nav.childNodes[0].textContent).toBe("Login");
-    expect(nav.childNodes[1].textContent).toBe("Signup");
+    expect(nav.childNodes[0].textContent).toBe("LoginSignup");
     // expect(nav.childNodes[0].textContent).toBe("Home");
     // expect(nav.childNodes[1].textContent).toBe("Articulate Your Pain");
     // expect(nav.childNodes[2].textContent).toBe("Chat");

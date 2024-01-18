@@ -11,7 +11,7 @@ const PainForm = (props) => {
 
     const { user } = useAuthContext();
 
-   async function handleSubmit(e) {
+    async function handleSubmit(e) {
         e.preventDefault()
 
         const imageWithoutPrefix = props.image.substring("data:image/jpeg;base64,".length);
@@ -53,20 +53,21 @@ const PainForm = (props) => {
                     <label>
                         Add title:
                         <input role="condition" type="text" value={condition} required={true}
-                        placeholder='e.g. headache'
-                        onChange={e => setCondition(e.target.value)} />
+                            placeholder='e.g. headache'
+                            onChange={e => setCondition(e.target.value)} />
                     </label>
                     <label>
                         Description:
-                        <input role="description"type="text" value={description} required={true}
-                        placeholder='e.g. throbbing pain on left side of head'
-                        onChange={e => setDescription(e.target.value)} />
+                        <textarea role="description" type="text" value={description} required={true} rows="4" cols="120"
+                            placeholder='e.g. throbbing pain on left side of head'
+                            onChange={e => setDescription(e.target.value)} />
                     </label>
                     <label>
                         Start date:
-                        <input role='date' type="datetime-local" value={startDate} required={true}
-                        onChange={e => setStartDate(e.target.value)} />
+                        <input role='date' type="date" value={startDate} required={true}
+                            onChange={e => setStartDate(e.target.value)} />
                     </label>
+
                     <button type="submit">Add</button>
                 </form>
                 <button id='closeBtn' onClick={props.toggle}>Cancel</button>
