@@ -7,7 +7,6 @@
   position: fixed;
   top: 0;
   left: 0;
-  padding-top: 20rem;
 }
 .painPage{
   background-image: url('/src/assets/mappain.png');
@@ -17,7 +16,7 @@
   height: 100%;
 }
 .pain_map_title{
-  margin: 45% 0% 0% 0%;
+  margin: 10% 0% 0% 0%;
 }
 #canvasDiv {
     background: rgba(120, 181, 160, 0.4);
@@ -47,13 +46,18 @@
 #button-container{
   display:flex;
   width: 90%;
-  justify-content: space-around;
+  align-items: center;
+  margin-left: 75%;
 }
 
 .butt{
-  margin: 3% 0%;
+  margin: 3% 1%;
+  /* margin-right: -30rem; */
 }
 
+/* .butt-save {
+  margin-left: -50rem;
+} */
 .diagram{
   position: fixed;
   top:15%;
