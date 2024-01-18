@@ -1,8 +1,8 @@
 import React from 'react';
+import { describe, it, beforeEach, afterEach, expect } from 'vitest';
+import { render, cleanup, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import { describe, it, expect, beforeEach, afterEach } from 'vitest';
-import { screen, render, cleanup } from '@testing-library/react';
-import '@testing-library/jest-dom';
+import '@testing-library/jest-dom/matchers';
 
 import RenderMessageContent from './index';
 
@@ -24,7 +24,7 @@ describe('RenderMessageContent Component', () => {
     );
 
     const messageContentElement = screen.getByText(/Hello/i);
-    expect(messageContentElement).toBeInTheDocument();
+    expect(messageContentElement).toBeTruthy();
   });
 
   // Test 2: Happy path
@@ -45,9 +45,9 @@ describe('RenderMessageContent Component', () => {
     const timeElement = screen.getByText(/12:34/i);
     const authorElement = screen.getByText(/User/i);
 
-    expect(contentElement).toBeInTheDocument();
-    expect(timeElement).toBeInTheDocument();
-    expect(authorElement).toBeInTheDocument();
+    expect(contentElement).toBeTruthy();
+    expect(timeElement).toBeTruthy();
+    expect(authorElement).toBeTruthy();
   });
 
   // Test 3: Edge case - System message
@@ -64,8 +64,6 @@ describe('RenderMessageContent Component', () => {
     );
 
     const systemMessageElement = screen.getByText(/This is a system message/i);
-
-    expect(systemMessageElement).toBeInTheDocument();
+    expect(systemMessageElement).toBeTruthy();
   });
 });
-
