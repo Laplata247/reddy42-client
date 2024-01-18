@@ -26,7 +26,7 @@ const Header = () => {
                     {user && (
                         <div className="userDisplay">
                             <NavLink to="/">Home</NavLink>
-                            {!user.user_id =="NHS@email.com" && (
+                            {!(user.user_id =="NHS@email.com") && (
                                 <>
                                     <NavLink to="/select-gender">Articulate Your Pain</NavLink>
                                     <NavLink to="/history">Medical History</NavLink>
