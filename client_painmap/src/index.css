@@ -16,6 +16,10 @@
   --darker-color: rgba(255, 97, 97, 0.77);
   --lighter-color: rgba(228, 129, 129, 0.896);
 
+  background-image: url('./assets/select-gender.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
 }
 
 a {

@@ -7,14 +7,6 @@ h1{
   font-weight: 800;
 }
 
-.body{
-  background-image: url('C:\Users\mattb\Desktop\LafosseAcademy\Lap-4\project42\reddy42-client\client_painmap\src\assets\anypage.png');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-    position: fixed;
-    top: 0;
-    left: 0;
-}
 
 .PageWrapper {
   display: grid;
