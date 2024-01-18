@@ -4,7 +4,7 @@
   align-items: center;
   height: 100%;
   width: 100%;
-  background-image: url('../../assets/signup.png');
+  background-image: url('../../assets/anypage.png');
   position: fixed;
   top: 0;
   left: 0;
@@ -17,6 +17,16 @@
   padding: 1vw;
   border: 1px solid black;
   border-radius: 20px;
-  background-color: rgba(253, 175, 118, 0.5);
+  background-color: rgba(194, 218, 240, 0.3);
   z-index: 10;
+}
+
+.consultation-description {
+  text-align: left;
+  margin-left: 30%;
+}
+
+.consultation-description span {
+  font-weight: 500;
+  margin-left: 1rem;
 }
