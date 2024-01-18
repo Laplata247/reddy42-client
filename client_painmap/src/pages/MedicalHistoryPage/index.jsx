@@ -57,7 +57,7 @@ const MedicalHistoryPage = () => {
             <div className='individual'>
             {
               loading
-                ? <p style={{ marginTop: "200px", fontSize: "70px" }}>Loading...</p>
+                ? <p style={{  marginTop: "200px", fontSize: "40px" }}>Loading...</p>
                 : (
                   hereditaryConditions.length > 0 ? (
                     <>
@@ -81,7 +81,7 @@ const MedicalHistoryPage = () => {
             <div className='individual'>
             {
               loading
-                ? <p style={{ marginTop: "200px", fontSize: "70px" }}>Loading...</p>
+                ? <p style={{ marginTop: "200px", fontSize: "40px" }}>Loading...</p>
                 : (
                   family.length > 0 ? (
                     <>
@@ -109,7 +109,7 @@ const MedicalHistoryPage = () => {
           <div className='consultations'>
             {
               loading
-                ? <p style={{ marginTop: "200px", fontSize: "70px" }}>Loading...</p>
+                ? <p style={{ marginTop: "200px", fontSize: "40px" }}>Loading...</p>
                 : <>
                   {
                     consultations.map(consultation => (

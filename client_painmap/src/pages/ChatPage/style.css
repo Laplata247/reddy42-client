@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
 
 .livechat-page {
   height: 100%;
@@ -85,7 +84,7 @@
   .chat-window .chat-header {
     height: 45px;
     border-radius: 6px;
-    background: #06699b;
+    background: #618699;
     position: relative;
     cursor: pointer;
     margin-top: 2.5rem;
@@ -101,7 +100,8 @@
   .chat-window .chat-body {
     height: calc(450px - (45px + 70px));
     border: 1px solid #263238;
-    background: #fff;
+    background: #ffffff;
+    width:100%;
     position: relative;
     overflow: hidden;
   }
@@ -109,8 +109,14 @@
     width: 100%;
     height: 100%;
     overflow-y: scroll;
-    overflow-x: hidden;
+
   }
+
+  .message::-webkit-scrollbar {
+    display: none;
+  }
+
+  
   
   .chat-window .chat-body .message-container::-webkit-scrollbar {
     display: none;
@@ -132,7 +138,7 @@
     max-width: 200rem; */
     background-color: cornflowerblue;
     border-radius: 5px;
-    color: white;
+    color: rgb(255, 255, 255);
     display: flex;
     align-items: center;
     text-align: justify;
@@ -233,4 +239,23 @@
   .send-btn {
     margin-top: -1rem;
     color: #43a047;
+    border: 0;
+  }
+
+
+.react-scroll-to-bottom--css-clnuq-1n7m0yu{
+    overflow-x: hidden;
+    
+  }
+
+  .react-scroll-to-bottom--css-rixkp-1n7m0yu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .react-scroll-to-bottom--css-rixkp-1n7m0yu .message-content{
+    width: 200px;
+  }
+
+  #you{
+    width: 100px;
   }

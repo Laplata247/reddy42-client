@@ -29,6 +29,8 @@
     border-radius: 10px;
     width: 30%;
     border: 0.5px;
+    background-color: rgb(255, 255, 255);
+    color: black;
 }
 
 .search-patient-btn {
