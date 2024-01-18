@@ -64,6 +64,11 @@
   margin: 5% 0;
 }
 
+.individual {
+  background-color: rgba(209, 224, 238, 0.4);
+  padding: 0.4rem 3.5rem;
+  text-align: left;
+}
 
 .family-members {
   width: 20vw;
@@ -71,4 +76,8 @@
   /* border: 1px solid black; */
   border-radius: 10px;
   background-color: rgba(194, 218, 240, 0.3);
+}
+
+.history-btn {
+  margin-top: 1rem;
 }

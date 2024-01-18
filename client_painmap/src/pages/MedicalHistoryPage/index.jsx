@@ -51,7 +51,10 @@ const MedicalHistoryPage = () => {
         <div className='hereditary-family-container'>
 
           <div className='hereditary-conditions'>
-            <p>Hereditary conditions:</p>
+
+            <h2>Hereditary conditions:</h2>
+
+            <div className='individual'>
             {
               loading
                 ? <p style={{ marginTop: "200px", fontSize: "70px" }}>Loading...</p>
@@ -67,12 +70,15 @@ const MedicalHistoryPage = () => {
                   )
                 )
             }
-            <button onClick={toggleHereditaryPopup}>Add</button>
+            </div>
+            <button onClick={toggleHereditaryPopup} className='history-btn'>Add more hereditary conditions</button>
             {hereditaryFormVisible ? <HereditaryForm toggleHereditaryPopup={toggleHereditaryPopup} /> : null}
           </div>
 
           <div className='family-members'>
-            <p>Family members:</p>
+            
+            <h2>Family members:</h2>
+            <div className='individual'>
             {
               loading
                 ? <p style={{ marginTop: "200px", fontSize: "70px" }}>Loading...</p>
@@ -90,26 +96,32 @@ const MedicalHistoryPage = () => {
                   )
                 )
             }
-            <button onClick={toggleFamilyPopup}>Add</button>
+            </div>
+
+            <button onClick={toggleFamilyPopup} className='history-btn'>Add more family members</button>
             {familyFormVisible ? <FamilyForm toggleFamilyPopup={toggleFamilyPopup} /> : null}
           </div>
         </div>
 
-        <h1>My Medical History</h1>
-        <div className='consultations'>
-          {
-            loading
-              ? <p style={{ marginTop: "200px", fontSize: "70px" }}>Loading...</p>
-              : <>
-                {
-                  consultations.map(consultation => (
-                    <Link to={`${consultation.id}`} key={consultation.id}>
-                      <Consultation consultation={consultation} />
-                    </Link>
-                  ))
-                }
-              </>
-          }
+        <div className='consultations-container'>
+
+          <h1>My Medical History</h1>
+          <div className='consultations'>
+            {
+              loading
+                ? <p style={{ marginTop: "200px", fontSize: "70px" }}>Loading...</p>
+                : <>
+                  {
+                    consultations.map(consultation => (
+                      <Link to={`${consultation.id}`} key={consultation.id}>
+                        <Consultation consultation={consultation} />
+                      </Link>
+                    ))
+                  }
+                </>
+            }
+          </div>
+
         </div>
         
       </div>
