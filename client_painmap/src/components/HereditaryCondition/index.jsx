@@ -4,7 +4,7 @@ import './style.css';
 const HereditaryCondition = ({ condition }) => {
   return (
     <div role='div'className='hereditaryCondition'>
-      <h3 role='title'>{condition.hereditary_condition_name}</h3>
+      <p role='title'>{condition.hereditary_condition_name}</p>
     </div>
   )
 }

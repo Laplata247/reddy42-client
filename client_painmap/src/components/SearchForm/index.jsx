@@ -19,8 +19,8 @@ export default function SearchForm ({ handleSearch, lastSearch }) {
         <form onSubmit={handleSubmit}>
             <input type="text" onChange={handleInput}
              placeholder={lastSearch} role="input" 
-             value={inputValue} required/>
-            <input type="submit" value="Search"/>
+             value={inputValue} required className='search-patient' />
+            <input type="submit" value="Search" className='search-patient-btn'/>
         </form>
     )   
 };
