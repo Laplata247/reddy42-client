@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import MapPainPage from '.';
 // import "jest-canvas-mock";
 
-describe("MapPainPage component", () => {
+describe("MapPainPage tests------------------------------------------------------------", () => {
 
     beforeEach(() => {
         jest.resetAllMocks();

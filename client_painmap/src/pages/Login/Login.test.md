@@ -9,7 +9,7 @@ import * as matchers from "@testing-library/jest-dom/matchers";
 expect.extend(matchers);
 import Login from ".";
 
-describe("Login Component", () => {
+describe("Login Page", () => {
   beforeEach(() => {
     render(
       <AuthProvider>
@@ -25,7 +25,7 @@ describe("Login Component", () => {
   });
 
   it("displays text when page is loaded", () => {
-    const heading = screen.getByText("Log In");
+    const heading = screen.getByText("Hi, there!👩‍⚕️");
     expect(heading).toBeInTheDocument();
   });
 

@@ -43,8 +43,8 @@ const Header = () => {
           )}
           {!user && !isHomePage && (
             <div className="userDisplay">
-              <Link to="/login">Login</Link>
-              <Link to="/signup">Signup</Link>
+              <Link to="/login" role="login">Login</Link>
+              <Link to="/signup" role='signup'>Signup</Link>
             </div>
           )}
           </div>
