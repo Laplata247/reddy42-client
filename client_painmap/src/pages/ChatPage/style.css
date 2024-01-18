@@ -75,7 +75,7 @@
   } */
   
   .chat-window {
-    width: 600px;
+    width: 500px;
     height: 620px;
   }
   
@@ -102,8 +102,8 @@
     height: calc(450px - (45px + 70px));
     border: 1px solid #263238;
     background: #fff;
-  
     position: relative;
+    overflow: hidden;
   }
   .chat-window .chat-body .message-container {
     width: 100%;
@@ -115,8 +115,10 @@
   .chat-window .chat-body .message-container::-webkit-scrollbar {
     display: none;
   }
+
+
   .chat-window .chat-body .message {
-    height: auto;
+    /* height: auto; */
     padding: 10px;
     display: flex;
     align-items: flex-start;
