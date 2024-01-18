@@ -64,10 +64,10 @@ const PainForm = (props) => {
                     </label>
                     <label>
                         Start date:
-                        <input role='date' type="datetime-local" value={startDate} required={true}
+                        <input role='date' type="date" value={startDate} required={true}
                             onChange={e => setStartDate(e.target.value)} />
                     </label>
-                    
+
                     <button type="submit">Add</button>
                 </form>
                 <button id='closeBtn' onClick={props.toggle}>Cancel</button>
