@@ -84,9 +84,10 @@ const MapPainPage = () => {
           
       </div>
       <section class='diagram'>
-        <img src="src/assets/clickIcon.png" alt="click on icon" height={70}/>   
-        <img src="src/assets/scaleIcon.png" alt="click on icon" height={80} />
-        <img src="src/assets/placeIcon.png" alt="click on icon" height={70}/>
+        <h3>Instructions</h3>
+        <img src="src/assets/clickIcon.png" alt="click on icon" height={120} width={120}/>   
+        <img src="src/assets/scaleIcon.png" alt="click on icon" height={120} width={120}/>
+        <img src="src/assets/placeIcon.png" alt="click on icon" height={120} width={120}/>
       </section>
   </div>
   </div>
