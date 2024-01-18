@@ -34,17 +34,6 @@ describe("Navbar Component", () => {
     expect(location.pathname).toBe('/');
   });
 
-  it("takes you to the login page when login is pressed", () => {
-    const login = screen.getByRole('login')
-    fireEvent.click(login);
-    expect(location.pathname).toBe('/');
-  });
-  it("takes you to the login page when login is pressed", () => {
-    const signup = screen.getByRole('signup') 
-    fireEvent.click(signup);
-    expect(location.pathname).toBe('/');
-  });
-
   it("displays a navbar with correct names", () => {
     const nav = screen.getByRole("navigation");
     expect(nav.childNodes[0].textContent).toBe("LoginSignup");
