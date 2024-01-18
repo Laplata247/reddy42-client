@@ -7,7 +7,7 @@ expect.extend(matchers);
 
 import Signup from ".";
 
-describe('Signup Page', () => {
+describe('Signup Page', () => { 
     beforeEach(() => {
         render (
             <BrowserRouter>
