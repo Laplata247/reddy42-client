@@ -14,9 +14,7 @@ vi.mock('react-lottie', () => ({
   
 describe('Signup Page', () => { 
     beforeEach(() => {
-        // vi.mock('bodymovin', () => ({
-        //     loadAnimation: vi.fn(),
-        //   }));
+    
           
         render (
             <BrowserRouter>
