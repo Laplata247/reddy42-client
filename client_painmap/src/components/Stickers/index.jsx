@@ -1,24 +1,24 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import './styles.css'
 import 'boxicons'
 // import dot from 'src/assets/Basic_red_dot.png'
 
 
 function Stickers({setSticker, setScaleMod}) {
-    const [open, setOpen] = useState(false)
-    const [className, setClassName] = useState('stickerSelectorClosed')
-    const [size1, setSize1] = useState(3)
-    const [size2, setSize2] = useState(3)
-    const [size3, setSize3] = useState(3)
-    const [size4, setSize4] = useState(3)
-    const [size5, setSize5] = useState(3)
-    const [size6, setSize6] = useState(3)
-    const [activeSticker1, setactiveSticker1] = useState('activeSticker')
-    const [activeSticker2, setactiveSticker2] = useState('inactiveSticker')
-    const [activeSticker3, setactiveSticker3] = useState('inactiveSticker')
-    const [activeSticker4, setactiveSticker4] = useState('inactiveSticker')
-    const [activeSticker5, setactiveSticker5] = useState('inactiveSticker')
-    const [activeSticker6, setactiveSticker6] = useState('inactiveSticker')
+    const [open, setOpen] = React.useState(false)
+    const [className, setClassName] = React.useState('stickerSelectorClosed')
+    const [size1, setSize1] = React.useState(3)
+    const [size2, setSize2] = React.useState(3)
+    const [size3, setSize3] = React.useState(3)
+    const [size4, setSize4] = React.useState(3)
+    const [size5, setSize5] = React.useState(3)
+    const [size6, setSize6] = React.useState(3)
+    const [activeSticker1, setactiveSticker1] = React.useState('activeSticker')
+    const [activeSticker2, setactiveSticker2] = React.useState('inactiveSticker')
+    const [activeSticker3, setactiveSticker3] = React.useState('inactiveSticker')
+    const [activeSticker4, setactiveSticker4] = React.useState('inactiveSticker')
+    const [activeSticker5, setactiveSticker5] = React.useState('inactiveSticker')
+    const [activeSticker6, setactiveSticker6] = React.useState('inactiveSticker')
 
     const openMenu= () =>{
         setOpen(!open)
@@ -63,7 +63,6 @@ function Stickers({setSticker, setScaleMod}) {
                 </p>
 
                 <p role="sticker" class={activeSticker2} onClick={e => {
-                    handleClick(2)
                     handleClick(2)
                     setSticker('src/assets/bolts.png')
                     setScaleMod(size2)
