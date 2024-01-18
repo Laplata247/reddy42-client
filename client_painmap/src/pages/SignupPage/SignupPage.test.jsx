@@ -1,5 +1,5 @@
 import React from "react";
-import { describe, it, expect, beforeEach, afterEach } from "vitest";
+import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 import { screen, render, cleanup } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import * as matchers from "@testing-library/jest-dom/matchers";
@@ -7,8 +7,17 @@ expect.extend(matchers);
 
 import Signup from ".";
 
+
+vi.mock('react-lottie', () => ({
+    Lottie: ({ options }) => <div data-testid="mock-lottie">{options.animationData}</div>, // Render a placeholder for visibility
+  }));
+  
 describe('Signup Page', () => { 
     beforeEach(() => {
+        // vi.mock('bodymovin', () => ({
+        //     loadAnimation: vi.fn(),
+        //   }));
+          
         render (
             <BrowserRouter>
                 <Signup />
@@ -24,6 +33,8 @@ describe('Signup Page', () => {
         const heading = screen.getByRole("message-heading");
         expect(heading).toBeInTheDocument();
         expect(heading.textContent).toBe("Visualize Your Health, Simplify Your Care.");
+        const mockLottie = screen.getByTestId('mock-lottie');
+        expect(mockLottie).toBeInTheDocument();
     });
 
 });
