@@ -58,4 +58,6 @@
 }
 .diagram img{
   padding: 10px 0px;
+  justify-content: center;
+  align-items: center;
 }
