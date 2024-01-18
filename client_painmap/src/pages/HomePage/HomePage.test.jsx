@@ -29,7 +29,7 @@ describe("NotFoundPage", () => {
     expect(wrapper.childNodes.length).toBe(2)
   })
   it("displays a welcome message", () => {
-    const welcome = screen.getByText(/Welcome back, name!/i);
+    const welcome = screen.getByText(/Welcome back!👋/i);
     expect(welcome).toBeInTheDocument();
   })
 });
