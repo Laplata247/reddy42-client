@@ -7,6 +7,15 @@ h1{
   font-weight: 800;
 }
 
+.body{
+  background-image: url('../../assets/mappain.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
 .PageWrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Creates two columns */

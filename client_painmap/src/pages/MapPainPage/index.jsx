@@ -51,7 +51,7 @@ const MapPainPage = () => {
   <div class="center-container">
     <Canvas id='canvasDiv'
       gl={{
-        preserveDrawingBuffer: true // allow showing model on the screenshot
+        preserveDrawingBuffer: true
       }}
       style={{
         height: '500px',
@@ -59,8 +59,6 @@ const MapPainPage = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        // background: 'white',
-        // border: '2px solid Green'
       }}
       shadows
       camera={{ position: [0, 0, 2] }}>
