@@ -31,11 +31,6 @@ const MapPainPage = () => {
     html2canvas(element).then((canvas) => {
       let image = canvas.toDataURL("image/jpeg");
       setImg(image)
-      // console.log(image)
-      // const a = document.createElement("a")
-      // a.href = image
-      // a.download = "screenshot.jpeg"
-      // a.click()
     })
   }
   const removeDecal = () => {
