@@ -8,7 +8,7 @@ h1{
 }
 
 .body{
-  background-image: url('../../assets/mappain.png');
+  background-image: url('C:\Users\mattb\Desktop\LafosseAcademy\Lap-4\project42\reddy42-client\client_painmap\src\assets\anypage.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
     position: fixed;
@@ -23,6 +23,8 @@ h1{
   justify-items: center; /* Centers the items horizontally */
   align-items: start; /* Aligns the items to the start vertically */
   padding: 20px; /* Adds some padding around the grid */
+  height: 80%;
+  width: 80%;
 }
 
 .chat, .history, .articulate, .images {
@@ -32,9 +34,9 @@ h1{
   border: none; /* Removes the border */
   padding: 20px; /* Adds padding inside the buttons */
   text-align: center; /* Centers the text inside the buttons */
-  font-size: 40px; /* Sets the font size */
-  height: 250px;
-  width: 250px;
+  font-size: 1.5rem; /* Sets the font size */
+  height: 10rem;
+  width: 10rem;
   background: rgba( 255, 130, 130, 0.25 );
 box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 backdrop-filter: blur( 6.5px );
@@ -70,9 +72,7 @@ backdrop-filter: blur( 6.5px );
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  white-space: nowrap;
   will-change: box-shadow,transform;
-  font-size: 40px;
 }
 
 .chat:focus {
@@ -96,7 +96,6 @@ backdrop-filter: blur( 6.5px );
   -webkit-user-select: none;
   touch-action: manipulation;
   will-change: box-shadow,transform;
-  font-size: 40px;
 }
 
 .articulate:focus {
@@ -120,7 +119,6 @@ backdrop-filter: blur( 6.5px );
   -webkit-user-select: none;
   touch-action: manipulation;
   will-change: box-shadow,transform;
-  font-size: 40px;
 }
 
 .history:focus {

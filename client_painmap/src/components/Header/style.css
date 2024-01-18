@@ -38,10 +38,10 @@
   color: #181818;
   margin-right: 15px;
   margin-left: 15px;
-  font-weight: 500;  
+  font-weight: 0.5rem;  
   width: fit-content;
 	padding: 1rem 3rem;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .navbar a:hover {
@@ -50,7 +50,7 @@
 }
 
 .logout-btn {
-  background-color: rgba(241, 49, 49, 0.829);
+  background-color: rgba(248, 69, 69, 0.829);
   color: #ffffff;
   z-index: 10;
 }
