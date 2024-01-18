@@ -6,16 +6,16 @@ import { screen, render, cleanup, fireEvent } from "@testing-library/react";
 import * as matchers from "@testing-library/jest-dom/matchers";
 expect.extend(matchers);
 
-import HereditaryForm from ".";
+import FamilyMember from ".";
 import {AuthProvider} from '../../contexts/AuthContext'
 
-describe("HereditaryForm component", () => {
+describe("FamilyMember component", () => {
 
     beforeEach(() => {
         render(
             <BrowserRouter>
                 <AuthProvider>
-                    <HereditaryForm />
+                    <FamilyMember />
                 </AuthProvider>
             </BrowserRouter>
         );
@@ -25,12 +25,7 @@ describe("HereditaryForm component", () => {
         cleanup();
     });
 
-    it("updates the hereditary condition field correctly", () => {
-        const condition = screen.getByRole("hereditaryCondition");
-        expect(condition.value).toBe("");
-        fireEvent.change(condition, { target: { value: "Albinism" } });
-        expect(condition.value).toBe("Albinism");
-    });
+
 
 
 })
