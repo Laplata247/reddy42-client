@@ -12,6 +12,8 @@ body, html {
   height: 100%;
   width: 100%;
   background-image: url('../../assets/signup.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   position: fixed;
   top: 0;
   left: 0;
@@ -34,7 +36,7 @@ body, html {
   width: 40rem;
   margin-right: 25rem;
   margin-left: 15rem;
-  color: #004299;
+  color: #1b3658;
 }
 
 .message .header {
@@ -51,15 +53,6 @@ body, html {
 .message p {
   font-size: 1.5rem;
 }
-
-/* Styling for the right column (signup-container) */
-/* .signup-container {
-  flex: 1;
-  padding: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
 
 #signup-form {
   width: 90%;
@@ -87,8 +80,6 @@ body, html {
   justify-content: center;
   align-items: center;
 }
-
-
 
 .signup-container::-webkit-scrollbar {
   display: none;
@@ -129,7 +120,6 @@ body, html {
 .sign-up-form input[type="submit"]:active {
   background-color: #004299;
 }
-
 /* Styling for the login link below the form */
 .login-link {
   display: block;
