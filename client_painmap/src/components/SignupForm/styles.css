@@ -31,6 +31,10 @@ backdrop-filter: blur( 4.5px );
 border-radius: 10px;
 }
 
+.signup-container select {
+  width: 106%; 
+}
+
 .signup-container input[type="submit"] {
   background-color: #007BFF; /* Button color */
   color: white;
@@ -41,6 +45,7 @@ border-radius: 10px;
   border-radius: 5px;
   transition: background-color 0.2s ease-in-out;
   border: 0px;
+  width: 106%; 
 }
 
 .signup-container input[type="submit"]:hover {

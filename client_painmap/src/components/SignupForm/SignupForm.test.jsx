@@ -2,6 +2,9 @@ import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import { screen, render, cleanup, fireEvent } from "@testing-library/react";
+import axios from 'axios';
+import MockAdapter from 'axios-mock-adapter';
+import { waitFor } from "@testing-library/react";
 
 import * as matchers from "@testing-library/jest-dom/matchers";
 expect.extend(matchers);
@@ -9,6 +12,8 @@ expect.extend(matchers);
 import SignupForm from ".";
 
 describe("SignupForm component", () => {
+
+    const mock = new MockAdapter(axios);
 
     beforeEach(() => {
         render(
@@ -20,7 +25,46 @@ describe("SignupForm component", () => {
 
     afterEach(() => {
         cleanup();
+        mock.reset();
     });
+
+    // it('submits the form and handles a successful signup', async () => {
+    //     const mockResponse = { status: 201 }
+    
+    //     mock.onPost('http://localhost:5000/patients').reply(201, mockResponse);
+    
+    //     fireEvent.change(screen.getByRole('first-name'), { target: { value: 'John' } });
+    //     fireEvent.change(screen.getByRole('last-name'), { target: { value: 'Doe' } });
+    //     fireEvent.change(screen.getByRole('email'), { target: { value: 'john@email.com' } });
+    //     fireEvent.change(screen.getByRole('password'), { target: { value: 'testPassword' } });
+    //     fireEvent.change(screen.getByRole('dateOfBirth'), { target: { value: '2024/01/19' } });
+    //     fireEvent.change(screen.getByRole('sex'), { target: { value: 'M' } });
+    //     fireEvent.change(screen.getByRole('ethnicity'), { target: { value: 'White' } });
+    
+    //     fireEvent.submit(screen.getByRole('form'));
+    
+    //     await waitFor(() => {
+    //         // Your assertions here
+    
+    //         expect(mock.history.post.length).toBe(1);
+    
+    //         const requestData = JSON.parse(mock.history.post[0].data);
+    
+    //         expect(requestData.first_name).toBe('John');
+    //         expect(requestData.last_name).toBe('Doe');
+    //         expect(requestData.email).toBe('john@email.com');
+    //         expect(requestData.password).toBe('testPassword');
+    //         // expect(requestData.nhs_number).toBe('No');
+    //         expect(requestData.date_of_birth).toBe('2024/01/19');
+    //         expect(requestData.sex).toBe('M');
+    //         expect(requestData.ethnicity).toBe('White');
+    
+    //         expect(screen.getByText('Create Account')).toBeTruthy();
+    //     });
+    
+    //     expect(screen.getByText('Create Account')).toBeTruthy();
+    // });
+    
 
     it("updates the firstName state correctly", () => {
         const userEmail = screen.getByRole("first-name");

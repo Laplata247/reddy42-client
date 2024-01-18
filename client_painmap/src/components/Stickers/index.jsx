@@ -20,8 +20,6 @@ function Stickers({setSticker, setScaleMod}) {
     const [activeSticker5, setactiveSticker5] = useState('inactiveSticker')
     const [activeSticker6, setactiveSticker6] = useState('inactiveSticker')
 
-
-
     const openMenu= () =>{
         setOpen(!open)
         if (open === false){
@@ -30,6 +28,7 @@ function Stickers({setSticker, setScaleMod}) {
             setClassName('stickerSelectorOpen')
         }
     }
+    
     const handleClick=(num)=>{
         if(num===1){
             setactiveSticker1('activeSticker'), setactiveSticker2('inactiveSticker'), setactiveSticker3('inactiveSticker'), setactiveSticker4('inactiveSticker'), setactiveSticker5('inactiveSticker'),setactiveSticker6('inactiveSticker')
@@ -49,10 +48,10 @@ function Stickers({setSticker, setScaleMod}) {
 
   return (
     <nav role="menu" id={className}>
-        <header>
+        {/* <header>
             {(open? <h2 class='title'>PS</h2>: <h2 class='title'>Pain Selector</h2> )}
-            <box-icon role='arrow' id='sideArrow' name='right-arrow-circle' onClick={openMenu}></box-icon>
-        </header>
+        </header> */}
+        <box-icon role='arrow'id='sideArrow' name='right-arrow-circle' onClick={openMenu}></box-icon>
         <section id='menu'>
             <div id='choices'>
                 <p class='choiceTitle'>Symbol</p>
