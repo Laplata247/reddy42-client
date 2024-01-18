@@ -33,9 +33,9 @@ const DoctorSearch = () => {
   return (
     <>
       <SearchForm handleSearch={handleSearch} lastSearch={searchString}/>
-      <Link to="/">Home</Link>
+      {/* <Link to="/">Home</Link> */}
 
-      <h1>Patient medical history</h1 >
+      <h1>Patient medical history:</h1 >
       <div className='consultations'>
         {
           loading
