@@ -75,7 +75,7 @@ const MapPainPage = () => {
         
             <div id="button-container">
               <button class='butt' onClick={removeDecal}>Undo</button>
-              <button class='butt' onClick={togglePopup}>Save image</button>
+              <button class='butt butt-save' onClick={togglePopup}>Save image</button>
               {visible ? <PainForm toggle={togglePopup} image={img} /> : null}
                 
             </div>
