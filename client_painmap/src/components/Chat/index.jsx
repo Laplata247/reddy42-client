@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ScrollToBottom from "react-scroll-to-bottom";
 import RenderMessageContent from "../RenderMessageContent";
+import './styles.css';
 
 function Chat({ socket, username, room }) {
   const [currentMessage, setCurrentMessage] = useState("");
@@ -90,7 +91,7 @@ function Chat({ socket, username, room }) {
             event.key === "Enter" && sendMessage();
           }}
         />
-        <button onClick={sendMessage}>&#9658;</button>
+        <button onClick={sendMessage} className="send-btn">&#9658;</button>
       </div>
     </div>
   );

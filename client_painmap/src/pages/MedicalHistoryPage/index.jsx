@@ -45,17 +45,19 @@ const MedicalHistoryPage = () => {
 
   return (
     <div className='history-page'>
-      <h1>My Medical History</h1>
 
       <div className='history-container'>
 
         <div className='hereditary-family-container'>
 
-          <div className='hereditary-conditions'>
-            <p>Hereditary conditions:</p>
+          <div className='hereditary-conditions' role="hereditary-form">
+
+            <h2>Hereditary conditions:</h2>
+
+            <div className='individual'>
             {
               loading
-                ? <p style={{ marginTop: "200px", fontSize: "70px" }}>Loading...</p>
+                ? <p style={{  marginTop: "200px", fontSize: "40px" }}>Loading...</p>
                 : (
                   hereditaryConditions.length > 0 ? (
                     <>
@@ -68,15 +70,18 @@ const MedicalHistoryPage = () => {
                   )
                 )
             }
-            <button onClick={toggleHereditaryPopup}>Add</button>
-            {hereditaryFormVisible ? <HereditaryForm toggleHereditaryPopup={toggleHereditaryPopup} /> : null}
+            </div>
+            <button onClick={toggleHereditaryPopup} className='history-btn'>Add more hereditary conditions</button>
+            {hereditaryFormVisible ? <HereditaryForm toggleHereditaryPopup={toggleHereditaryPopup} role="hereditary-form"/> : null}
           </div>
 
           <div className='family-members'>
-            <p>Family members:</p>
+            
+            <h2>Family members:</h2>
+            <div className='individual'>
             {
               loading
-                ? <p style={{ marginTop: "200px", fontSize: "70px" }}>Loading...</p>
+                ? <p style={{ marginTop: "200px", fontSize: "40px" }}>Loading...</p>
                 : (
                   family.length > 0 ? (
                     <>
@@ -91,29 +96,38 @@ const MedicalHistoryPage = () => {
                   )
                 )
             }
-            <button onClick={toggleFamilyPopup}>Add</button>
+            </div>
+
+            <button onClick={toggleFamilyPopup} className='history-btn'>Add more family members</button>
             {familyFormVisible ? <FamilyForm toggleFamilyPopup={toggleFamilyPopup} /> : null}
           </div>
         </div>
 
-        <div className='consultations'>
-          {
-            loading
-              ? <p style={{ marginTop: "200px", fontSize: "70px" }}>Loading...</p>
-              : <>
-                {
-                  consultations.map(consultation => (
-                    <Link to={`${consultation.id}`} key={consultation.id}>
-                      <Consultation consultation={consultation} />
-                    </Link>
-                  ))
-                }
-              </>
-          }
+        <div className='consultations-container'>
+
+          <h1>My Medical History</h1>
+          <div className='consultations'>
+            {
+              loading
+                ? <p style={{ marginTop: "200px", fontSize: "40px" }}>Loading...</p>
+                : <>
+                  {
+                    consultations.map(consultation => (
+                      <Link to={`${consultation.id}`} key={consultation.id}>
+                        <Consultation consultation={consultation} />
+                      </Link>
+                    ))
+                  }
+                </>
+            }
+          </div>
+
         </div>
+        
+      </div>
 
       </div>
-    </div>
+    
   )
 }
 

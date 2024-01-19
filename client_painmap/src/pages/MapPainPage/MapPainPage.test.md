@@ -1,12 +1,16 @@
 import React from 'react';
-import { describe, it, expect, beforeEach, afterEach } from 'vitest';
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { render, cleanup, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import MapPainPage from '.';
+import "vitest-canvas-mock";
+
 
 describe("MapPainPage tests------------------------------------------------------------", () => {
 
     beforeEach(() => {
+        vi.resetAllMocks();
+        setupJestCanvasMock()
         render(
             <BrowserRouter>
                 <MapPainPage />

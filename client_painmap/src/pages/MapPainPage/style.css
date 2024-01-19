@@ -1,12 +1,22 @@
+.map-pain-page {
+  background-image: url('../../assets/mappain.png');
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
 .painPage{
-  background-image: url('/src/assets/signup.png');
+  background-image: url('/src/assets/mappain.png');
   background-size: cover; /* Adjust as needed */
   background-repeat: no-repeat;
   background-attachment: fixed; 
   height: 100%;
 }
 .pain_map_title{
-  margin: 45% 0% 0% 0%;
+  margin: 5% 0% 0% 0%;
 }
 #canvasDiv {
     background: rgba(120, 181, 160, 0.4);
@@ -36,13 +46,18 @@
 #button-container{
   display:flex;
   width: 90%;
-  justify-content: space-around;
+  align-items: center;
+  margin-left: 75%;
 }
 
 .butt{
-  margin: 3% 0%;
+  margin: 3% 1%;
+  /* margin-right: -30rem; */
 }
 
+/* .butt-save {
+  margin-left: -50rem;
+} */
 .diagram{
   position: fixed;
   top:15%;
@@ -59,5 +74,6 @@
 }
 .diagram img{
   padding: 10px 35px;
+  margin-top: 0.6rem;
 
 }

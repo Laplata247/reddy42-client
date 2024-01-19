@@ -4,7 +4,7 @@ import { screen, render, cleanup } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext";
 import * as matchers from "@testing-library/jest-dom/matchers";
-// import "jest-canvas-mock";
+import "vitest-canvas-mock";
 
 expect.extend(matchers);
 

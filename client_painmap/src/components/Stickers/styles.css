@@ -55,7 +55,7 @@ max-width: 100px;
     padding: 10px 0px;
     transition: width 1s;
     transition-timing-function: ease-out;
-
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
 }
 #stickerSelectorClosed .title{
     position: relative;
