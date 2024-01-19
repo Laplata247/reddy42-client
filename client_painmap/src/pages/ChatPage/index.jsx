@@ -16,7 +16,6 @@ function ChatPage() {
 
   const joinRoom = () => {
     if (username !== "" && room !== "") {
-      console.log("Joining room:", room);
       const data = { room: room, username: username }
       socket.emit("join_room", data);
       socket.emit("user_joined", data);
@@ -31,19 +30,14 @@ function ChatPage() {
     const fetchData = async () => {
       try {
         const email = JSON.parse(localStorage.getItem("user")).user_id;
-        console.log(email)
         const response = await axios.get(`http://localhost:5000/patients/email/${email}`);
         const userData = response.data.data;
         setUsername(userData.first_name);
         if (userData.nhs_number === "False") {
           setRoom(userData.id)
           setIsStaff(false)
-          console.log("before join room")
           joinRoom()
-          console.log("after join room")
         }
-        console.log("Username:", userData.first_name);
-        console.log("is staff: ", userData.nhs_number)
       } catch (error) {
         console.error("Error fetching user data:", error);
       }

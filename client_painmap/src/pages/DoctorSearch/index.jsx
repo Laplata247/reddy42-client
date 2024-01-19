@@ -32,7 +32,7 @@ const DoctorSearch = () => {
 
   //////////////////////////////////////////////////////////
   return (
-    <div className='doctor-search-page'>
+    <div className='doctor-search-page' data-testid='doctor-search-container'>
       <SearchForm handleSearch={handleSearch} lastSearch={searchString}/>
       {/* <Link to="/">Home</Link> */}
       <div className='searched-patient-container'>

@@ -2,6 +2,8 @@ import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import { screen, render, cleanup, fireEvent } from "@testing-library/react";
+import "vitest-canvas-mock";
+
 
 import * as matchers from "@testing-library/jest-dom/matchers";
 expect.extend(matchers);
@@ -15,7 +17,7 @@ describe("PainForm component", () => {
         render(
             <BrowserRouter>
                 <AuthProvider>
-                    <PainForm />
+                    <PainForm url="path/to/texture.png" position={[0, 0, 0]} scale={[1, 1, 1]} rotation={[0, 0, 0]} />
                 </AuthProvider>
             </BrowserRouter>
         );
@@ -24,6 +26,8 @@ describe("PainForm component", () => {
     afterEach(() => {
         cleanup();
     });
+
+
 
     it.skip("updates the condition field correctly", () => {
         const condition = screen.getByRole("condition");
