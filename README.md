@@ -1,5 +1,6 @@
 # Reddy_4_2_Front_End
 A medically focused application, aimed at improving medical consultation between patient and their GP.
+Click on the video below to see a demo of the app
 
 [![Watch the video](https://img.youtube.com/vi/1OLcAyWFuO8/0.jpg)](https://www.youtube.com/watch?v=1OLcAyWFuO8&ab_channel=Warden)
 
