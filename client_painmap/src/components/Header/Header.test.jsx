@@ -36,10 +36,21 @@ describe("Navbar Component", () => {
 
   it.skip("displays a navbar with correct names", () => {
     const nav = screen.getByRole("navigation");
-    expect(nav.childNodes[0].textContent).toBe("LoginSignup");
-    // expect(nav.childNodes[0].textContent).toBe("Home");
-    // expect(nav.childNodes[1].textContent).toBe("Articulate Your Pain");
-    // expect(nav.childNodes[2].textContent).toBe("Chat");
-    // expect(nav.childNodes[3].textContent).toBe("Medical History");
+    const user = mockUseAuthContext().user;
+    const isHomePage = mockUseLocation().pathname === '/';
+
+    if (user && !isHomePage) {
+      // User is logged in, and it's not the home page
+      expect(nav.childNodes[0].textContent).toBe("Home");
+      expect(nav.childNodes[1].textContent).toBe("Articulate Your Pain");
+      expect(nav.childNodes[2].textContent).toBe("Chat");
+      expect(nav.childNodes[3].textContent).toBe("Medical History");
+      // Add more assertions based on your actual structure
+    } else if (!user && !isHomePage) {
+      // User is not logged in, and it's not the home page
+      expect(nav.childNodes[0].textContent).toBe("Login");
+      expect(nav.childNodes[1].textContent).toBe("Signup");
+    } else {
+    }
   });
 });

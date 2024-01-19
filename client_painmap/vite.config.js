@@ -11,6 +11,7 @@ export default defineConfig({
       ...configDefaults.exclude, 
       'node_modules/**'
     ]
+
   },
   coverage: {
     reporter: ["text", "json", "html"],

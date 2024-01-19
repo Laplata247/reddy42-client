@@ -21,6 +21,7 @@
     "@types/three": "^0.160.0",
     "axios": "^1.6.5",
     "boxicons": "^2.1.4",
+    "canvas": "^2.11.2",
     "debounce": "^2.0.0",
     "hsl-to-hex": "^1.0.0",
     "html2canvas": "^1.4.1",

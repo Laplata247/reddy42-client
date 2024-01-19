@@ -2,13 +2,19 @@ import React from "react";
 import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 // import { useVite } from 'vite-plu'
 import { screen, render, cleanup, fireEvent } from "@testing-library/react";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, MemoryRouter } from "react-router-dom";
 import * as matchers from "@testing-library/jest-dom/matchers";
 expect.extend(matchers);
 
 import Chat from ".";
 
 describe('Chat Component', () => {
+  let socket = {
+    on: vi.fn(),
+    off: vi.fn(),
+    emit: vi.fn(),
+  };
+
   let mockSocket;
 
   beforeEach(() => {
@@ -17,15 +23,9 @@ describe('Chat Component', () => {
       emit: vi.fn(),
       on: vi.fn(),
       off: vi.fn(),
+
     };
 
-    render(
-      <BrowserRouter>
-        <Chat socket={mockSocket} username="TestUser" room="TestRoom" />
-      </BrowserRouter>,
-      // Ensure you use `useVite` to handle asynchronous code
-      // useVite(),
-    );
   });
 
   afterEach(() => {
@@ -33,11 +33,28 @@ describe('Chat Component', () => {
   });
 
   it('renders the Chat component', () => {
+    render(
+      <BrowserRouter>
+        <Chat socket={mockSocket} username="TestUser" room="TestRoom" />
+      </BrowserRouter>,
+    );
     const chatWindow = screen.getByText('Live Chat');
     expect(chatWindow).toBeInTheDocument();
   });
 
-  it.skip('sends a message when the button is clicked', async () => {
+  it("renders the chat header and footer", () => {
+        render(
+          <MemoryRouter initialEntries={["/chat"]}>
+            <Chat socket={socket} username="Alice" room="general" />
+          </MemoryRouter>
+        );
+    
+        expect(screen.getByText("Live Chat")).toBeInTheDocument();
+        expect(screen.getByRole("textbox")).toBeInTheDocument();
+        expect(screen.getByRole("button", { class: "send-btn" })).toBeInTheDocument();
+  });
+
+  it('sends a message when the button is clicked', async () => {
     render(<Chat socket={mockSocket} username="TestUser" room="TestRoom" />);
     
     // Mock user input
