@@ -6,14 +6,18 @@
 1. Clone the repository
 ```sh
 git clone https://github.com/Laplata247/reddy42-client.git
-```  
+```
+1. Change directory to get inside the folder
+```sh
+cd client_painmap
+```
 
-2. Install required dependencies 
+3. Install required dependencies 
 ```sh
 npm install
 ```
 
-3. Run the client
+4. Run the client
 ```sh
 npm run dev
 ```
