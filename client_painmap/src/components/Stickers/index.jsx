@@ -92,34 +92,34 @@ function Stickers({setSticker, setScaleMod}) {
             <div id='sizes'>
                 <p id='sizeTitle'>Size</p>
                 <div class='scale'>
-                    <label for="size1">s</label>
+                    <label htmlFor="size1">s</label>
                     <input type="range" id="size1" name="volume" min="1" max="10" onChange={e =>{setSize1(e.target.value*0.3); setScaleMod(size1)}}/>
-                    <label for="size1">L</label>
+                    <label htmlFor="size1">L</label>
                 </div>
                 <div class='scale'>
-                    <label for="size2">s</label>
+                    <label htmlFor="size2">s</label>
                     <input role='scale' type="range" id="size2" name="volume" min="1" max="10" onChange={e =>{setSize2(e.target.value*0.3); setScaleMod(size2)}}/>
-                    <label for="size2">L</label>
+                    <label htmlFor="size2">L</label>
                 </div>
                 <div class='scale'>
-                    <label for="size3">xs</label>
+                    <label htmlFor="size3">xs</label>
                     <input type="range" id="size3" name="volume" min="1" max="10" onChange={e =>{setSize3(e.target.value*0.4); setScaleMod(size3)}}/>
-                    <label for="size3">L</label>
+                    <label htmlFor="size3">L</label>
                 </div>
                 <div class='scale'>
-                    <label for="size4">s</label>
+                    <label htmlFor="size4">s</label>
                     <input type="range" id="size4" name="volume" min="1" max="10" onChange={e =>{setSize4(e.target.value*0.3); setScaleMod(size4)}}/>
-                    <label for="size4">L</label>
+                    <label htmlFor="size4">L</label>
                 </div>
                 <div class='scale'>
-                    <label for="size5">s</label>
+                    <label htmlFor="size5">s</label>
                     <input type="range" id="size5" name="volume" min="1" max="10" onChange={e =>{setSize5(e.target.value*0.3); setScaleMod(size5)}}/>
-                    <label for="size5">L</label>
+                    <label htmlFor="size5">L</label>
                 </div>
                 <div class='scale'>
-                    <label for="size6">s</label>
+                    <label htmlFor="size6">s</label>
                     <input type="range" id="size6" name="volume" min="1" max="10" onChange={e =>{setSize6(e.target.value*0.5); setScaleMod(size6)}}/>
-                    <label for="size6">L</label>
+                    <label htmlFor="size6">L</label>
                 </div>
 
             </div>
