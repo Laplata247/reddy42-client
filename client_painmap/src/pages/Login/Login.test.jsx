@@ -7,6 +7,8 @@ import { vi } from "vitest";
 import { AuthProvider } from "../../contexts/AuthContext";
 import * as matchers from "@testing-library/jest-dom/matchers";
 expect.extend(matchers);
+import "vitest-canvas-mock";
+
 import Login from ".";
 
 describe("Login Page", () => {

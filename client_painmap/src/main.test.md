@@ -1,25 +1,31 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
+
 import { BrowserRouter as Router } from 'react-router-dom'
 import { ConsultationsProvider } from './contexts'
 import { GenderProvider } from './contexts'
-import App from './App';
+import "vitest-canvas-mock";
 
-test('renders the application with providers', () => {
-    const { container } = render(
-        <React.StrictMode>
-            <AuthProvider>
-                <Router>
-                    <GenderProvider>
-                        <ConsultationsProvider>
-                            <App />
-                        </ConsultationsProvider>
-                    </GenderProvider>
-                </Router>
-            </AuthProvider>
-        </React.StrictMode>
-    );
+import App from './main';
 
-});
+describe('App Component', () => {
+    let container;
+  
+    beforeEach(() => {
+      container = document.createElement('div');
+      document.body.appendChild(container);
+    });
+  
+    afterEach(() => {
+      document.body.removeChild(container);
+    });
+  
+    it('renders without crashing', () => {
+      render(<App />, container);
+      expect(container).toBeDefined();
+    });
+
+})
 
 // You can add more tests as needed, for example, to ensure the providers are working correctly.
