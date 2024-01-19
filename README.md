@@ -1,4 +1,5 @@
 # Reddy_4_2_Front_End
+A medically focused application, aimed at improving medical consultation between patient and their GP.
 
 # Installation & usage
 ## Instalation
@@ -48,13 +49,6 @@ The client should now be running on port 5173, or other port mentioned in the co
 - Creating a trello board, listing all the tasks in To do column
 - Completing tasks from the board one at a time
 - Testing the front end and back end everyday
-
-# Screenshots/Images
-![login](./screenshots/.PNG)
-![sign up](./screenshots/.PNG)
-![chat](./screenshots/.PNG)
-![map pain](./screenshots/.PNG)
-![medical history](./screenshots/.PNG)
 
 # Wins & Challenges
 ## Wins
