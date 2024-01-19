@@ -50,7 +50,7 @@ const MedicalHistoryPage = () => {
 
         <div className='hereditary-family-container'>
 
-          <div className='hereditary-conditions'>
+          <div className='hereditary-conditions' role="hereditary-form">
 
             <h2>Hereditary conditions:</h2>
 
@@ -72,7 +72,7 @@ const MedicalHistoryPage = () => {
             }
             </div>
             <button onClick={toggleHereditaryPopup} className='history-btn'>Add more hereditary conditions</button>
-            {hereditaryFormVisible ? <HereditaryForm toggleHereditaryPopup={toggleHereditaryPopup} /> : null}
+            {hereditaryFormVisible ? <HereditaryForm toggleHereditaryPopup={toggleHereditaryPopup} role="hereditary-form"/> : null}
           </div>
 
           <div className='family-members'>

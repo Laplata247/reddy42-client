@@ -4,6 +4,8 @@ import { screen, render, cleanup } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import * as matchers from "@testing-library/jest-dom/matchers";
 expect.extend(matchers);
+import "vitest-canvas-mock";
+
 
 import Signup from ".";
 
