@@ -25,28 +25,28 @@ const Header = () => {
           <img src="../../logo.png" className="nav-logo" alt="Logo" />
         </Link>
         <nav className='navbar'>
-          <div className="links">
-            {!user && !isHomePage && (
-              <div className="userDisplay">
-                <NavLink to="/">Home</NavLink>
-                {!(user.user_id === "NHS@email.com") && (
-                  <>
-                    <NavLink to="/select-gender">Articulate Your Pain</NavLink>
-                    <NavLink to="/history">Medical History</NavLink>
-                  </>
-                )}
-                <NavLink to="/chat">Chat</NavLink>
-                {user.user_id === "NHS@email.com" && (
-                  <NavLink to="/search">Search patients</NavLink>
-                )}
-              </div>
-            )}
-            {!user && (
-              <div className="userDisplay">
-                <Link to="/login" role="login">Login</Link>
-                <Link to="/signup" role='signup'>Signup</Link>
-              </div>
-            )}
+            <div className ="links">
+          {user && !isHomePage && (
+            <div className="userDisplay">
+              <NavLink to="/">Home</NavLink>
+              {!(user.user_id === "NHS@email.com") && (
+                <>
+                  <NavLink to="/select-gender">Articulate Your Pain</NavLink>
+                  <NavLink to="/history">Medical History</NavLink>
+                </>
+              )}
+              <NavLink to="/chat">Chat</NavLink>
+              {user.user_id === "NHS@email.com" && (
+                <NavLink to="/search">Search patients</NavLink>
+              )}
+            </div>
+          )}
+          {!user && !isHomePage && (
+            <div className="userDisplay">
+              <Link to="/login" role="login">Login</Link>
+              <Link to="/signup" role='signup'>Signup</Link>
+            </div>
+          )}
           </div>
           {user && (
             <div className="userDisplay">
