@@ -41,7 +41,7 @@ const Header = () => {
               )}
             </div>
           )}
-          {!user && !isHomePage && (
+          {!user  && (
             <div className="userDisplay">
               <Link to="/login" role="login">Login</Link>
               <Link to="/signup" role='signup'>Signup</Link>

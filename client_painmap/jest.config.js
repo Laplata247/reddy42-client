@@ -1,1 +1,0 @@
-// setupFiles: [     "jest-canvas-mock"   ]
