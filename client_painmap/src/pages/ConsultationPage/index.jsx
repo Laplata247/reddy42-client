@@ -12,7 +12,7 @@ const ConsultationPage = () => {
 
     useEffect(() => {
         const displayConsultation = async () => {
-            const { data } = await axios.get(`http://localhost:5000/conditions/${id}`)
+            const { data } = await axios.get(`https://reddy-42-back-end.onrender.com/conditions/${id}`)
             setConsultation(data.data)
             setLoading(false)
         }

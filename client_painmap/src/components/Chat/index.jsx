@@ -28,7 +28,7 @@ function Chat({ socket, username, room }) {
 
   const fetchPreviousMessages = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/messages/${room}`);
+      const response = await fetch(`https://reddy-42-back-end.onrender.com/messages/${room}`);
       const data = await response.json();
       setMessageList(data.data);
       setHistoryLoaded(true); 

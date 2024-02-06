@@ -19,7 +19,7 @@ const DoctorSearch = () => {
 
   useEffect(() => {
     const displayConsultations = async () => {
-      const { data } = await axios.get(`http://localhost:5000/conditions/users/${searchString}`)
+      const { data } = await axios.get(`https://reddy-42-back-end.onrender.com/conditions/users/${searchString}`)
       setConsultations(data.data)
       setLoading(false)
     }

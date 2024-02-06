@@ -18,13 +18,13 @@ const MedicalHistoryPage = () => {
 
   useEffect(() => {
     const displayConsultations = async () => {
-      const { data } = await axios.get(`http://localhost:5000/conditions/users/${user.user_id}`)
+      const { data } = await axios.get(`https://reddy-42-back-end.onrender.com/conditions/users/${user.user_id}`)
       setConsultations(data.data)
 
-      const data2 = await axios.get(`http://localhost:5000/patients/${user.user_id}/family`)
+      const data2 = await axios.get(`https://reddy-42-back-end.onrender.com/patients/${user.user_id}/family`)
       setFamily(data2.data.family_members)
 
-      const data3 = await axios.get(`http://localhost:5000/patients/${user.user_id}`)
+      const data3 = await axios.get(`https://reddy-42-back-end.onrender.com/patients/${user.user_id}`)
 
       // use set to make sure the conditions are unique
       const hereditaryConditionsSet = new Set([...hereditaryConditions, ...data3.data.data.hereditary_conditions]);

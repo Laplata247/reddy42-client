@@ -4,7 +4,7 @@ import axios from 'axios'
 export const AuthContext = createContext()
 
 const logoutUser = async() => {
-  const response = await axios.get('http://localhost:5000/patients')
+  const response = await axios.get('https://reddy-42-back-end.onrender.com/patients')
 }
 
 
